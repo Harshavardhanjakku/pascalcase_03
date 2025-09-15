@@ -53,7 +53,7 @@ export default async function BlogDetail({ params }: Params) {
               <h3>1. What types of data sources can be integrated with the Card Gallery?</h3>
               <p>The Card Gallery can integrate with various data sources, including Common Data Service entities, SharePoint lists, and external APIs, allowing users to pull in relevant information for display.</p>
               <h3>2. Are there any limitations on the types of fields that can be displayed in the Card Gallery?</h3>
-              <p>Yes, while users can display a variety of field types, certain fields like Lookup type fields are not accessible in the Description section. It's essential to choose compatible field types to ensure proper display.</p>
+              <p>Yes, while users can display a variety of field types, certain fields like Lookup type fields are not accessible in the Description section. It&apos;s essential to choose compatible field types to ensure proper display.</p>
               <h3>3. Can I preview the Card Gallery design before publishing it?</h3>
               <p>Users can preview their Card Gallery design in real time while configuring it. This feature allows for adjustments to be made on the fly, ensuring that the final appearance meets expectations before publishing.</p>
               <h3>4. How does the Card Gallery improve mobile responsiveness?</h3>
