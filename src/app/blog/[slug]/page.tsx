@@ -3,6 +3,7 @@ import BlogCard from '@/components/BlogCard';
 import { notFound } from 'next/navigation';
 import styles from './blog.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const revalidate = 60;
 
@@ -19,9 +20,32 @@ export default async function BlogDetail({ params }: Params) {
   if (!post) return notFound();
   const allPosts = await getAllPosts();
   const related = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
+  // Build a sidebar list of related posts (prefer same category, then others)
+  const relatedSidebar = allPosts
+    .filter((p) => p.slug !== slug)
+    .sort((a, b) => {
+      const aSame = a.category === post.category ? 0 : 1;
+      const bSame = b.category === post.category ? 0 : 1;
+      if (aSame !== bSame) return aSame - bSame; // same-category first
+      // fall back to publishedAt desc if available
+      const ad = a.publishedAt ?? '';
+      const bd = b.publishedAt ?? '';
+      return bd.localeCompare(ad);
+    })
+    .slice(0, 15);
+  const sidebarLinks = [
+    { title: 'Using Content Snippets in Power Pages', slug: 'using-content-snippets-in-power-pages' },
+    { title: 'Creating an App from Figma in Power Apps', slug: 'creating-app-from-figma-in-power-apps' },
+    { title: 'DocuSign integration with Power Pages', slug: 'docusign-integration-with-power-pages' },
+    { title: 'Custom Sign-Out Redirects in Power Pages', slug: 'custom-signout-redirects-power-pages' },
+    { title: 'Power BI Integration with Power Pages', slug: 'power-bi-integration-power-pages' },
+    { title: 'Creating Virtual Tables in Power Apps', slug: 'creating-virtual-tables-power-apps' },
+    { title: 'Custom Filters and Search in Power Pages', slug: 'custom-filters-and-search-power-pages' },
+    { title: 'Automate Image Data Extraction Using AI', slug: 'automate-image-data-extraction-using-ai' }
+  ];
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-      <div className="grid gap-12 xl:gap-16 lg:grid-cols-12">
+      <div className="grid gap-12 lg:gap-16 xl:gap-24 lg:grid-cols-12">
         <article className="lg:col-span-8 xl:col-span-8">
           <header className="mb-6 border-b border-slate-200 pb-4 dark:border-slate-700">
             <h1 className="mb-4 text-3xl font-bold">{post.title}</h1>
@@ -74,10 +98,18 @@ export default async function BlogDetail({ params }: Params) {
             </div>
           </section>
         </article>
-        <aside className="lg:col-span-4 xl:col-span-4 lg:ml-4 xl:ml-6">
-          <div className="sticky top-24 rounded-xl border border-slate-200 p-5 shadow-sm dark:border-slate-700">
-            <h3 className="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-200">Related blogs</h3>
-            <div className="text-sm text-slate-500 dark:text-slate-400">Coming soon</div>
+        <aside className="lg:col-span-4 xl:col-span-4">
+          <div className="sticky top-24 rounded-xl border border-slate-200 p-6 dark:border-slate-700 sidebarLightForce">
+            <h3 className="mb-4 text-lg font-semibold">Related blogs</h3>
+            <ul className="space-y-2 list-disc pl-5">
+              {relatedSidebar.map((r) => (
+                <li key={r.slug} className="leading-snug">
+                  <Link href={`/blog/${r.slug}`} className="hover:underline">
+                    {r.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </aside>
       </div>

@@ -14,3 +14,43 @@
 }
 
 /* FAQ overrides removed */
+
+/* Force visible sidebar text in light theme */
+:root :where(.sidebarLightForce) {
+    color: #0f172a !important;
+    /* slate-900 */
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    isolation: isolate !important;
+}
+
+:root :where(.sidebarLightForce h3,
+    .sidebarLightForce a,
+    .sidebarLightForce li,
+    .sidebarLightForce ul) {
+    color: #0f172a !important;
+    /* slate-900 */
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+:root :where(.sidebarLightForce li) {
+    list-style-type: disc;
+}
+
+:root :where(.sidebarLightForce li::marker) {
+    color: #334155 !important;
+    /* slate-700 */
+}
+
+/* Do not affect dark theme */
+@media (prefers-color-scheme: dark) {
+    :root :where(.sidebarLightForce) {
+        color: inherit !important;
+        opacity: inherit !important;
+        filter: inherit !important;
+        mix-blend-mode: inherit !important;
+    }
+}
