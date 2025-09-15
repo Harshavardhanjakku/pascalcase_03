@@ -289,7 +289,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--accent), transparent);
+  background: linear-gradient(135deg, var(--primary), transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -297,7 +297,7 @@ body {
 }
 
 .module-card:hover::before {
-  opacity: 0.05;
+  opacity: 0.08;
 }
 
 .module-icon {
@@ -314,8 +314,8 @@ body {
 }
 
 .module-card:hover .module-icon {
-  background-color: var(--accent);
-  color: var(--text-inverse);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
 }
 
 .module-title {
@@ -328,7 +328,7 @@ body {
 }
 
 .module-card:hover .module-title {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .module-description {
