@@ -87,7 +87,7 @@ export default function ContactSection() {
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {/* Name with icon + floating label */}
                 <div className="relative">
-                  <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2" style={{ color: 'var(--text-secondary)' }}>
+                  <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 z-10" style={{ color: 'var(--text-secondary)' }}>
                     {/* user icon */}
                     <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="currentColor" strokeWidth="1.5" /><path d="M20 22a8 8 0 1 0-16 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
                   </span>
@@ -111,7 +111,7 @@ export default function ContactSection() {
 
                 {/* Email */}
                 <div className="relative">
-                  <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2" style={{ color: 'var(--text-secondary)' }}>
+                  <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 z-10" style={{ color: 'var(--text-secondary)' }}>
                     {/* mail icon */}
                     <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" stroke="currentColor" strokeWidth="1.5" /><path d="m3 7 9 6 9-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
                   </span>
@@ -136,7 +136,7 @@ export default function ContactSection() {
 
               {/* Company */}
               <div className="relative">
-                <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2" style={{ color: 'var(--text-secondary)' }}>
+                <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 z-10" style={{ color: 'var(--text-secondary)' }}>
                   {/* building icon */}
                   <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21h18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /><path d="M7 21V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v14" stroke="currentColor" strokeWidth="1.5" /><path d="M9 10h.01M12 10h.01M15 10h.01M9 13h.01M12 13h.01M15 13h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
                 </span>
@@ -160,7 +160,7 @@ export default function ContactSection() {
 
               {/* Message */}
               <div className="relative">
-                <span className="pointer-events-none absolute left-3 top-3" style={{ color: 'var(--text-secondary)' }}>
+                <span className="pointer-events-none absolute left-3 top-3 z-10" style={{ color: 'var(--text-secondary)' }}>
                   {/* message icon */}
                   <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 12a8 8 0 0 1-11.8 7L3 20l1-6A8 8 0 1 1 21 12Z" stroke="currentColor" strokeWidth="1.5" /></svg>
                 </span>

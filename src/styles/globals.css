@@ -19,6 +19,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Themed link underline */
+:where(a):hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--primary);
+}
+
 /* Focus visibility */
 :where(a, button, input, textarea, select):focus-visible {
   outline: 2px solid var(--accent-2);
@@ -338,6 +345,79 @@ body {
   text-align: center;
 }
 
+/* Product Cards - align style with module cards */
+.product-card {
+  position: relative;
+  background-color: var(--surface-card);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: var(--radius-lg);
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-large);
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+}
+
+.product-card:hover::before {
+  opacity: 0.08;
+}
+
+.product-icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-2);
+  color: var(--text-primary);
+}
+
+/* Product CTA buttons */
+.product-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.product-cta--filled {
+  background-color: var(--surface-2);
+  color: var(--text-primary);
+}
+
+.product-cta--ghost {
+  border: 1px solid var(--border-default);
+}
+
+.product-cta:hover,
+.product-cta:focus-visible {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-color: transparent;
+  outline: none;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
 /* Blog Card Styles */
 .blog-card {
   position: relative;
@@ -499,25 +579,24 @@ body {
 .form-label {
   position: absolute;
   left: 2.5rem;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0.75rem;
+  transform: none;
   font-size: 0.875rem;
   color: var(--text-secondary);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   pointer-events: none;
   font-weight: 500;
-  background: linear-gradient(135deg, var(--surface-2), var(--surface-1));
-  padding: 0 0.5rem;
-  border-radius: 4px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 
 .form-input:focus+.form-label,
 .form-input:not(:placeholder-shown)+.form-label {
-  top: 0.5rem;
+  top: 0.35rem;
   font-size: 0.75rem;
   color: var(--accent-2);
   font-weight: 600;
-  transform: translateY(0);
 }
 
 .form-error {
