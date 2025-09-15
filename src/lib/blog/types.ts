@@ -8,6 +8,7 @@ export type BlogPost = {
   coverImage: string;
   contentHtml?: string;
   publishedAt?: string;
+  tags?: string[];
 };
 
 export type BlogCardProps = Pick<

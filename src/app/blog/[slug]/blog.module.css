@@ -1,0 +1,16 @@
+.article img {
+    border: 1px solid var(--tw-prose-body, rgba(148, 163, 184, 0.4));
+    border-radius: 0.75rem;
+    /* match rounded-xl */
+}
+
+.article figure>img {
+    border: 1px solid var(--tw-prose-body, rgba(148, 163, 184, 0.4));
+    border-radius: 0.75rem;
+}
+
+.article figure {
+    padding: 0.25rem;
+}
+
+/* FAQ overrides removed */
