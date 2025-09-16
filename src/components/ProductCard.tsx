@@ -59,7 +59,7 @@ export default function ProductCard({ product }: { product: Product }) {
                     initial={{ opacity: 0, y: -6 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
-                    className="border-border-default bg-surface-popover absolute right-0 z-10 mt-2 min-w-44 rounded-lg border p-2 text-sm backdrop-blur-md"
+                    className="kebab-menu absolute right-0 z-50 mt-2 min-w-44 rounded-lg border p-2 text-sm"
                   >
                     <a
                       className="hover:bg-overlay-1 flex items-center gap-2 rounded-md px-3 py-2"

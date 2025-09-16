@@ -926,6 +926,64 @@ body {
   background-color: transparent;
 }
 
+/* Kebab Menu - Professional backdrop blur styling */
+.kebab-menu {
+  background: var(--surface-popover);
+  border: 1px solid var(--border-default);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+}
+
+/* Enhanced backdrop blur for better separation */
+.kebab-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--surface-popover);
+  border-radius: inherit;
+  z-index: -1;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Light theme specific adjustments */
+[data-theme="light"] .kebab-menu {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .kebab-menu::before {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Dark theme specific adjustments */
+[data-theme="dark"] .kebab-menu {
+  background: rgba(17, 24, 39, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(12px)) {
+  .kebab-menu {
+    background: var(--surface-popover);
+  }
+
+  [data-theme="light"] .kebab-menu {
+    background: rgba(255, 255, 255, 0.98);
+  }
+
+  [data-theme="dark"] .kebab-menu {
+    background: rgba(17, 24, 39, 0.98);
+  }
+}
+
 /* Feature Grid - Edge Compatibility */
 .feature-card {
   background-color: var(--card-bg-fallback);
