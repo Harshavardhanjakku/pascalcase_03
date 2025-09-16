@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 type Theme = 'dark' | 'light';
@@ -17,8 +17,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    const stored = typeof window !== 'undefined' ? (localStorage.getItem('theme') as Theme | null) : null;
-    const system: Theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const stored =
+      typeof window !== 'undefined' ? (localStorage.getItem('theme') as Theme | null) : null;
+    const system: Theme =
+      window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
     const initial = stored ?? system;
     setThemeState(initial);
     document.documentElement.setAttribute('data-theme', initial);
@@ -30,13 +34,20 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.setAttribute('data-theme', t);
   }, []);
 
-  const toggleTheme = useCallback(() => setTheme(theme === 'dark' ? 'light' : 'dark'), [theme, setTheme]);
+  const toggleTheme = useCallback(
+    () => setTheme(theme === 'dark' ? 'light' : 'dark'),
+    [theme, setTheme],
+  );
 
   const value = useMemo(() => ({ theme, setTheme, toggleTheme }), [theme, setTheme, toggleTheme]);
 
   // Prevent hydration mismatch by not rendering theme-dependent content until mounted
   if (!mounted) {
-    return <ThemeContext.Provider value={{ theme: 'dark', setTheme, toggleTheme }}>{children}</ThemeContext.Provider>;
+    return (
+      <ThemeContext.Provider value={{ theme: 'dark', setTheme, toggleTheme }}>
+        {children}
+      </ThemeContext.Provider>
+    );
   }
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
@@ -57,9 +68,8 @@ export function ThemeScript() {
     document.documentElement.setAttribute('data-theme', s || m);
   } catch(_){} })();`;
   return (
-    <Script id="theme-init" strategy="afterInteractive">
+    <Script id="theme-init" strategy="beforeInteractive">
       {script}
     </Script>
   );
 }
-

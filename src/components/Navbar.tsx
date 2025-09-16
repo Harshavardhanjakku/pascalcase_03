@@ -15,6 +15,7 @@ import {
 } from '@radix-ui/react-icons';
 import Link from 'next/link';
 import Image from 'next/image';
+import { BanknotesIcon } from '@heroicons/react/24/outline';
 
 type NavItem =
   | { label: string; href: string }
@@ -56,7 +57,7 @@ const productCatalog = [
       {
         label: 'Commission 365',
         href: '/products/commission-365',
-        icon: RocketIcon,
+        icon: BanknotesIcon,
         badge: 'Popular',
       },
       { label: 'HTML To PDF Converter', href: '/products/html-to-pdf', icon: FileTextIcon },
