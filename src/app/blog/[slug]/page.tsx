@@ -19,7 +19,6 @@ export default async function BlogDetail({ params }: Params) {
   if (!post) return notFound();
   const allPosts = await getAllPosts();
   const related = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
-  // Build a sidebar list of related posts (prefer same category, then others)
   const relatedSidebar = allPosts
     .filter((p) => p.slug !== slug)
     .sort((a, b) => {
