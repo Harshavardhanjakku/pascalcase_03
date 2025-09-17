@@ -24,7 +24,10 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
                         <button
                             type="button"
                             onClick={() => setOpenIndex(isOpen ? null : index)}
-                            className="flex w-full items-center justify-between gap-4 rounded-xl px-5 py-4 text-left transition-colors hover:bg-blue-500/10"
+                            className={`flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors ${isOpen
+                                    ? "rounded-t-xl hover:bg-transparent"
+                                    : "rounded-xl hover:bg-blue-500/10"
+                                }`}
                             aria-expanded={isOpen}
                         >
                             <span className="font-medium" style={{ color: "var(--text-primary)" }}>
