@@ -338,7 +338,8 @@ export default async function ProductDetail({ params }: Params) {
         <div className="mb-8">
           <Link
             href="/products"
-            className="mb-6 inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+            className="mb-6 inline-flex items-center gap-2 transition-colors"
+            style={{ color: 'var(--text-secondary)' }}
           >
             <ArrowLeftIcon className="h-4 w-4" />
             Back to Products
@@ -346,10 +347,10 @@ export default async function ProductDetail({ params }: Params) {
 
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="mb-2 text-4xl font-bold text-slate-900 dark:text-white">
+              <h1 className="mb-2 text-4xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 Data Mask App for Dataverse
               </h1>
-              <p className="mb-4 text-xl text-slate-600 dark:text-slate-400">
+              <p className="mb-4 text-xl" style={{ color: 'var(--text-secondary)' }}>
                 Make your Power Platform sandbox environments more secure by replacing sensitive
                 data with dummy data
               </p>
@@ -368,11 +369,18 @@ export default async function ProductDetail({ params }: Params) {
           {/* Row 1: About the App & Get Started */}
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
             <div className="lg:col-span-2">
-              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-                <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
+              <div
+                className="rounded-2xl p-8 backdrop-blur-sm"
+                style={{
+                  backgroundColor: 'var(--surface-card)',
+                  borderColor: 'var(--border-default)',
+                  border: '1px solid',
+                }}
+              >
+                <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                   About the App
                 </h2>
-                <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
+                <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   Mask/Anonymize/Obfuscate Dataverse data with random characters and numbers, mock
                   data from pre-built formats. You can also easily select the fields to be masked or
                   simply deleted.
@@ -412,8 +420,15 @@ export default async function ProductDetail({ params }: Params) {
           {/* Row 2: Why This App & FAQ */}
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
             <div className="lg:col-span-2">
-              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-                <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
+              <div
+                className="rounded-2xl p-8 backdrop-blur-sm"
+                style={{
+                  backgroundColor: 'var(--surface-card)',
+                  borderColor: 'var(--border-default)',
+                  border: '1px solid',
+                }}
+              >
+                <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                   Why This App?
                 </h2>
                 <div className="space-y-4">
@@ -422,10 +437,10 @@ export default async function ProductDetail({ params }: Params) {
                       <CheckCircleIcon className="h-5 w-5 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                         Secure your sandbox environments
                       </h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                         The app ensures that your testing and development activities can be
                         conducted without compromising confidential data.
                       </p>
@@ -437,10 +452,10 @@ export default async function ProductDetail({ params }: Params) {
                       <CheckCircleIcon className="h-5 w-5 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                         Anonymization
                       </h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                         The app replaces sensitive data with realistic anonymous values, ensuring
                         personal information remains unlinked to specific individuals.
                       </p>
@@ -452,10 +467,10 @@ export default async function ProductDetail({ params }: Params) {
                       <CheckCircleIcon className="h-5 w-5 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                         Data Privacy & Compliance
                       </h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                         Comply with data privacy regulations like GDPR, HIPAA, or CCPA by masking
                         personal & sensitive information.
                       </p>
@@ -467,10 +482,10 @@ export default async function ProductDetail({ params }: Params) {
                       <CheckCircleIcon className="h-5 w-5 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                         Data Protection
                       </h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                         Safeguard sensitive data from unauthorized access or exposure, reducing the
                         risk of data breaches, cyberattacks, and internal data leaks.
                       </p>
@@ -481,56 +496,63 @@ export default async function ProductDetail({ params }: Params) {
             </div>
 
             <div>
-              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-                <h3 className="mb-6 text-xl font-bold text-slate-900 dark:text-white">
+              <div
+                className="rounded-2xl p-8 backdrop-blur-sm"
+                style={{
+                  backgroundColor: 'var(--surface-card)',
+                  borderColor: 'var(--border-default)',
+                  border: '1px solid',
+                }}
+              >
+                <h3 className="mb-6 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
                   Frequently Asked Questions
                 </h3>
 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                       Is the app free to test?
                     </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                       The app is free to test without a valid license. However, there is a record
                       restriction of 1,000 records per run without a license.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                       How can I install the app?
                     </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                       This app is available as managed solution. You can directly download the app
                       from this link, and follow the steps in the video.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                       How can I use the app for more than 1,000 records?
                     </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                       You can reach out to us through Microsoft Teams or contact us page.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                       How efficiently does your app handle data masking?
                     </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                       Our app efficiently masks 200,000 records in 15 minutes and up to 1 million
                       records in 60 to 70 minutes, ensuring speedy and secure data masking.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                       Can I selectively mask tables and attributes?
                     </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                       Yes, it is possible to configure tables and attributes to mask.
                     </p>
                   </div>
@@ -542,20 +564,30 @@ export default async function ProductDetail({ params }: Params) {
           {/* Row 3: How It Works & Performance */}
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
             <div className="lg:col-span-2">
-              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-                <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
+              <div
+                className="rounded-2xl p-8 backdrop-blur-sm"
+                style={{
+                  backgroundColor: 'var(--surface-card)',
+                  borderColor: 'var(--border-default)',
+                  border: '1px solid',
+                }}
+              >
+                <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                   How Does Data Mask App Work?
                 </h2>
-                <div className="rounded-xl border-l-4 border-blue-500 bg-slate-50 p-6 dark:bg-slate-700/50">
+                <div
+                  className="rounded-xl border-l-4 border-blue-500 p-6"
+                  style={{ backgroundColor: 'var(--surface-2)' }}
+                >
                   <div className="mb-4 flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-lg font-bold text-white">
                       1
                     </div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
                       Step-by-Step Process
                     </h3>
                   </div>
-                  <p className="text-slate-600 dark:text-slate-400">
+                  <p style={{ color: 'var(--text-secondary)' }}>
                     The Data Mask app provides a simple, intuitive interface to select tables and
                     fields for masking. Configure your masking preferences and run the process to
                     secure your sandbox environment.
@@ -565,17 +597,26 @@ export default async function ProductDetail({ params }: Params) {
             </div>
 
             <div>
-              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-                <h3 className="mb-6 text-xl font-bold text-slate-900 dark:text-white">Performance</h3>
+              <div
+                className="rounded-2xl p-8 backdrop-blur-sm"
+                style={{
+                  backgroundColor: 'var(--surface-card)',
+                  borderColor: 'var(--border-default)',
+                  border: '1px solid',
+                }}
+              >
+                <h3 className="mb-6 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                  Performance
+                </h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-slate-600 dark:text-slate-400">
+                    <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                       200,000 records
                     </span>
                     <span className="text-sm font-semibold text-blue-600">15 minutes</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-slate-600 dark:text-slate-400">
+                    <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                       1 million records
                     </span>
                     <span className="text-sm font-semibold text-blue-600">60-70 minutes</span>
@@ -605,7 +646,8 @@ export default async function ProductDetail({ params }: Params) {
         <div className="mb-8">
           <Link
             href="/products"
-            className="mb-6 inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+            className="mb-6 inline-flex items-center gap-2 transition-colors"
+            style={{ color: 'var(--text-secondary)' }}
           >
             <ArrowLeftIcon className="h-4 w-4" />
             Back to Products
@@ -613,10 +655,10 @@ export default async function ProductDetail({ params }: Params) {
 
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="mb-2 text-4xl font-bold text-slate-900 dark:text-white">
+              <h1 className="mb-2 text-4xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 HTML to PDF Converter for Power Automate
               </h1>
-              <p className="mb-4 text-xl text-slate-600 dark:text-slate-400">
+              <p className="mb-4 text-xl" style={{ color: 'var(--text-secondary)' }}>
                 Convert HTML content to PDF documents using Power Automate flows
               </p>
             </div>
@@ -634,18 +676,28 @@ export default async function ProductDetail({ params }: Params) {
           {/* Row 1: About the Connector & Pricing Plans */}
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
             <div className="lg:col-span-2">
-              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-                <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
+              <div
+                className="rounded-2xl p-8 backdrop-blur-sm"
+                style={{
+                  backgroundColor: 'var(--surface-card)',
+                  borderColor: 'var(--border-default)',
+                  border: '1px solid',
+                }}
+              >
+                <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                   About the Connector
                 </h2>
-                <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
-                  A Power Automate premium connector for converting HTML content to PDF documents. Say
-                  goodbye to the restrictive 2MB limit. Now, you can create heavy-duty PDF documents
-                  without size constraints.
+                <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  A Power Automate premium connector for converting HTML content to PDF documents.
+                  Say goodbye to the restrictive 2MB limit. Now, you can create heavy-duty PDF
+                  documents without size constraints.
                 </p>
 
-                <div className="rounded-xl border-l-4 border-blue-500 bg-slate-50 p-6 dark:bg-slate-700/50">
-                  <h3 className="mb-4 font-semibold text-slate-900 dark:text-white">
+                <div
+                  className="rounded-xl border-l-4 border-blue-500 p-6"
+                  style={{ backgroundColor: 'var(--surface-2)' }}
+                >
+                  <h3 className="mb-4 font-semibold" style={{ color: 'var(--text-primary)' }}>
                     Key Advantages
                   </h3>
                   <div className="space-y-3">
@@ -654,10 +706,10 @@ export default async function ProductDetail({ params }: Params) {
                         <CheckCircleIcon className="h-4 w-4 text-blue-600" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-slate-900 dark:text-white">
+                        <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
                           Free for one page
                         </p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400">
+                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
                           Use without a licensing key for one page
                         </p>
                       </div>
@@ -668,10 +720,10 @@ export default async function ProductDetail({ params }: Params) {
                         <CheckCircleIcon className="h-4 w-4 text-blue-600" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-slate-900 dark:text-white">
+                        <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
                           Process large HTML content
                         </p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400">
+                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
                           Fast and powerful conversion
                         </p>
                       </div>
@@ -682,10 +734,10 @@ export default async function ProductDetail({ params }: Params) {
                         <CheckCircleIcon className="h-4 w-4 text-blue-600" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-slate-900 dark:text-white">
+                        <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
                           Power Automate integration
                         </p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400">
+                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
                           Use directly from Power Automate flows
                         </p>
                       </div>
@@ -696,10 +748,10 @@ export default async function ProductDetail({ params }: Params) {
                         <CheckCircleIcon className="h-4 w-4 text-blue-600" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-slate-900 dark:text-white">
+                        <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
                           No size constraints
                         </p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400">
+                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
                           Break free from 2MB limitations
                         </p>
                       </div>
@@ -755,8 +807,17 @@ export default async function ProductDetail({ params }: Params) {
           {/* Row 2: Features & FAQ */}
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
             <div className="lg:col-span-2">
-              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-                <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">Features</h2>
+              <div
+                className="rounded-2xl p-8 backdrop-blur-sm"
+                style={{
+                  backgroundColor: 'var(--surface-card)',
+                  borderColor: 'var(--border-default)',
+                  border: '1px solid',
+                }}
+              >
+                <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                  Features
+                </h2>
                 <div className="space-y-3">
                   {[
                     'Free one-page conversion',
@@ -770,7 +831,7 @@ export default async function ProductDetail({ params }: Params) {
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
-                      <span className="text-slate-600 dark:text-slate-400">{feature}</span>
+                      <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -778,33 +839,42 @@ export default async function ProductDetail({ params }: Params) {
             </div>
 
             <div>
-              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-                <h3 className="mb-6 text-xl font-bold text-slate-900 dark:text-white">
+              <div
+                className="rounded-2xl p-8 backdrop-blur-sm"
+                style={{
+                  backgroundColor: 'var(--surface-card)',
+                  borderColor: 'var(--border-default)',
+                  border: '1px solid',
+                }}
+              >
+                <h3 className="mb-6 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
                   Frequently Asked Questions
                 </h3>
 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                       Can I cancel the subscription at any time?
                     </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                       Yes, you can cancel the plan anytime.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                       Can I get a refund if I&apos;m not satisfied?
                     </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Yes, you can.</p>
+                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                      Yes, you can.
+                    </p>
                   </div>
 
                   <div>
-                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                       Can I get a free trial before subscribing?
                     </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                       There is a free version available without requiring a license key.
                     </p>
                   </div>
@@ -816,8 +886,15 @@ export default async function ProductDetail({ params }: Params) {
           {/* Row 3: Setup Instructions & Documentation */}
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
             <div className="lg:col-span-2">
-              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-                <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
+              <div
+                className="rounded-2xl p-8 backdrop-blur-sm"
+                style={{
+                  backgroundColor: 'var(--surface-card)',
+                  borderColor: 'var(--border-default)',
+                  border: '1px solid',
+                }}
+              >
+                <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                   Setup Instructions
                 </h2>
                 <div className="space-y-6">
@@ -826,10 +903,10 @@ export default async function ProductDetail({ params }: Params) {
                       1
                     </div>
                     <div>
-                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                         Search for the Connector
                       </h3>
-                      <p className="text-slate-600 dark:text-slate-400">
+                      <p style={{ color: 'var(--text-secondary)' }}>
                         Search for &quot;HTML to PDF by Pascalcase&quot; in the &quot;add an
                         action&quot; section and select the Pascalcase connector.
                       </p>
@@ -841,10 +918,10 @@ export default async function ProductDetail({ params }: Params) {
                       2
                     </div>
                     <div>
-                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                         Provide HTML Content
                       </h3>
-                      <p className="text-slate-600 dark:text-slate-400">
+                      <p style={{ color: 'var(--text-secondary)' }}>
                         Provide the HTML string or code along with an optional key. The key enables
                         multi-page PDFs.
                       </p>
@@ -856,12 +933,12 @@ export default async function ProductDetail({ params }: Params) {
                       3
                     </div>
                     <div>
-                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                         Get Response
                       </h3>
-                      <p className="text-slate-600 dark:text-slate-400">
-                        The response will be a byte array that can be used as file content for storing
-                        in Dataverse or SharePoint.
+                      <p style={{ color: 'var(--text-secondary)' }}>
+                        The response will be a byte array that can be used as file content for
+                        storing in Dataverse or SharePoint.
                       </p>
                     </div>
                   </div>
@@ -871,10 +948,10 @@ export default async function ProductDetail({ params }: Params) {
                       4
                     </div>
                     <div>
-                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
                         Parse Output
                       </h3>
-                      <p className="text-slate-600 dark:text-slate-400">
+                      <p style={{ color: 'var(--text-secondary)' }}>
                         Parse the output using the provided schema and use the body output to create
                         your PDF file.
                       </p>
@@ -885,11 +962,18 @@ export default async function ProductDetail({ params }: Params) {
             </div>
 
             <div>
-              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-                <h3 className="mb-6 text-xl font-bold text-slate-900 dark:text-white">
+              <div
+                className="rounded-2xl p-8 backdrop-blur-sm"
+                style={{
+                  backgroundColor: 'var(--surface-card)',
+                  borderColor: 'var(--border-default)',
+                  border: '1px solid',
+                }}
+              >
+                <h3 className="mb-6 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
                   Documentation
                 </h3>
-                <p className="mb-6 text-slate-600 dark:text-slate-400">
+                <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
                   Get detailed information about the HTML to PDF connector, including setup guides,
                   API documentation, and best practices for Power Automate integration.
                 </p>
@@ -919,7 +1003,8 @@ export default async function ProductDetail({ params }: Params) {
         <div className="mb-8">
           <Link
             href="/products"
-            className="mb-6 inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+            className="mb-6 inline-flex items-center gap-2 transition-colors"
+            style={{ color: 'var(--text-secondary)' }}
           >
             <ArrowLeftIcon className="h-4 w-4" />
             Back to Products
@@ -927,10 +1012,10 @@ export default async function ProductDetail({ params }: Params) {
 
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="mb-2 text-4xl font-bold text-slate-900 dark:text-white">
+              <h1 className="mb-2 text-4xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 Commission 365 for Dataverse
               </h1>
-              <p className="mb-4 text-xl text-slate-600 dark:text-slate-400">
+              <p className="mb-4 text-xl" style={{ color: 'var(--text-secondary)' }}>
                 Design commission plans and incentives for your sales teams
               </p>
             </div>
@@ -948,20 +1033,32 @@ export default async function ProductDetail({ params }: Params) {
           {/* Left Column - Main Product */}
           <div className="space-y-8 lg:col-span-2">
             {/* Product Description */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
+            <div
+              className="rounded-2xl p-8 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 About the App
               </h2>
-              <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
+              <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 Commission 365 is a comprehensive commission management solution for Dataverse that
                 helps you design, implement, and track commission plans for your sales teams. Create
                 flexible incentive structures that drive performance and align with your business
                 goals.
               </p>
 
-              <div className="rounded-xl border-l-4 border-blue-500 bg-slate-50 p-6 dark:bg-slate-700/50">
-                <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">Key Advantage</h3>
-                <p className="text-slate-600 dark:text-slate-400">
+              <div
+                className="rounded-xl border-l-4 border-blue-500 p-6"
+                style={{ backgroundColor: 'var(--surface-2)' }}
+              >
+                <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
+                  Key Advantage
+                </h3>
+                <p style={{ color: 'var(--text-secondary)' }}>
                   Commission 365 provides a centralized platform to manage all aspects of sales
                   compensation, from plan design to payout calculations, ensuring accuracy and
                   transparency in your commission processes.
@@ -970,8 +1067,17 @@ export default async function ProductDetail({ params }: Params) {
             </div>
 
             {/* Features */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">Features</h2>
+            <div
+              className="rounded-2xl p-8 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                Features
+              </h2>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 {[
                   'Flexible commission plan design',
@@ -985,7 +1091,7 @@ export default async function ProductDetail({ params }: Params) {
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
-                    <span className="text-slate-600 dark:text-slate-400">{feature}</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
                   </div>
                 ))}
               </div>
@@ -1014,20 +1120,30 @@ export default async function ProductDetail({ params }: Params) {
             </div>
 
             {/* How Commission 365 Works */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-6 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h3 className="mb-4 text-lg font-bold text-slate-900 dark:text-white">
+            <div
+              className="rounded-2xl p-6 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h3 className="mb-4 text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
                 How Commission 365 Works
               </h3>
-              <div className="rounded-xl border-l-4 border-blue-500 bg-slate-50 p-4 dark:bg-slate-700/50">
+              <div
+                className="rounded-xl border-l-4 border-blue-500 p-4"
+                style={{ backgroundColor: 'var(--surface-2)' }}
+              >
                 <div className="mb-3 flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500 text-sm font-bold text-white">
                     $
                   </div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white">
+                  <h4 className="font-semibold" style={{ color: 'var(--text-primary)' }}>
                     Commission Management
                   </h4>
                 </div>
-                <p className="text-sm text-slate-600 dark:text-slate-400">
+                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                   Commission 365 streamlines your sales compensation process by providing tools to
                   create commission plans, track sales performance, and automatically calculate
                   payouts based on your defined rules and criteria.
@@ -1051,7 +1167,8 @@ export default async function ProductDetail({ params }: Params) {
         <div className="mb-8">
           <Link
             href="/products"
-            className="mb-6 inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+            className="mb-6 inline-flex items-center gap-2 transition-colors"
+            style={{ color: 'var(--text-secondary)' }}
           >
             <ArrowLeftIcon className="h-4 w-4" />
             Back to Products
@@ -1059,10 +1176,10 @@ export default async function ProductDetail({ params }: Params) {
 
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="mb-2 text-4xl font-bold text-slate-900 dark:text-white">
+              <h1 className="mb-2 text-4xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 Flow Monitor for Power Automate
               </h1>
-              <p className="mb-4 text-xl text-slate-600 dark:text-slate-400">
+              <p className="mb-4 text-xl" style={{ color: 'var(--text-secondary)' }}>
                 Monitor Power Automate flows across environments with rich insights
               </p>
             </div>
@@ -1080,19 +1197,31 @@ export default async function ProductDetail({ params }: Params) {
           {/* Left Column - Main Product */}
           <div className="space-y-8 lg:col-span-2">
             {/* Product Description */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
+            <div
+              className="rounded-2xl p-8 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 About the App
               </h2>
-              <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
+              <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 Flow Monitor provides comprehensive monitoring and analytics for your Power Automate
                 flows across different environments. Track performance, identify bottlenecks, and
                 optimize your automation workflows with detailed insights and reporting.
               </p>
 
-              <div className="rounded-xl border-l-4 border-blue-500 bg-slate-50 p-6 dark:bg-slate-700/50">
-                <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">Key Advantage</h3>
-                <p className="text-slate-600 dark:text-slate-400">
+              <div
+                className="rounded-xl border-l-4 border-blue-500 p-6"
+                style={{ backgroundColor: 'var(--surface-2)' }}
+              >
+                <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
+                  Key Advantage
+                </h3>
+                <p style={{ color: 'var(--text-secondary)' }}>
                   Flow Monitor gives you complete visibility into your Power Automate flows, helping
                   you identify performance issues, track success rates, and optimize your automation
                   processes for better efficiency and reliability.
@@ -1101,8 +1230,17 @@ export default async function ProductDetail({ params }: Params) {
             </div>
 
             {/* Features */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">Features</h2>
+            <div
+              className="rounded-2xl p-8 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                Features
+              </h2>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 {[
                   'Real-time flow monitoring',
@@ -1116,27 +1254,37 @@ export default async function ProductDetail({ params }: Params) {
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
-                    <span className="text-slate-600 dark:text-slate-400">{feature}</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* How It Works */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
+            <div
+              className="rounded-2xl p-8 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 How Flow Monitor Works
               </h2>
-              <div className="rounded-xl border-l-4 border-blue-500 bg-slate-50 p-6 dark:bg-slate-700/50">
+              <div
+                className="rounded-xl border-l-4 border-blue-500 p-6"
+                style={{ backgroundColor: 'var(--surface-2)' }}
+              >
                 <div className="mb-4 flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-lg font-bold text-white">
                     📊
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
                     Flow Analytics
                   </h3>
                 </div>
-                <p className="text-slate-600 dark:text-slate-400">
+                <p style={{ color: 'var(--text-secondary)' }}>
                   Flow Monitor continuously tracks your Power Automate flows, collecting performance
                   data, execution metrics, and error information to provide actionable insights for
                   optimization and troubleshooting.
@@ -1167,42 +1315,54 @@ export default async function ProductDetail({ params }: Params) {
             </div>
 
             {/* Keep in Touch */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-6 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h3 className="mb-4 text-lg font-bold text-slate-900 dark:text-white">
+            <div
+              className="rounded-2xl p-6 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h3 className="mb-4 text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
                 Keep in Touch
               </h3>
               <div className="space-y-3">
                 <a
                   href="#"
-                  className="flex items-center gap-3 text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
+                  className="flex items-center gap-3 transition-colors"
+                  style={{ color: 'var(--text-secondary)' }}
                 >
                   <ArrowTopRightOnSquareIcon className="h-4 w-4" />
                   <span className="text-sm">Contact us</span>
                 </a>
                 <a
                   href="#"
-                  className="flex items-center gap-3 text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
+                  className="flex items-center gap-3 transition-colors"
+                  style={{ color: 'var(--text-secondary)' }}
                 >
                   <ArrowTopRightOnSquareIcon className="h-4 w-4" />
                   <span className="text-sm">Chat on Microsoft Teams</span>
                 </a>
                 <a
                   href="#"
-                  className="flex items-center gap-3 text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
+                  className="flex items-center gap-3 transition-colors"
+                  style={{ color: 'var(--text-secondary)' }}
                 >
                   <ArrowTopRightOnSquareIcon className="h-4 w-4" />
                   <span className="text-sm">LinkedIn</span>
                 </a>
                 <a
                   href="#"
-                  className="flex items-center gap-3 text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
+                  className="flex items-center gap-3 transition-colors"
+                  style={{ color: 'var(--text-secondary)' }}
                 >
                   <ArrowTopRightOnSquareIcon className="h-4 w-4" />
                   <span className="text-sm">Instagram</span>
                 </a>
                 <a
                   href="#"
-                  className="flex items-center gap-3 text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
+                  className="flex items-center gap-3 transition-colors"
+                  style={{ color: 'var(--text-secondary)' }}
                 >
                   <ArrowTopRightOnSquareIcon className="h-4 w-4" />
                   <span className="text-sm">YouTube</span>
@@ -1226,7 +1386,8 @@ export default async function ProductDetail({ params }: Params) {
         <div className="mb-8">
           <Link
             href="/products"
-            className="mb-6 inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+            className="mb-6 inline-flex items-center gap-2 transition-colors"
+            style={{ color: 'var(--text-secondary)' }}
           >
             <ArrowLeftIcon className="h-4 w-4" />
             Back to Products
@@ -1234,10 +1395,10 @@ export default async function ProductDetail({ params }: Params) {
 
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="mb-2 text-4xl font-bold text-slate-900 dark:text-white">
+              <h1 className="mb-2 text-4xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 Pascalcase Metadata Browser for Dataverse
               </h1>
-              <p className="mb-4 text-xl text-slate-600 dark:text-slate-400">
+              <p className="mb-4 text-xl" style={{ color: 'var(--text-secondary)' }}>
                 for Dynamics 365 & PowerApps
               </p>
             </div>
@@ -1255,20 +1416,32 @@ export default async function ProductDetail({ params }: Params) {
           {/* Left Column - Main Product */}
           <div className="space-y-8 lg:col-span-2">
             {/* Product Description */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
+            <div
+              className="rounded-2xl p-8 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 About the Extension
               </h2>
-              <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
+              <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 Pascalcase Metadata Browser is an extension for Microsoft Edge browser for accessing
                 metadata of Dataverse (Dynamics 365 and PowerApps) instances. You can easily browse
                 properties like tables, columns, relationships, choices, etc. and export to CSV
                 files.
               </p>
 
-              <div className="rounded-xl border-l-4 border-blue-500 bg-slate-50 p-6 dark:bg-slate-700/50">
-                <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">Key Advantage</h3>
-                <p className="text-slate-600 dark:text-slate-400">
+              <div
+                className="rounded-xl border-l-4 border-blue-500 p-6"
+                style={{ backgroundColor: 'var(--surface-2)' }}
+              >
+                <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
+                  Key Advantage
+                </h3>
+                <p style={{ color: 'var(--text-secondary)' }}>
                   The main advantage of this extension is that it will automatically show you the
                   logical names of the tables and their columns on UI forms, assisting you not to
                   always navigate to your solution to find the logical names.
@@ -1277,8 +1450,17 @@ export default async function ProductDetail({ params }: Params) {
             </div>
 
             {/* Features */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">Features</h2>
+            <div
+              className="rounded-2xl p-8 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                Features
+              </h2>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 {[
                   'Browse Dataverse metadata',
@@ -1292,7 +1474,7 @@ export default async function ProductDetail({ params }: Params) {
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
-                    <span className="text-slate-600 dark:text-slate-400">{feature}</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
                   </div>
                 ))}
               </div>
@@ -1330,12 +1512,20 @@ export default async function ProductDetail({ params }: Params) {
       id="content"
       className="mx-auto max-w-4xl scroll-mt-24 px-4 py-10 sm:px-6 md:scroll-mt-28"
     >
-      <h1 className="text-3xl font-bold text-slate-900 dark:text-white">{data.title}</h1>
-      <p className="mt-3 text-slate-600 dark:text-slate-400">{data.body}</p>
+      <h1 className="text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>
+        {data.title}
+      </h1>
+      <p className="mt-3" style={{ color: 'var(--text-secondary)' }}>
+        {data.body}
+      </p>
       <div className="mt-6 flex gap-3">
         <Link
           href="/products"
-          className="rounded-md border border-slate-300 px-4 py-2 text-sm transition-colors hover:bg-slate-100 dark:border-slate-600 dark:hover:bg-slate-800"
+          className="rounded-md border px-4 py-2 text-sm transition-colors"
+          style={{
+            borderColor: 'var(--border-default)',
+            color: 'var(--text-secondary)',
+          }}
         >
           Back to Products
         </Link>

@@ -22,22 +22,39 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (dataTheme && dataTheme !== theme) {
       setThemeState(dataTheme);
     } else if (!dataTheme) {
-      // Fallback to localStorage or system preference
+      // Prioritize user's stored preference over system theme
       const stored = localStorage.getItem('theme') as Theme | null;
-      const system: Theme =
-        window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? 'dark'
-          : 'light';
-      const initial = stored ?? system;
-      setThemeState(initial);
-      document.documentElement.setAttribute('data-theme', initial);
+      if (stored) {
+        setThemeState(stored);
+        document.documentElement.setAttribute('data-theme', stored);
+        document.documentElement.style.colorScheme = stored;
+      } else {
+        // Only use system preference if no user preference is stored
+        const system: Theme =
+          window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light';
+        setThemeState(system);
+        document.documentElement.setAttribute('data-theme', system);
+        document.documentElement.style.colorScheme = system;
+      }
     }
   }, [theme]);
 
   const setTheme = useCallback((t: Theme) => {
     setThemeState(t);
-    if (typeof window !== 'undefined') localStorage.setItem('theme', t);
-    document.documentElement.setAttribute('data-theme', t);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme', t);
+      // Force update the DOM immediately
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.style.colorScheme = t;
+      // Also set a class for additional browser compatibility
+      document.documentElement.className = document.documentElement.className.replace(
+        /theme-\w+/g,
+        '',
+      );
+      document.documentElement.classList.add(`theme-${t}`);
+    }
   }, []);
 
   const toggleTheme = useCallback(
@@ -74,15 +91,29 @@ export function ThemeScript() {
       const stored = localStorage.getItem('theme');
       const system = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       const theme = stored || system;
+      
+      // Set theme attributes and properties
       document.documentElement.setAttribute('data-theme', theme);
       document.documentElement.style.colorScheme = theme;
-      // Also set CSS custom properties immediately to prevent flash
+      
+      // Add theme class for additional browser compatibility
+      document.documentElement.className = document.documentElement.className.replace(/theme-\\w+/g, '');
+      document.documentElement.classList.add('theme-' + theme);
+      
+      // Set CSS custom properties immediately to prevent flash
       document.documentElement.style.setProperty('--initial-theme', theme);
+      
+      // Force immediate style application for Edge/Safari
+      if (window.navigator.userAgent.includes('Edge') || window.navigator.userAgent.includes('Safari')) {
+        document.documentElement.style.setProperty('--theme-applied', '1');
+      }
     } catch(e) {
       // Fallback to system preference
       const system = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', system);
       document.documentElement.style.colorScheme = system;
+      document.documentElement.className = document.documentElement.className.replace(/theme-\\w+/g, '');
+      document.documentElement.classList.add('theme-' + system);
       document.documentElement.style.setProperty('--initial-theme', system);
     }
   })();`;
