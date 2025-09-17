@@ -91,7 +91,7 @@ export default function Hero() {
                       Commission 365 is a tool by Pascalcase for the Dynamics 365 Sales App & PowerApps that allows you to configure commissions, incentives and bonus plans for your sales staff. You can customise plans by determining when sales representatives receive commission, the sort of calculation to be used to determine commission, and so on.
                     </motion.p>
                     <motion.div className="mt-6 flex justify-center gap-3" {...fadeUp(0.16)}>
-                      <Link href="https://pascalcase.com/Home/Commission365" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>More Info</Link>
+                      <Link href="/products/commission-365" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>More Info</Link>
                       <Link href="https://appsource.microsoft.com/en/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.commission365?tab=Overview" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>Download from Microsoft AppSource</Link>
                     </motion.div>
                   </div>
@@ -108,7 +108,7 @@ export default function Hero() {
                       Resolve your cases quickly using AI Autocloser. It is an app for the Dataverse that auto-resolves cases that require no further action. The app closes only non-actionable tickets, where the customer has thanked you and has no additional requests to be made.
                     </motion.p>
                     <motion.div className="mt-6 flex justify-center gap-3" {...fadeUp(0.16)}>
-                      <Link href="https://pascalcase.com/Home/AIAutocloser" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>More Info</Link>
+                      <Link href="/products/ai-autocloser" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>More Info</Link>
                       <Link href="https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.autocloser?tab=DetailsAndSupport" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>Download from Microsoft AppSource</Link>
                     </motion.div>
                   </div>
@@ -125,7 +125,7 @@ export default function Hero() {
                       Flow Monitor provides seamless tracking and in-depth monitoring of your Power Automate flows across all environments. Gain detailed insights into flow performance, including execution duration and failure reasons.
                     </motion.p>
                     <motion.div className="mt-6 flex justify-center gap-3" {...fadeUp(0.16)}>
-                      <Link href="https://pascalcase.com/Home/FlowMonitor" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>More Info</Link>
+                      <Link href="/products/flow-monitor" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>More Info</Link>
                       <Link href="https://appsource.microsoft.com/en-us/product/web-apps/pascalcasesoftwareprivatelimited1662384934323.flowmonitor?ocid=GTMRewards_WhatsNewBlog_flowmonitor_08012024" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>Download from Microsoft AppSource</Link>
                     </motion.div>
                   </div>
