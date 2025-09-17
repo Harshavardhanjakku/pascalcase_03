@@ -812,195 +812,132 @@ export default async function ProductDetail({ params }: Params) {
                 Flow Monitor for Power Automate
               </h1>
               <p className="mb-4 text-xl" style={{ color: 'var(--text-secondary)' }}>
-                Monitor Power Automate flows across environments with rich insights
+                Monitor thousands of flows effectively across all environments.
               </p>
-            </div>
-            <div className="hidden md:block">
-              <div className="rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 p-4 text-white">
-                <ArrowDownTrayIcon className="mb-2 h-8 w-8" />
-                <p className="text-sm font-medium">Microsoft AppSource</p>
-              </div>
             </div>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {/* Left Column - Main Product */}
-          <div className="space-y-8 lg:col-span-2">
-            {/* Product Description */}
-            <div
-              className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
+        <div className="space-y-8">
+          {/* About the App */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm"
+            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+          >
+            <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              About the App
+            </h2>
+            <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              Flow Monitor provides seamless tracking and in‑depth monitoring of your Power Automate
+              flows across all environments. Gain detailed insights into flow performance, including
+              execution duration and failure reasons. Receive timely notifications for failed flows and
+              regular updates from all environments, ensuring you stay informed and in control.
+            </p>
+            <a
+              href="https://appsource.microsoft.com/en-us/product/web-apps/pascalcasesoftwareprivatelimited1662384934323.flowmonitor?ocid=GTMRewards_WhatsNewBlog_flowmonitor_08012024"
+              className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-600 hover:to-purple-700 hover:shadow-xl"
             >
-              <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                About the App
-              </h2>
-              <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Flow Monitor provides comprehensive monitoring and analytics for your Power Automate
-                flows across different environments. Track performance, identify bottlenecks, and
-                optimize your automation workflows with detailed insights and reporting.
-              </p>
+              <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
+              Download from Microsoft AppSource
+            </a>
+          </div>
 
-              <div
-                className="rounded-xl border-l-4 border-blue-500 p-6"
-                style={{ backgroundColor: 'var(--surface-2)' }}
-              >
-                <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                  Key Advantage
-                </h3>
-                <p style={{ color: 'var(--text-secondary)' }}>
-                  Flow Monitor gives you complete visibility into your Power Automate flows, helping
-                  you identify performance issues, track success rates, and optimize your automation
-                  processes for better efficiency and reliability.
-                </p>
-              </div>
-            </div>
-
-            {/* Features */}
-            <div
-              className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
-            >
-              <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                Features
-              </h2>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                {[
-                  'Real-time flow monitoring',
-                  'Performance analytics and insights',
-                  'Cross-environment tracking',
-                  'Failure analysis and reporting',
-                  'Flow execution history',
-                  'Performance optimization recommendations',
-                  'Custom dashboards and alerts',
-                  'Integration with Power Platform',
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
-                    <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
+          {/* Why This App */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm"
+            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+          >
+            <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              Why This App?
+            </h2>
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              {[
+                'Stay notified and updated',
+                'Centralized monitoring',
+                'Insightful analytics',
+                'Multi‑environment compatibility',
+              ].map((title, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-xl p-5"
+                  style={{ backgroundColor: 'var(--surface-2)', border: '1px solid', borderColor: 'var(--border-default)' }}
+                >
+                  <div className="mb-2 flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
+                      <CheckCircleIcon className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <h3 className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+                      {title}
+                    </h3>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* How It Works */}
-            <div
-              className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
-            >
-              <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                How Flow Monitor Works
-              </h2>
-              <div
-                className="rounded-xl border-l-4 border-blue-500 p-6"
-                style={{ backgroundColor: 'var(--surface-2)' }}
-              >
-                <div className="mb-4 flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-lg font-bold text-white">
-                    📊
-                  </div>
-                  <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
-                    Flow Analytics
-                  </h3>
                 </div>
-                <p style={{ color: 'var(--text-secondary)' }}>
-                  Flow Monitor continuously tracks your Power Automate flows, collecting performance
-                  data, execution metrics, and error information to provide actionable insights for
-                  optimization and troubleshooting.
+              ))}
+            </div>
+          </div>
+
+          {/* Improve experience + Image + CTA */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm"
+            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+          >
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
+              <div>
+                <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                  Improve your Power Automate experience with Flow Monitor
+                </h2>
+                <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
+                  Monitor all flows using dashboards, charts and visualizations. Access detailed
+                  insights, understand flow failures, and make better decisions with centralized
+                  visibility.
                 </p>
+                <a
+                  href="https://teams.microsoft.com/l/chat/0/0?users=satish@pascalcase.com,likitha@pascalcase.com&topicName=FlowMonitor%20Demo"
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-5 py-3 font-semibold text-white transition-colors hover:from-purple-700 hover:to-indigo-700"
+                >
+                  <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
+                  Book a Call or Demo
+                </a>
+              </div>
+              <div>
+                <img
+                  src="/our_products/flow.webp"
+                  alt="Flow Monitor"
+                  className="w-full rounded-xl border"
+                  style={{ borderColor: 'var(--border-default)' }}
+                />
               </div>
             </div>
           </div>
 
-          {/* Right Column - CTA & Links */}
-          <div className="space-y-6">
-            {/* Download Card */}
-            <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-6 text-white">
-              <div className="mb-4 flex items-center gap-3">
-                <ArrowDownTrayIcon className="h-8 w-8" />
-                <h3 className="text-xl font-bold">Download Now</h3>
-              </div>
-              <p className="mb-6 text-blue-100">
-                Get Flow Monitor from Microsoft AppSource and start monitoring your Power Automate
-                flows today.
-              </p>
-              <a
-                href="#"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
-              >
-                <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
-                Download from Microsoft AppSource
-              </a>
+          {/* Demo Video */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm"
+            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+          >
+            <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              Watch the Demo
+            </h2>
+            <div className="aspect-video w-full overflow-hidden rounded-xl">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/z86lb_9OwpI"
+                title="Flow Monitor Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
             </div>
+          </div>
 
-            {/* Keep in Touch */}
-            <div
-              className="rounded-2xl p-6 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
+          {/* Bottom CTA */}
+          <div className="flex w-full justify-center">
+            <a
+              href="https://appsource.microsoft.com/en-us/product/web-apps/pascalcasesoftwareprivatelimited1662384934323.flowmonitor?ocid=GTMRewards_WhatsNewBlog_flowmonitor_08012024"
+              className="rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
             >
-              <h3 className="mb-4 text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
-                Keep in Touch
-              </h3>
-              <div className="space-y-3">
-                <a
-                  href="#"
-                  className="flex items-center gap-3 transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                  <span className="text-sm">Contact us</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-3 transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                  <span className="text-sm">Chat on Microsoft Teams</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-3 transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                  <span className="text-sm">LinkedIn</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-3 transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                  <span className="text-sm">Instagram</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-3 transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                  <span className="text-sm">YouTube</span>
-                </a>
-              </div>
-            </div>
+              Download from Microsoft AppSource
+            </a>
           </div>
         </div>
       </main>
