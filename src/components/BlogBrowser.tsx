@@ -139,11 +139,10 @@ export default function BlogBrowser({ posts }: BlogBrowserProps) {
                         type="button"
                         onClick={() => toggleTag(t)}
                         aria-pressed={selected}
-                        className={`flex items-center justify-between rounded-md px-2 py-1 text-sm transition-colors ${
-                          selected
-                            ? 'dark:bg-accent/20 bg-blue-100 text-blue-900 dark:text-white'
-                            : 'text-slate-900 hover:bg-slate-100 dark:text-white dark:hover:bg-white/10'
-                        }`}
+                        className={`flex items-center justify-between rounded-md px-2 py-1 text-sm transition-colors ${selected
+                          ? 'dark:bg-accent/20 bg-blue-100 text-blue-900 dark:text-white'
+                          : 'text-slate-900 hover:bg-slate-100 dark:text-white dark:hover:bg-white/10'
+                          }`}
                       >
                         <span className="truncate">{t}</span>
                         <span
@@ -182,7 +181,7 @@ export default function BlogBrowser({ posts }: BlogBrowserProps) {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="rounded-md bg-blue-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-blue-700 dark:bg-white dark:text-black dark:hover:bg-white/90"
+                  className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-3 py-1.5 text-xs font-medium text-white hover:from-blue-700 hover:to-indigo-700"
                 >
                   Done
                 </button>
@@ -201,11 +200,10 @@ export default function BlogBrowser({ posts }: BlogBrowserProps) {
                 type="button"
                 onClick={() => toggleTag(t)}
                 aria-pressed={selected}
-                className={`rounded-full border px-3 py-1 text-xs transition-colors ${
-                  selected
-                    ? 'dark:border-accent/60 dark:bg-accent/20 border-blue-600 bg-blue-100 text-blue-900 dark:text-white'
-                    : 'border-slate-200/50 bg-slate-100/80 text-slate-600 hover:bg-slate-200/80 dark:border-white/20 dark:bg-white/10 dark:text-slate-400 dark:hover:bg-white/15'
-                }`}
+                className={`rounded-full border px-3 py-1 text-xs transition-colors ${selected
+                  ? 'dark:border-accent/60 dark:bg-accent/20 border-blue-600 bg-blue-100 text-blue-900 dark:text-white'
+                  : 'border-slate-200/50 bg-slate-100/80 text-slate-600 hover:bg-slate-200/80 dark:border-white/20 dark:bg-white/10 dark:text-slate-400 dark:hover:bg-white/15'
+                  }`}
               >
                 {t}
               </button>

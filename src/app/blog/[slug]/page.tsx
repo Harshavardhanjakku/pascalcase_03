@@ -48,13 +48,13 @@ export default async function BlogDetail({ params }: Params) {
               </div>
             </div>
             <div className="text-text-muted flex flex-wrap items-center gap-2 text-sm">
-              <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-slate-700 dark:bg-slate-800 dark:text-slate-200">
+              <span className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-2 py-0.5 text-white font-medium">
                 {post.category}
               </span>
               {post.tags?.map((t) => (
                 <span
                   key={t}
-                  className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-slate-700 dark:bg-slate-800 dark:text-slate-200"
+                  className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-2 py-0.5 text-white font-medium"
                 >
                   #{t}
                 </span>

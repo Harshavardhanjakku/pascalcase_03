@@ -507,11 +507,15 @@ body {
   display: inline-flex;
   align-items: center;
   border-radius: 9999px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
   color: white;
   padding: 0.25rem 0.75rem;
   font-size: 0.75rem;
+  font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  z-index: 10;
 }
 
 .blog-content {
@@ -632,8 +636,8 @@ body {
   border-radius: 0;
 }
 
-.form-input:focus + .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
+.form-input:focus+.form-label,
+.form-input:not(:placeholder-shown)+.form-label {
   top: 0.35rem;
   font-size: 0.75rem;
   color: var(--accent-2);
@@ -845,27 +849,27 @@ body {
 }
 
 /* Spacing */
-.space-y-2 > * + * {
+.space-y-2>*+* {
   margin-top: 0.5rem;
 }
 
-.space-y-4 > * + * {
+.space-y-4>*+* {
   margin-top: 1rem;
 }
 
-.space-y-6 > * + * {
+.space-y-6>*+* {
   margin-top: 1.5rem;
 }
 
-.space-y-8 > * + * {
+.space-y-8>*+* {
   margin-top: 2rem;
 }
 
-.space-y-10 > * + * {
+.space-y-10>*+* {
   margin-top: 2.5rem;
 }
 
-.space-y-12 > * + * {
+.space-y-12>*+* {
   margin-top: 3rem;
 }
 
@@ -925,6 +929,7 @@ body {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -1118,6 +1123,7 @@ body {
 
 /* Browser-specific fixes for Edge and Safari */
 @supports (-ms-ime-align: auto) {
+
   /* Edge-specific fixes */
   .theme-dark {
     background-color: #050607 !important;
@@ -1278,6 +1284,7 @@ body {
 
 /* Print styles */
 @media print {
+
   .navbar,
   .theme-toggle,
   .btn-primary,

@@ -234,7 +234,7 @@ export default async function ProductDetail({ params }: Params) {
               </p>
               <a
                 href="#"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 font-semibold text-purple-600 transition-colors hover:bg-purple-50"
+                className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-purple-700 hover:to-indigo-700"
               >
                 <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
                 Book a Call or Demo
@@ -408,7 +408,7 @@ export default async function ProductDetail({ params }: Params) {
                 </p>
                 <a
                   href="#"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
                 >
                   <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
                   Book a Call or Demo
@@ -622,8 +622,8 @@ export default async function ProductDetail({ params }: Params) {
                     <span className="text-sm font-semibold text-blue-600">60-70 minutes</span>
                   </div>
                 </div>
-                <div className="mt-4 rounded-lg bg-blue-50 p-3 dark:bg-blue-900/20">
-                  <p className="text-xs text-blue-700 dark:text-blue-300">
+                <div className="mt-4 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 p-3">
+                  <p className="text-xs text-white">
                     <strong>Free tier:</strong> Up to 1,000 records per run
                   </p>
                 </div>
@@ -769,7 +769,7 @@ export default async function ProductDetail({ params }: Params) {
                 </div>
 
                 {/* Free Plan */}
-                <div className="mb-4 rounded-lg bg-white/20 p-4">
+                <div className="mb-4 rounded-lg bg-gradient-to-r from-blue-50/50 to-indigo-50/50 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 border border-blue-200/50 dark:border-blue-700/50">
                   <h4 className="mb-2 text-lg font-bold">Free Version</h4>
                   <div className="mb-2 text-2xl font-bold">$0</div>
                   <ul className="space-y-1 text-sm text-blue-100">
@@ -780,7 +780,7 @@ export default async function ProductDetail({ params }: Params) {
                 </div>
 
                 {/* Paid Plan */}
-                <div className="mb-4 rounded-lg bg-white/20 p-4">
+                <div className="mb-4 rounded-lg bg-gradient-to-r from-blue-50/50 to-indigo-50/50 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 border border-blue-200/50 dark:border-blue-700/50">
                   <h4 className="mb-2 text-lg font-bold">Paid Plan</h4>
                   <div className="mb-2 text-2xl font-bold">
                     $49<span className="text-sm font-normal">/month*</span>
@@ -795,7 +795,7 @@ export default async function ProductDetail({ params }: Params) {
 
                 <a
                   href="#"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
                 >
                   <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
                   Purchase using Stripe
@@ -1112,7 +1112,7 @@ export default async function ProductDetail({ params }: Params) {
               </p>
               <a
                 href="#"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50"
+                className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
               >
                 <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
                 Download from Microsoft AppSource
@@ -1307,7 +1307,7 @@ export default async function ProductDetail({ params }: Params) {
               </p>
               <a
                 href="#"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50"
+                className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
               >
                 <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
                 Download from Microsoft AppSource
@@ -1494,7 +1494,7 @@ export default async function ProductDetail({ params }: Params) {
               </p>
               <a
                 href="#"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50"
+                className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
               >
                 <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
                 Download from Microsoft Edge
