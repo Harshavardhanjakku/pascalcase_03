@@ -236,30 +236,33 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
             </div>
           </div>
 
-          {/* Dots with max three visible */}
+          {/* Dots that cycle every 3 cards */}
           {(() => {
-            const totalPages = maxIndex + 1;
-            const dotsCount = Math.min(3, totalPages);
-            const start = Math.min(Math.max(index - 1, 0), Math.max(0, totalPages - dotsCount));
-            const indices = Array.from({ length: dotsCount }, (_, i) => start + i);
+            const dotsCount = 3;
+            const activeDotIndex = index % 3;
             return (
               <div
                 className="mt-4 flex items-center justify-center gap-2"
                 role="tablist"
                 aria-label="Slide indicators"
               >
-                {indices.map((i) => (
+                {Array.from({ length: dotsCount }, (_, i) => (
                   <button
                     key={i}
                     role="tab"
-                    aria-selected={i === index}
-                    aria-label={`Go to slide ${i + 1}`}
-                    onClick={() => setIndex(i)}
+                    aria-selected={activeDotIndex === i}
+                    aria-label={`Go to slide ${i + 1} in current group`}
+                    onClick={() => {
+                      const currentGroup = Math.floor(index / 3);
+                      const newIndex = currentGroup * 3 + i;
+                      setIndex(Math.min(newIndex, maxIndex));
+                    }}
                     className="h-2.5 w-2.5 rounded-full border"
                     style={{
                       backgroundColor:
-                        i === index ? 'var(--text-primary)' : 'var(--text-secondary)',
-                      borderColor: i === index ? 'var(--border-strong)' : 'var(--border-subtle)',
+                        activeDotIndex === i ? 'var(--text-primary)' : 'var(--text-secondary)',
+                      borderColor:
+                        activeDotIndex === i ? 'var(--border-strong)' : 'var(--border-subtle)',
                     }}
                   />
                 ))}
