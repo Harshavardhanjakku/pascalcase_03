@@ -132,7 +132,7 @@ export default function SixStepInfographic() {
     return (
       <div className="group flex cursor-pointer items-center justify-start transition-all duration-300 hover:scale-105">
         <div
-          className={`flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 text-lg font-bold text-white shadow-lg ring-1 ring-white/10 backdrop-blur-sm transition-all duration-300 group-hover:shadow-xl`}
+          className={`text-text-primary bg-surface-input border-border-default ring-border-subtle flex h-14 w-14 items-center justify-center rounded-full border text-lg font-bold shadow-lg ring-1 backdrop-blur-sm transition-all duration-300 group-hover:shadow-xl`}
         >
           {step.number}
         </div>
