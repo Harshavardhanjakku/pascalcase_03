@@ -1402,12 +1402,6 @@ export default async function ProductDetail({ params }: Params) {
                 for Dynamics 365 & PowerApps
               </p>
             </div>
-            <div className="hidden md:block">
-              <div className="rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 p-4 text-white">
-                <ArrowDownTrayIcon className="mb-2 h-8 w-8" />
-                <p className="text-sm font-medium">Microsoft Edge Extension</p>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -1447,6 +1441,38 @@ export default async function ProductDetail({ params }: Params) {
                   always navigate to your solution to find the logical names.
                 </p>
               </div>
+              <div className="mt-6">
+                <a
+                  href="https://microsoftedge.microsoft.com/addons/detail/metadata-browser-for-dyna/fdfelmicclblfanogpnejdogjjildbkf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow transition-colors hover:from-blue-700 hover:to-indigo-700"
+                >
+                  <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
+                  Download from Microsoft Edge
+                </a>
+              </div>
+            </div>
+
+            {/* Video */}
+            <div
+              className="rounded-2xl p-4 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <div className="aspect-video w-full overflow-hidden rounded-xl">
+                <iframe
+                  className="h-full w-full"
+                  src="https://www.youtube.com/embed/WGOKc2VnODY"
+                  title="Metadata Browser for Dataverse"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
             </div>
 
             {/* Features */}
@@ -1463,14 +1489,11 @@ export default async function ProductDetail({ params }: Params) {
               </h2>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 {[
-                  'Browse Dataverse metadata',
-                  'Export to CSV files',
-                  'View table properties',
-                  'Examine column details',
-                  'Check relationships',
-                  'Review choice values',
-                  'Auto-show logical names',
-                  'Edge browser integration',
+                  'Download Microsoft Dataverse metadata as a .mdb file',
+                  'Direct extraction from your Dataverse instance',
+                  'Browse tables, columns, entities, keys, option sets, relationships',
+                  'Expand tables to view primary/foreign keys, logical and schema names',
+                  'Accelerate discovery for data catalog, governance, warehouse, MDM and integration projects',
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
@@ -1481,23 +1504,40 @@ export default async function ProductDetail({ params }: Params) {
             </div>
           </div>
 
-          {/* Right Column - Download & Alternative */}
+          {/* Right Column - Alternative */}
           <div className="space-y-6">
-            {/* Download Card */}
-            <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 p-6 text-white">
-              <div className="mb-4 flex items-center gap-3">
-                <ArrowDownTrayIcon className="h-8 w-8" />
-                <h3 className="text-xl font-bold">Download Now</h3>
-              </div>
-              <p className="mb-6 text-blue-100">
-                Get the Pascalcase Metadata Browser extension from Microsoft Edge Add-ons store.
+            {/* Safyr Section */}
+            <div
+              className="rounded-2xl p-6 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h3 className="mb-4 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                Safyr for Microsoft Dynamics 365 Metadata
+              </h3>
+              <p className="mb-4 text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                Safyr for Microsoft Dynamics 365 Metadata is a powerful metadata tool, which allows
+                you to download metadata as a .mdb file. The data present in the file is directly
+                extracted from your Microsoft Dataverse instance. This file contains a list of
+                metadata components such as tables, columns, entities, keys, option sets,
+                relationships, etc. You can expand any table and find the required information like
+                primary keys, foreign keys, logical names, schema names and more. The main advantage
+                of using this tool is, it allows you to speed up the source data discovery process
+                for many projects such as data catalog, data governance, data warehouse, master
+                data, data integration, etc.
               </p>
+
               <a
-                href="#"
+                href="https://www.silwoodtechnology.com/products/safyr-for-microsoft-dynamics-365/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
               >
-                <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
-                Download from Microsoft Edge
+                <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
+                Go to Silwood Technology website
               </a>
             </div>
           </div>
