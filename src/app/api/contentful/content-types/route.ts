@@ -1,10 +1,9 @@
-import { NextRequest } from 'next/server';
 import { getEnvironment } from '@/lib/contentful/management';
 import type { ContentTypeProps } from 'contentful-management';
 
 export const revalidate = 0;
 
-export async function GET(_req: NextRequest) {
+export async function GET() {
   try {
     const env = await getEnvironment();
     const list = await env.getContentTypes();

@@ -4,7 +4,6 @@ import {
   type Asset,
   type EntryCollection,
   type EntrySkeletonType,
-  type EntryFieldTypes,
   type ChainModifiers,
   type LocaleCode,
 } from 'contentful';
@@ -57,27 +56,6 @@ function richTextToHtml(doc: Document | undefined): string | undefined {
 function getBlogContentTypeId(override?: string) {
   return override || process.env.CONTENTFUL_BLOG_CONTENT_TYPE_ID || 'blog';
 }
-
-type BlogSkeleton = EntrySkeletonType & {
-  contentTypeId: 'blog';
-  fields: {
-    slug: EntryFieldTypes.Symbol;
-    title: EntryFieldTypes.Symbol;
-    excerpt?: EntryFieldTypes.Text;
-    category?: EntryFieldTypes.Symbol;
-    author?: EntryFieldTypes.EntryLink<EntrySkeletonType> | EntryFieldTypes.Symbol;
-    readTime?: EntryFieldTypes.Symbol;
-    image?: EntryFieldTypes.AssetLink;
-    heroImage?: EntryFieldTypes.AssetLink;
-    coverImage?: EntryFieldTypes.AssetLink;
-    content?: EntryFieldTypes.RichText;
-    body?: EntryFieldTypes.RichText;
-    publishDate?: EntryFieldTypes.Date;
-    date?: EntryFieldTypes.Date;
-    publishedAt?: EntryFieldTypes.Date;
-    tags?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
-  };
-};
 
 type GenericEntry = Entry<EntrySkeletonType, ChainModifiers, LocaleCode>;
 type BlogEntry = GenericEntry;
