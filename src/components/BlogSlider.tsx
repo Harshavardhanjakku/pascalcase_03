@@ -173,9 +173,10 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
           viewport={{ once: false }}
           className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {posts.map((p) => (
-            <BlogCard key={p.slug} {...p} />
-          ))}
+          {posts.map((p) => {
+            const { coverImage, ...blogCardProps } = p;
+            return <BlogCard key={p.slug} {...blogCardProps} />;
+          })}
         </motion.div>
       ) : (
         <div className="relative px-10 sm:px-16">
@@ -187,18 +188,21 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
               animate={{ x: -index * (slideWidth + GAP_PX) }}
               transition={{ type: 'spring', stiffness: 220, damping: 28 }}
             >
-              {posts.map((p, i) => (
-                <div
-                  key={p.slug}
-                  data-slide={i + 1}
-                  className="flex"
-                  style={{
-                    flex: `0 0 calc((100% - (var(--g) * ${itemsPerView - 1})) / ${itemsPerView})`,
-                  }}
-                >
-                  <BlogCard {...p} />
-                </div>
-              ))}
+              {posts.map((p, i) => {
+                const { coverImage, ...blogCardProps } = p;
+                return (
+                  <div
+                    key={p.slug}
+                    data-slide={i + 1}
+                    className="flex"
+                    style={{
+                      flex: `0 0 calc((100% - (var(--g) * ${itemsPerView - 1})) / ${itemsPerView})`,
+                    }}
+                  >
+                    <BlogCard {...blogCardProps} />
+                  </div>
+                );
+              })}
             </motion.div>
           </div>
 

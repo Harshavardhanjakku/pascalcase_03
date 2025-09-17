@@ -119,9 +119,10 @@ export default async function BlogDetail({ params }: Params) {
           <section className="mt-12 border-t border-slate-200 pt-8 dark:border-slate-700">
             <h2 className="mb-4 text-xl font-semibold">Related blogs</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {related.map((r) => (
-                <BlogCard key={r.slug} {...r} />
-              ))}
+              {related.map((r) => {
+                const { coverImage, ...blogCardProps } = r;
+                return <BlogCard key={r.slug} {...blogCardProps} />;
+              })}
             </div>
           </section>
         </article>

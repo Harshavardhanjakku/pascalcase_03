@@ -13,7 +13,5 @@ export type BlogPost = {
 
 export type BlogCardProps = Pick<
   BlogPost,
-  'slug' | 'title' | 'excerpt' | 'category' | 'author' | 'readTime' | 'coverImage'
+  'slug' | 'title' | 'excerpt' | 'category' | 'author' | 'readTime'
 >;
-
-
