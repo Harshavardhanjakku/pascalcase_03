@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import {
   ArrowLeftIcon,
@@ -77,15 +78,20 @@ export default async function ProductDetail({ params }: Params) {
             {/* Product Description (match data-mask style) */}
             <div
               className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
             >
               <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 About the App
               </h2>
               <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 Resolve your cases quickly using AI Autocloser. It is an app for the Dataverse that
-                auto-resolves cases that require no further action. The app closes only non-actionable
-                tickets, where the customer has thanked you and has no additional requests to be made.
+                auto-resolves cases that require no further action. The app closes only
+                non-actionable tickets, where the customer has thanked you and has no additional
+                requests to be made.
               </p>
               <a
                 href="https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.autocloser?tab=DetailsAndSupport"
@@ -99,7 +105,11 @@ export default async function ProductDetail({ params }: Params) {
             {/* Why This App (2x2 grid like data-mask) */}
             <div
               className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
             >
               <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 Why This App?
@@ -108,29 +118,29 @@ export default async function ProductDetail({ params }: Params) {
                 {[
                   {
                     title: 'Automated Case Resolution',
-                    body:
-                      'Intelligently identifies and resolves non-actionable cases automatically, reducing manual workload.',
+                    body: 'Intelligently identifies and resolves non-actionable cases automatically, reducing manual workload.',
                   },
                   {
                     title: 'Enhanced Productivity',
-                    body:
-                      "Focus your team's efforts on cases that require human intervention and complex problem-solving.",
+                    body: "Focus your team's efforts on cases that require human intervention and complex problem-solving.",
                   },
                   {
                     title: 'One-Time Configuration',
-                    body:
-                      'Set up once and let AI handle the rest. Minimal ongoing maintenance required.',
+                    body: 'Set up once and let AI handle the rest. Minimal ongoing maintenance required.',
                   },
                   {
                     title: 'Cost Savings',
-                    body:
-                      'Reduce operational costs by automating routine case closures and improving efficiency.',
+                    body: 'Reduce operational costs by automating routine case closures and improving efficiency.',
                   },
                 ].map((item, idx) => (
                   <div
                     key={idx}
                     className="rounded-xl p-5"
-                    style={{ backgroundColor: 'var(--surface-2)', border: '1px solid', borderColor: 'var(--border-default)' }}
+                    style={{
+                      backgroundColor: 'var(--surface-2)',
+                      border: '1px solid',
+                      borderColor: 'var(--border-default)',
+                    }}
                   >
                     <div className="mb-2 flex items-center gap-3">
                       <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30">
@@ -151,7 +161,11 @@ export default async function ProductDetail({ params }: Params) {
             {/* Combined: How It Works + Image + Book a Call (like original) */}
             <div
               className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
             >
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
                 <div>
@@ -159,17 +173,25 @@ export default async function ProductDetail({ params }: Params) {
                     Automate Case Resolution with AI Auto-closer for Incoming Emails
                   </h2>
                   <div
-                    className="rounded-xl border-l-4 border-purple-500 p-6 mb-6"
+                    className="mb-6 rounded-xl border-l-4 border-purple-500 p-6"
                     style={{ backgroundColor: 'var(--surface-2)' }}
                   >
                     <div className="mb-4 flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500 text-lg font-bold text-white">AI</div>
-                      <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500 text-lg font-bold text-white">
+                        AI
+                      </div>
+                      <h3
+                        className="text-lg font-semibold"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
                         Intelligent Email Processing
                       </h3>
                     </div>
                     <p style={{ color: 'var(--text-secondary)' }}>
-                      AI Autocloser efficiently handles incoming emails by identifying non-actionable cases and resolving them. When a customer expresses satisfaction without any additional requests through mail, Autocloser recognizes this and closes the case automatically.
+                      AI Autocloser efficiently handles incoming emails by identifying
+                      non-actionable cases and resolving them. When a customer expresses
+                      satisfaction without any additional requests through mail, Autocloser
+                      recognizes this and closes the case automatically.
                     </p>
                   </div>
                   <a
@@ -194,7 +216,11 @@ export default async function ProductDetail({ params }: Params) {
             {/* Demo Video */}
             <div
               className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
             >
               <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 Watch the Demo
@@ -254,7 +280,6 @@ export default async function ProductDetail({ params }: Params) {
                 data with dummy data
               </p>
             </div>
-
           </div>
         </div>
 
@@ -273,9 +298,9 @@ export default async function ProductDetail({ params }: Params) {
               About the App
             </h2>
             <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Mask/Anonymize/Obfuscate Dataverse data with random characters and numbers, mock
-              data from pre-built formats. You can also easily select the fields to be masked or
-              simply deleted.
+              Mask/Anonymize/Obfuscate Dataverse data with random characters and numbers, mock data
+              from pre-built formats. You can also easily select the fields to be masked or simply
+              deleted.
             </p>
 
             <a
@@ -303,23 +328,19 @@ export default async function ProductDetail({ params }: Params) {
               {[
                 {
                   title: 'Secure your sandbox environments',
-                  body:
-                    'The app ensures that your testing and development activities can be conducted without compromising confidential data.',
+                  body: 'The app ensures that your testing and development activities can be conducted without compromising confidential data.',
                 },
                 {
                   title: 'Anonymization',
-                  body:
-                    'The app replaces sensitive data with realistic anonymous values, ensuring personal information remains unlinked to specific individuals.',
+                  body: 'The app replaces sensitive data with realistic anonymous values, ensuring personal information remains unlinked to specific individuals.',
                 },
                 {
                   title: 'Data Privacy & Compliance',
-                  body:
-                    'Comply with data privacy regulations like GDPR, HIPAA, or CCPA by masking personal & sensitive information.',
+                  body: 'Comply with data privacy regulations like GDPR, HIPAA, or CCPA by masking personal & sensitive information.',
                 },
                 {
                   title: 'Data Protection',
-                  body:
-                    'Safeguard sensitive data from unauthorized access or exposure, reducing the risk of data breaches, cyberattacks, and internal data leaks.',
+                  body: 'Safeguard sensitive data from unauthorized access or exposure, reducing the risk of data breaches, cyberattacks, and internal data leaks.',
                 },
               ].map((item, idx) => (
                 <div
@@ -405,8 +426,12 @@ export default async function ProductDetail({ params }: Params) {
 
           {/* FAQs */}
           <div
-            className="rounded-2xl p-8 backdrop-blur-sm mt-8"
-            style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+            className="mt-8 rounded-2xl p-8 backdrop-blur-sm"
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              border: '1px solid',
+              borderColor: 'var(--border-default)',
+            }}
           >
             <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
               FAQS
@@ -415,13 +440,63 @@ export default async function ProductDetail({ params }: Params) {
               Frequently Asked Questions
             </h3>
             <FaqAccordion
-              items={[
-                { q: 'Is the app free to test?', a: (<p>The app is free to test without a valid license. However, there is a record restriction of 1,000 records per run without a license.</p>) },
-                { q: 'How can I install the app?', a: (<p>This app is available as managed solution. You can directly download the app from <a href="https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.datamask?tab=Overview" target="_blank" rel="noopener noreferrer" className="ml-1 text-blue-500 hover:underline">this link</a>, and follow the steps in the <a href="https://youtu.be/jWjaJS_7Zus" target="_blank" rel="noopener noreferrer" className="ml-1 text-blue-500 hover:underline">video</a>.</p>) },
-                { q: 'How can I use the app for more than 1,000 records?', a: (<p>You can reach out to us through Microsoft Teams or contact us page.</p>) },
-                { q: 'How efficiently does your app handle data masking?', a: (<p>Our app efficiently masks 200,000 records in 15 minutes and up to 1 million records in 60 to 70 minutes, ensuring speedy and secure data masking.</p>) },
-                { q: 'Can I selectively mask tables and attributes?', a: (<p>Yes, it is possible to configure tables and attributes to mask.</p>) },
-              ] as FaqItem[]}
+              items={
+                [
+                  {
+                    q: 'Is the app free to test?',
+                    a: (
+                      <p>
+                        The app is free to test without a valid license. However, there is a record
+                        restriction of 1,000 records per run without a license.
+                      </p>
+                    ),
+                  },
+                  {
+                    q: 'How can I install the app?',
+                    a: (
+                      <p>
+                        This app is available as managed solution. You can directly download the app
+                        from{' '}
+                        <a
+                          href="https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.datamask?tab=Overview"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ml-1 text-blue-500 hover:underline"
+                        >
+                          this link
+                        </a>
+                        , and follow the steps in the{' '}
+                        <a
+                          href="https://youtu.be/jWjaJS_7Zus"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ml-1 text-blue-500 hover:underline"
+                        >
+                          video
+                        </a>
+                        .
+                      </p>
+                    ),
+                  },
+                  {
+                    q: 'How can I use the app for more than 1,000 records?',
+                    a: <p>You can reach out to us through Microsoft Teams or contact us page.</p>,
+                  },
+                  {
+                    q: 'How efficiently does your app handle data masking?',
+                    a: (
+                      <p>
+                        Our app efficiently masks 200,000 records in 15 minutes and up to 1 million
+                        records in 60 to 70 minutes, ensuring speedy and secure data masking.
+                      </p>
+                    ),
+                  },
+                  {
+                    q: 'Can I selectively mask tables and attributes?',
+                    a: <p>Yes, it is possible to configure tables and attributes to mask.</p>,
+                  },
+                ] as FaqItem[]
+              }
             />
           </div>
         </div>
@@ -451,7 +526,11 @@ export default async function ProductDetail({ params }: Params) {
         {/* Hero */}
         <div
           className="mb-8 rounded-2xl p-8 backdrop-blur-sm"
-          style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+          style={{
+            backgroundColor: 'var(--surface-card)',
+            border: '1px solid',
+            borderColor: 'var(--border-default)',
+          }}
         >
           <h1 className="mb-2 text-4xl font-bold" style={{ color: 'var(--text-primary)' }}>
             Html to Pdf converter for Power Automate
@@ -460,7 +539,8 @@ export default async function ProductDetail({ params }: Params) {
             Convert Html content to Pdf documents using Power Automate flows
           </p>
           <p className="mt-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
-            Say goodbye to the restrictive 2MB limit. Now, you can create heavy-duty pdf documents without size constraints.
+            Say goodbye to the restrictive 2MB limit. Now, you can create heavy-duty pdf documents
+            without size constraints.
           </p>
           <div className="mt-6">
             <a
@@ -478,7 +558,11 @@ export default async function ProductDetail({ params }: Params) {
         {/* Intro advantages */}
         <div
           className="mb-8 rounded-2xl p-8 backdrop-blur-sm"
-          style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+          style={{
+            backgroundColor: 'var(--surface-card)',
+            border: '1px solid',
+            borderColor: 'var(--border-default)',
+          }}
         >
           <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
             A Power Automate premium connector for converting HTML content to PDF documents
@@ -501,7 +585,11 @@ export default async function ProductDetail({ params }: Params) {
               <div
                 key={idx}
                 className="rounded-xl p-5"
-                style={{ backgroundColor: 'var(--surface-2)', border: '1px solid', borderColor: 'var(--border-default)' }}
+                style={{
+                  backgroundColor: 'var(--surface-2)',
+                  border: '1px solid',
+                  borderColor: 'var(--border-default)',
+                }}
               >
                 <div className="mb-2 flex items-center gap-3">
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
@@ -522,7 +610,11 @@ export default async function ProductDetail({ params }: Params) {
         {/* Pricing */}
         <div
           className="mb-8 rounded-2xl p-8 backdrop-blur-sm"
-          style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+          style={{
+            backgroundColor: 'var(--surface-card)',
+            border: '1px solid',
+            borderColor: 'var(--border-default)',
+          }}
         >
           <h2 className="mb-2 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
             Pricing
@@ -531,7 +623,10 @@ export default async function ProductDetail({ params }: Params) {
             Pay yearly and cancel anytime.
           </p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div className="rounded-xl border p-6" style={{ borderColor: 'var(--border-default)', backgroundColor: 'var(--surface-2)' }}>
+            <div
+              className="rounded-xl border p-6"
+              style={{ borderColor: 'var(--border-default)', backgroundColor: 'var(--surface-2)' }}
+            >
               <h3 className="mb-2 text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
                 Free Version
               </h3>
@@ -542,12 +637,19 @@ export default async function ProductDetail({ params }: Params) {
                 <li>100 calls per month</li>
               </ul>
             </div>
-            <div className="rounded-xl border p-6" style={{ borderColor: 'var(--border-default)', backgroundColor: 'var(--surface-2)' }}>
+            <div
+              className="rounded-xl border p-6"
+              style={{ borderColor: 'var(--border-default)', backgroundColor: 'var(--surface-2)' }}
+            >
               <h3 className="mb-2 text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
                 Paid
               </h3>
-              <div className="mb-1 text-3xl font-bold">$49<span className="text-base font-normal"> per month*</span></div>
-              <p className="mb-3 text-xs" style={{ color: 'var(--text-secondary)' }}>*billed annually</p>
+              <div className="mb-1 text-3xl font-bold">
+                $49<span className="text-base font-normal"> per month*</span>
+              </div>
+              <p className="mb-3 text-xs" style={{ color: 'var(--text-secondary)' }}>
+                *billed annually
+              </p>
               <ul className="space-y-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
                 <li>Convert HTML content to pdf document (Up to 5 pages)</li>
                 <li>Up to 10MB of HTML content</li>
@@ -562,7 +664,9 @@ export default async function ProductDetail({ params }: Params) {
                 <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
                 Purchase Using Stripe
               </a>
-              <p className="mt-2 text-xs" style={{ color: 'var(--text-secondary)' }}>Credit card required.</p>
+              <p className="mt-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
+                Credit card required.
+              </p>
             </div>
           </div>
         </div>
@@ -570,7 +674,11 @@ export default async function ProductDetail({ params }: Params) {
         {/* FAQs */}
         <div
           className="mb-8 rounded-2xl p-8 backdrop-blur-sm"
-          style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+          style={{
+            backgroundColor: 'var(--surface-card)',
+            border: '1px solid',
+            borderColor: 'var(--border-default)',
+          }}
         >
           <h2 className="mb-2 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
             FAQS
@@ -579,18 +687,30 @@ export default async function ProductDetail({ params }: Params) {
             Frequently Asked Questions
           </h3>
           <FaqAccordion
-            items={[
-              { q: 'Can I cancel the subscription at any time?', a: (<p>Yes, you can cancel the plan anytime.</p>) },
-              { q: 'Can I get a refund if I\'m not satisfied?', a: (<p>Yes, you can.</p>) },
-              { q: 'Can I get a free trial before subscribing?', a: (<p>There is a free version available without requiring a license key.</p>) },
-            ] as FaqItem[]}
+            items={
+              [
+                {
+                  q: 'Can I cancel the subscription at any time?',
+                  a: <p>Yes, you can cancel the plan anytime.</p>,
+                },
+                { q: "Can I get a refund if I'm not satisfied?", a: <p>Yes, you can.</p> },
+                {
+                  q: 'Can I get a free trial before subscribing?',
+                  a: <p>There is a free version available without requiring a license key.</p>,
+                },
+              ] as FaqItem[]
+            }
           />
         </div>
 
         {/* Setting up */}
         <div
           className="mb-8 rounded-2xl p-8 backdrop-blur-sm"
-          style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+          style={{
+            backgroundColor: 'var(--surface-card)',
+            border: '1px solid',
+            borderColor: 'var(--border-default)',
+          }}
         >
           <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
             Setting up:
@@ -598,43 +718,85 @@ export default async function ProductDetail({ params }: Params) {
           {/* Step 1 */}
           <div className="mb-8">
             <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>
-              1. Search for HTML to PDF by Pascalcase in the &quot;add an action&quot; section and select the Pascalcase connector. (Refer Image - H1)
+              1. Search for HTML to PDF by Pascalcase in the &quot;add an action&quot; section and
+              select the Pascalcase connector. (Refer Image - H1)
             </p>
-            <img src="/our_products/Image1–H1-HTMLToPDF.png" alt="HTML to PDF H1" className="w-full rounded-xl border" style={{ borderColor: 'var(--border-default)' }} />
+            <img
+              src="/our_products/Image1–H1-HTMLToPDF.png"
+              alt="HTML to PDF H1"
+              className="w-full rounded-xl border"
+              style={{ borderColor: 'var(--border-default)' }}
+            />
           </div>
           {/* Step 2 */}
           <div className="mb-8">
             <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>
-              2. Provide the HTML string or code along with an optional key. The key, provided by Pascalcase Software Pvt. Ltd., enables users to generate multi-page PDFs. By default, the HTML string contains pre-defined values, but users can customize it according to their requirements. (Refer Image - H2)
+              2. Provide the HTML string or code along with an optional key. The key, provided by
+              Pascalcase Software Pvt. Ltd., enables users to generate multi-page PDFs. By default,
+              the HTML string contains pre-defined values, but users can customize it according to
+              their requirements. (Refer Image - H2)
             </p>
-            <img src="/our_products/Image1–H2-HTMLToPDF.png" alt="HTML to PDF H2" className="w-full rounded-xl border" style={{ borderColor: 'var(--border-default)' }} />
+            <img
+              src="/our_products/Image1–H2-HTMLToPDF.png"
+              alt="HTML to PDF H2"
+              className="w-full rounded-xl border"
+              style={{ borderColor: 'var(--border-default)' }}
+            />
           </div>
           {/* Step 3 */}
           <div className="mb-8">
             <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>
-              3. After running the flow, the response will be a byte array that can be used as file content for various purposes, such as storing in Dataverse or SharePoint. (Refer Image - H3)
+              3. After running the flow, the response will be a byte array that can be used as file
+              content for various purposes, such as storing in Dataverse or SharePoint. (Refer Image
+              - H3)
             </p>
-            <img src="/our_products/Image1–H3-HTMLToPDF.png" alt="HTML to PDF H3" className="w-full rounded-xl border" style={{ borderColor: 'var(--border-default)' }} />
+            <img
+              src="/our_products/Image1–H3-HTMLToPDF.png"
+              alt="HTML to PDF H3"
+              className="w-full rounded-xl border"
+              style={{ borderColor: 'var(--border-default)' }}
+            />
           </div>
           {/* Step 4 */}
           <div className="mb-8">
             <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>
-              4. Note, while creating a OneDrive, Dataverse, or SharePoint PDF file, you must parse the output of the connector using the below schema. (Refer Image – H4)
+              4. Note, while creating a OneDrive, Dataverse, or SharePoint PDF file, you must parse
+              the output of the connector using the below schema. (Refer Image – H4)
             </p>
-            <img src="/our_products/Image–H4-HTMLToPDF.png" alt="HTML to PDF H4" className="w-full rounded-xl border mb-4" style={{ borderColor: 'var(--border-default)' }} />
+            <img
+              src="/our_products/Image–H4-HTMLToPDF.png"
+              alt="HTML to PDF H4"
+              className="mb-4 w-full rounded-xl border"
+              style={{ borderColor: 'var(--border-default)' }}
+            />
             <h3 className="mb-2 text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
               Schema
             </h3>
-            <div className="overflow-auto rounded-xl border p-4 text-sm" style={{ borderColor: 'var(--border-default)', backgroundColor: 'var(--surface-2)', color: 'var(--text-secondary)' }}>
-              <pre className="whitespace-pre-wrap break-words">{`{ "type": "object", "properties": { "statusCode": {"type": "integer"}, "headers": { "type": "object", "properties": { "Pragma": {"type": "string"}, "Vary": {"type": "string"}, "Cache-Control": {"type": "string"}, "Set-Cookie": {"type": "string"}, "X-AspNet-Version": {"type": "string"}, "X-Powered-By": {"type": "string"}, "Timing-Allow-Origin": {"type": "string"}, "x-ms-apihub-cached-response": {"type": "string"}, "x-ms-apihub-obo": {"type": "string"}, "Date": {"type": "string"}, "Content-Type": {"type": "string"}, "Expires": {"type": "string"}, "Content-Length": {"type": "string"} } }, "body": {"type": "string"} } }`}</pre>
+            <div
+              className="overflow-auto rounded-xl border p-4 text-sm"
+              style={{
+                borderColor: 'var(--border-default)',
+                backgroundColor: 'var(--surface-2)',
+                color: 'var(--text-secondary)',
+              }}
+            >
+              <pre className="break-words whitespace-pre-wrap">{`{ "type": "object", "properties": { "statusCode": {"type": "integer"}, "headers": { "type": "object", "properties": { "Pragma": {"type": "string"}, "Vary": {"type": "string"}, "Cache-Control": {"type": "string"}, "Set-Cookie": {"type": "string"}, "X-AspNet-Version": {"type": "string"}, "X-Powered-By": {"type": "string"}, "Timing-Allow-Origin": {"type": "string"}, "x-ms-apihub-cached-response": {"type": "string"}, "x-ms-apihub-obo": {"type": "string"}, "Date": {"type": "string"}, "Content-Type": {"type": "string"}, "Expires": {"type": "string"}, "Content-Length": {"type": "string"} } }, "body": {"type": "string"} } }`}</pre>
             </div>
           </div>
           {/* Step 5 */}
           <div>
             <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>
-              5. The desired file can then be created using the body output from the parsed object. It&apos;s vital to remember that when creating PDF files for OneDrive or SharePoint, you must use the base64to Binary function to convert the body to binary. (Refer to Image H5 below)
+              5. The desired file can then be created using the body output from the parsed object.
+              It&apos;s vital to remember that when creating PDF files for OneDrive or SharePoint,
+              you must use the base64to Binary function to convert the body to binary. (Refer to
+              Image H5 below)
             </p>
-            <img src="/our_products/Image–H5-HTMLToPDF.png" alt="HTML to PDF H5" className="w-full rounded-xl border" style={{ borderColor: 'var(--border-default)' }} />
+            <img
+              src="/our_products/Image–H5-HTMLToPDF.png"
+              alt="HTML to PDF H5"
+              className="w-full rounded-xl border"
+              style={{ borderColor: 'var(--border-default)' }}
+            />
           </div>
         </div>
 
@@ -678,13 +840,21 @@ export default async function ProductDetail({ params }: Params) {
           {/* About the App */}
           <div
             className="rounded-2xl p-8 backdrop-blur-sm"
-            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
           >
             <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
               About the App
             </h2>
             <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Commission 365 is a tool by Pascalcase for Dynamics 365 Sales App &amp; PowerApps that allows you to configure commissions, incentives and bonus plans for your sales staff. You can customise plans and automate the complete process. This App gives complete control over the ruleset, including type of data, eligible people, frequency of commissions paid, etc.
+              Commission 365 is a tool by Pascalcase for Dynamics 365 Sales App &amp; PowerApps that
+              allows you to configure commissions, incentives and bonus plans for your sales staff.
+              You can customise plans and automate the complete process. This App gives complete
+              control over the ruleset, including type of data, eligible people, frequency of
+              commissions paid, etc.
             </p>
             <a
               href="https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.commission365?tab=Overview"
@@ -698,7 +868,11 @@ export default async function ProductDetail({ params }: Params) {
           {/* Why This App - pills in 2 rows */}
           <div
             className="rounded-2xl p-8 backdrop-blur-sm"
-            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
           >
             <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
               Why This App?
@@ -714,7 +888,11 @@ export default async function ProductDetail({ params }: Params) {
                 <div
                   key={idx}
                   className="rounded-xl p-5"
-                  style={{ backgroundColor: 'var(--surface-2)', border: '1px solid', borderColor: 'var(--border-default)' }}
+                  style={{
+                    backgroundColor: 'var(--surface-2)',
+                    border: '1px solid',
+                    borderColor: 'var(--border-default)',
+                  }}
                 >
                   <div className="mb-2 flex items-center gap-3">
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
@@ -732,7 +910,11 @@ export default async function ProductDetail({ params }: Params) {
           {/* Automate Sales Incentives + Image + CTA */}
           <div
             className="rounded-2xl p-8 backdrop-blur-sm"
-            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
           >
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
               <div>
@@ -740,7 +922,11 @@ export default async function ProductDetail({ params }: Params) {
                   Automate Sales Incentives with Commission 365
                 </h2>
                 <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
-                  Commission 365 helps you in creating tailored incentives based on your preferences. Choose when you want to receive commissions and the calculation method that suits you best. With two types of calculations, Count-Based &amp; Percentage-Based, This App ensures a personalized commission experience tailored to your needs.
+                  Commission 365 helps you in creating tailored incentives based on your
+                  preferences. Choose when you want to receive commissions and the calculation
+                  method that suits you best. With two types of calculations, Count-Based &amp;
+                  Percentage-Based, This App ensures a personalized commission experience tailored
+                  to your needs.
                 </p>
                 <a
                   href="https://teams.microsoft.com/l/chat/0/0?users=satish@pascalcase.com,likitha@pascalcase.com&topicName=Commission365%20Demo"
@@ -764,7 +950,11 @@ export default async function ProductDetail({ params }: Params) {
           {/* Banner Image above Download for Free! */}
           <div
             className="rounded-2xl p-6 backdrop-blur-sm"
-            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
           >
             <img
               src="/our_products/commission365(2).png"
@@ -823,7 +1013,11 @@ export default async function ProductDetail({ params }: Params) {
           {/* About the App */}
           <div
             className="rounded-2xl p-8 backdrop-blur-sm"
-            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
           >
             <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
               About the App
@@ -831,8 +1025,8 @@ export default async function ProductDetail({ params }: Params) {
             <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               Flow Monitor provides seamless tracking and in‑depth monitoring of your Power Automate
               flows across all environments. Gain detailed insights into flow performance, including
-              execution duration and failure reasons. Receive timely notifications for failed flows and
-              regular updates from all environments, ensuring you stay informed and in control.
+              execution duration and failure reasons. Receive timely notifications for failed flows
+              and regular updates from all environments, ensuring you stay informed and in control.
             </p>
             <a
               href="https://appsource.microsoft.com/en-us/product/web-apps/pascalcasesoftwareprivatelimited1662384934323.flowmonitor?ocid=GTMRewards_WhatsNewBlog_flowmonitor_08012024"
@@ -846,7 +1040,11 @@ export default async function ProductDetail({ params }: Params) {
           {/* Why This App */}
           <div
             className="rounded-2xl p-8 backdrop-blur-sm"
-            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
           >
             <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
               Why This App?
@@ -861,7 +1059,11 @@ export default async function ProductDetail({ params }: Params) {
                 <div
                   key={idx}
                   className="rounded-xl p-5"
-                  style={{ backgroundColor: 'var(--surface-2)', border: '1px solid', borderColor: 'var(--border-default)' }}
+                  style={{
+                    backgroundColor: 'var(--surface-2)',
+                    border: '1px solid',
+                    borderColor: 'var(--border-default)',
+                  }}
                 >
                   <div className="mb-2 flex items-center gap-3">
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
@@ -879,7 +1081,11 @@ export default async function ProductDetail({ params }: Params) {
           {/* Improve experience + Image + CTA */}
           <div
             className="rounded-2xl p-8 backdrop-blur-sm"
-            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
           >
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
               <div>
@@ -913,7 +1119,11 @@ export default async function ProductDetail({ params }: Params) {
           {/* Demo Video */}
           <div
             className="rounded-2xl p-8 backdrop-blur-sm"
-            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
           >
             <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
               Watch the Demo
@@ -1087,7 +1297,10 @@ export default async function ProductDetail({ params }: Params) {
               <h3 className="mb-4 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 Safyr for Microsoft Dynamics 365 Metadata
               </h3>
-              <p className="mb-4 text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              <p
+                className="mb-4 text-sm leading-relaxed"
+                style={{ color: 'var(--text-secondary)' }}
+              >
                 Safyr for Microsoft Dynamics 365 Metadata is a powerful metadata tool, which allows
                 you to download metadata as a .mdb file. The data present in the file is directly
                 extracted from your Microsoft Dataverse instance. This file contains a list of

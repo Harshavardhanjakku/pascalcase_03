@@ -118,7 +118,7 @@ export function ThemeScript() {
     }
   })();`;
   return (
-    <Script id="theme-init" strategy="beforeInteractive">
+    <Script id="theme-init" strategy="afterInteractive">
       {script}
     </Script>
   );

@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import BlogCard from './BlogCard';
-import type { BlogCardProps, BlogPostWithImage } from '@/lib/blog/types';
+import type { BlogPostWithImage } from '@/lib/blog/types';
 import { toBlogCardProps } from '@/lib/blog/types';
 
 type BlogSliderProps = {

@@ -20,6 +20,13 @@ export type BlogPostWithImage = BlogPost;
 
 // Helper function to convert BlogPostWithImage to BlogCardProps
 export function toBlogCardProps(post: BlogPostWithImage): BlogCardProps {
-  const { coverImage, ...blogCardProps } = post;
-  return blogCardProps;
+  // coverImage is intentionally dropped for the card; suppress unused var warning by not assigning.
+  return {
+    slug: post.slug,
+    title: post.title,
+    excerpt: post.excerpt,
+    category: post.category,
+    author: post.author,
+    readTime: post.readTime,
+  };
 }
