@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import BlogCard from './BlogCard';
@@ -49,7 +49,6 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
   const canPrev = index > 0;
   const canNext = index < maxIndex;
 
-
   const goPrev = useCallback(() => setIndex((i) => Math.max(0, i - 1)), []);
   const goNext = useCallback(() => setIndex((i) => Math.min(maxIndex, i + 1)), [maxIndex]);
 
@@ -75,11 +74,31 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
   };
 
   return (
-    <section aria-label="Blog posts" className="relative">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold" style={{ color: 'var(--text-primary)' }}>Latest from the blog</h2>
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: false }}
+      aria-label="Blog posts"
+      className="relative"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: false }}
+        className="mb-4 flex items-center justify-between"
+      >
+        <h2 className="text-xl font-semibold" style={{ color: 'var(--text-primary)' }}>
+          Latest from the blog
+        </h2>
         {/* Segmented control: Grid / Flashcard */}
-        <div className="relative inline-flex items-center rounded-full border p-1 backdrop-blur" style={{ borderColor: 'var(--border-subtle)', backgroundColor: 'var(--surface-card)' }} role="tablist" aria-label="View mode">
+        <div
+          className="relative inline-flex items-center rounded-full border p-1 backdrop-blur"
+          style={{ borderColor: 'var(--border-subtle)', backgroundColor: 'var(--surface-card)' }}
+          role="tablist"
+          aria-label="View mode"
+        >
           <motion.div
             layout
             transition={{ type: 'spring', stiffness: 500, damping: 35 }}
@@ -87,7 +106,7 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
             style={{
               left: viewMode === 'grid' ? '4px' : '50%',
               right: viewMode === 'grid' ? '50%' : '4px',
-              backgroundColor: 'var(--surface-2)'
+              backgroundColor: 'var(--surface-2)',
             }}
             aria-hidden
           />
@@ -98,8 +117,20 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
             className="relative z-[1] inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium transition-colors"
             style={{ color: viewMode === 'grid' ? 'var(--text-primary)' : 'var(--text-secondary)' }}
           >
-            <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.143 4H4.857A.857.857 0 0 0 4 4.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 10 9.143V4.857A.857.857 0 0 0 9.143 4Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 20 9.143V4.857A.857.857 0 0 0 19.143 4Zm-10 10H4.857a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286A.857.857 0 0 0 9.143 14Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286a.857.857 0 0 0-.857-.857Z" />
+            <svg
+              className="h-4 w-4"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9.143 4H4.857A.857.857 0 0 0 4 4.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 10 9.143V4.857A.857.857 0 0 0 9.143 4Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 20 9.143V4.857A.857.857 0 0 0 19.143 4Zm-10 10H4.857a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286A.857.857 0 0 0 9.143 14Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286a.857.857 0 0 0-.857-.857Z"
+              />
             </svg>
           </button>
           <button
@@ -107,23 +138,45 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
             aria-selected={viewMode === 'flash'}
             onClick={() => setViewMode('flash')}
             className="relative z-[1] inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium transition-colors"
-            style={{ color: viewMode === 'flash' ? 'var(--text-primary)' : 'var(--text-secondary)' }}
+            style={{
+              color: viewMode === 'flash' ? 'var(--text-primary)' : 'var(--text-secondary)',
+            }}
           >
-            <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-              <rect x="4" y="6" width="16" height="12" rx="3" stroke="currentColor" strokeWidth="2" />
+            <svg
+              className="h-4 w-4"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <rect
+                x="4"
+                y="6"
+                width="16"
+                height="12"
+                rx="3"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
               <path d="M8 10h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               <path d="M8 14h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {viewMode === 'grid' ? (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: false }}
+          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+        >
           {posts.map((p) => (
             <BlogCard key={p.slug} {...p} />
           ))}
-        </div>
+        </motion.div>
       ) : (
         <div className="relative px-10 sm:px-16">
           <div ref={containerRef} className="overflow-hidden">
@@ -139,7 +192,9 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
                   key={p.slug}
                   data-slide={i + 1}
                   className="flex"
-                  style={{ flex: `0 0 calc((100% - (var(--g) * ${itemsPerView - 1})) / ${itemsPerView})` }}
+                  style={{
+                    flex: `0 0 calc((100% - (var(--g) * ${itemsPerView - 1})) / ${itemsPerView})`,
+                  }}
                 >
                   <BlogCard {...p} />
                 </div>
@@ -149,7 +204,7 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
 
           {/* Side arrows */}
           <div className="pointer-events-none">
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
+            <div className="absolute top-1/2 left-0 z-10 -translate-y-1/2">
               <button
                 aria-label="Previous"
                 onClick={goPrev}
@@ -158,13 +213,13 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
                 style={{
                   borderColor: 'var(--border-subtle)',
                   backgroundColor: 'var(--surface-card)',
-                  color: 'var(--text-primary)'
+                  color: 'var(--text-primary)',
                 }}
               >
-                <span className="text-2xl font-extrabold leading-none">&lt;</span>
+                <span className="text-2xl leading-none font-extrabold">&lt;</span>
               </button>
             </div>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
+            <div className="absolute top-1/2 right-0 z-10 -translate-y-1/2">
               <button
                 aria-label="Next"
                 onClick={goNext}
@@ -173,10 +228,10 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
                 style={{
                   borderColor: 'var(--border-subtle)',
                   backgroundColor: 'var(--surface-card)',
-                  color: 'var(--text-primary)'
+                  color: 'var(--text-primary)',
                 }}
               >
-                <span className="text-2xl font-extrabold leading-none">&gt;</span>
+                <span className="text-2xl leading-none font-extrabold">&gt;</span>
               </button>
             </div>
           </div>
@@ -188,7 +243,11 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
             const start = Math.min(Math.max(index - 1, 0), Math.max(0, totalPages - dotsCount));
             const indices = Array.from({ length: dotsCount }, (_, i) => start + i);
             return (
-              <div className="mt-4 flex items-center justify-center gap-2" role="tablist" aria-label="Slide indicators">
+              <div
+                className="mt-4 flex items-center justify-center gap-2"
+                role="tablist"
+                aria-label="Slide indicators"
+              >
                 {indices.map((i) => (
                   <button
                     key={i}
@@ -198,8 +257,9 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
                     onClick={() => setIndex(i)}
                     className="h-2.5 w-2.5 rounded-full border"
                     style={{
-                      backgroundColor: i === index ? 'var(--text-primary)' : 'var(--text-secondary)',
-                      borderColor: i === index ? 'var(--border-strong)' : 'var(--border-subtle)'
+                      backgroundColor:
+                        i === index ? 'var(--text-primary)' : 'var(--text-secondary)',
+                      borderColor: i === index ? 'var(--border-strong)' : 'var(--border-subtle)',
                     }}
                   />
                 ))}
@@ -208,8 +268,6 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
           })()}
         </div>
       )}
-    </section>
+    </motion.section>
   );
 }
-
-
