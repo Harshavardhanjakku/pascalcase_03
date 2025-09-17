@@ -2,10 +2,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import BlogCard from './BlogCard';
-import type { BlogCardProps } from '@/lib/blog/types';
+import type { BlogCardProps, BlogPostWithImage } from '@/lib/blog/types';
+import { toBlogCardProps } from '@/lib/blog/types';
 
 type BlogSliderProps = {
-  posts: BlogCardProps[];
+  posts: BlogPostWithImage[];
 };
 
 export default function BlogSlider({ posts }: BlogSliderProps) {
@@ -174,7 +175,7 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
           className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {posts.map((p) => (
-            <BlogCard key={p.slug} {...p} />
+            <BlogCard key={p.slug} {...toBlogCardProps(p)} />
           ))}
         </motion.div>
       ) : (
@@ -196,7 +197,7 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
                     flex: `0 0 calc((100% - (var(--g) * ${itemsPerView - 1})) / ${itemsPerView})`,
                   }}
                 >
-                  <BlogCard {...p} />
+                  <BlogCard {...toBlogCardProps(p)} />
                 </div>
               ))}
             </motion.div>

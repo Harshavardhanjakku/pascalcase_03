@@ -1,5 +1,6 @@
 import { getAllPosts, getPostBySlug } from '@/lib/blog/api';
 import BlogCard from '@/components/BlogCard';
+import { toBlogCardProps } from '@/lib/blog/types';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -120,7 +121,7 @@ export default async function BlogDetail({ params }: Params) {
             <h2 className="mb-4 text-xl font-semibold">Related blogs</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((r) => (
-                <BlogCard key={r.slug} {...r} />
+                <BlogCard key={r.slug} {...toBlogCardProps(r)} />
               ))}
             </div>
           </section>

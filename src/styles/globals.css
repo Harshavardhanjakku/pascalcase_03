@@ -461,6 +461,45 @@ body {
   overflow: hidden;
 }
 
+.blog-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover .blog-preview {
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  transform: scale(1.02);
+}
+
+.blog-preview-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover .blog-preview-title {
+  transform: translateY(-2px);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
 .blog-category {
   position: absolute;
   left: 0.75rem;
