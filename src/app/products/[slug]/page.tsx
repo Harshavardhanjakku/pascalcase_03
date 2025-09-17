@@ -64,37 +64,31 @@ export default async function ProductDetail({ params }: Params) {
                 AI Autocloser for Dataverse
               </h1>
               <p className="mb-4 text-xl" style={{ color: 'var(--text-secondary)' }}>
-                Auto-resolve the cases with AI Auto-closer
+                Auto-resolve the cases with AI Auto-closer.
               </p>
             </div>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {/* Left Column - Main Product */}
-          <div className="space-y-8 lg:col-span-2">
-            {/* Product Description */}
+        <div className="space-y-8">
+          {/* Main Product */}
+          <div className="space-y-8">
+            {/* Product Description (match data-mask style) */}
             <div
               className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
+              style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
             >
               <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 About the App
               </h2>
               <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 Resolve your cases quickly using AI Autocloser. It is an app for the Dataverse that
-                auto-resolves cases that require no further action. The app closes only
-                non-actionable tickets, where the customer has thanked you and has no additional
-                requests to be made.
+                auto-resolves cases that require no further action. The app closes only non-actionable
+                tickets, where the customer has thanked you and has no additional requests to be made.
               </p>
-
               <a
-                href="#"
+                href="https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.autocloser?tab=DetailsAndSupport"
                 className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-600 hover:to-purple-700 hover:shadow-xl"
               >
                 <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
@@ -102,221 +96,131 @@ export default async function ProductDetail({ params }: Params) {
               </a>
             </div>
 
-            {/* Why This App */}
+            {/* Why This App (2x2 grid like data-mask) */}
             <div
               className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
+              style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
             >
               <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
                 Why This App?
               </h2>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30">
-                      <CheckCircleIcon className="h-5 w-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Automated Case Resolution
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                {[
+                  {
+                    title: 'Automated Case Resolution',
+                    body:
+                      'Intelligently identifies and resolves non-actionable cases automatically, reducing manual workload.',
+                  },
+                  {
+                    title: 'Enhanced Productivity',
+                    body:
+                      "Focus your team's efforts on cases that require human intervention and complex problem-solving.",
+                  },
+                  {
+                    title: 'One-Time Configuration',
+                    body:
+                      'Set up once and let AI handle the rest. Minimal ongoing maintenance required.',
+                  },
+                  {
+                    title: 'Cost Savings',
+                    body:
+                      'Reduce operational costs by automating routine case closures and improving efficiency.',
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="rounded-xl p-5"
+                    style={{ backgroundColor: 'var(--surface-2)', border: '1px solid', borderColor: 'var(--border-default)' }}
+                  >
+                    <div className="mb-2 flex items-center gap-3">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30">
+                        <CheckCircleIcon className="h-5 w-5 text-purple-600" />
+                      </div>
+                      <h3 className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+                        {item.title}
                       </h3>
-                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        Intelligently identifies and resolves non-actionable cases automatically,
-                        reducing manual workload.
-                      </p>
                     </div>
+                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                      {item.body}
+                    </p>
                   </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30">
-                      <CheckCircleIcon className="h-5 w-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Enhanced Productivity
-                      </h3>
-                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        Focus your team&apos;s efforts on cases that require human intervention and
-                        complex problem-solving.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30">
-                      <CheckCircleIcon className="h-5 w-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        One-Time Configuration
-                      </h3>
-                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        Set up once and let AI handle the rest. Minimal ongoing maintenance
-                        required.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30">
-                      <CheckCircleIcon className="h-5 w-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Cost Savings
-                      </h3>
-                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        Reduce operational costs by automating routine case closures and improving
-                        efficiency.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            {/* How It Works */}
+            {/* Combined: How It Works + Image + Book a Call (like original) */}
             <div
               className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
+              style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+            >
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                    Automate Case Resolution with AI Auto-closer for Incoming Emails
+                  </h2>
+                  <div
+                    className="rounded-xl border-l-4 border-purple-500 p-6 mb-6"
+                    style={{ backgroundColor: 'var(--surface-2)' }}
+                  >
+                    <div className="mb-4 flex items-center gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500 text-lg font-bold text-white">AI</div>
+                      <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+                        Intelligent Email Processing
+                      </h3>
+                    </div>
+                    <p style={{ color: 'var(--text-secondary)' }}>
+                      AI Autocloser efficiently handles incoming emails by identifying non-actionable cases and resolving them. When a customer expresses satisfaction without any additional requests through mail, Autocloser recognizes this and closes the case automatically.
+                    </p>
+                  </div>
+                  <a
+                    href="https://teams.microsoft.com/l/chat/0/0?users=satish@pascalcase.com,likitha@pascalcase.com&topicName=AIAutocloser%20Demo"
+                    className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-5 py-3 font-semibold text-white transition-colors hover:from-purple-700 hover:to-indigo-700"
+                  >
+                    <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
+                    Book a Call or Demo
+                  </a>
+                </div>
+                <div>
+                  <img
+                    src="/our_products/AIAutocloser.png"
+                    alt="AI Autocloser"
+                    className="w-full rounded-xl border"
+                    style={{ borderColor: 'var(--border-default)' }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Demo Video */}
+            <div
+              className="rounded-2xl p-8 backdrop-blur-sm"
+              style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
             >
               <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                Automate Case Resolution with AI Auto-closer for Incoming Emails
+                Watch the Demo
               </h2>
-              <div
-                className="rounded-xl border-l-4 border-purple-500 p-6"
-                style={{ backgroundColor: 'var(--surface-2)' }}
-              >
-                <div className="mb-4 flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500 text-lg font-bold text-white">
-                    AI
-                  </div>
-                  <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
-                    Intelligent Email Processing
-                  </h3>
-                </div>
-                <p style={{ color: 'var(--text-secondary)' }}>
-                  AI Autocloser efficiently handles incoming emails by identifying non-actionable
-                  cases and resolving them. When a customer expresses satisfaction without any
-                  additional requests through mail, Autocloser recognizes this and closes the case
-                  automatically.
-                </p>
+              <div className="aspect-video w-full overflow-hidden rounded-xl">
+                <iframe
+                  className="h-full w-full"
+                  src="https://www.youtube.com/embed/ZLRMSvkUlpI"
+                  title="AI Autocloser Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Right Column - CTA & Links */}
-          <div className="space-y-6">
-            {/* Book a Call */}
-            <div className="rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 p-6 text-white">
-              <div className="mb-4 flex items-center gap-3">
-                <ArrowDownTrayIcon className="h-8 w-8" />
-                <h3 className="text-xl font-bold">Get Started</h3>
-              </div>
-              <p className="mb-6 text-purple-100">
-                Ready to automate your case resolution? Book a call or demo to see AI Autocloser in
-                action.
-              </p>
-              <a
-                href="#"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-purple-700 hover:to-indigo-700"
-              >
-                <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
-                Book a Call or Demo
-              </a>
-            </div>
-
-            {/* Download Card */}
-            <div
-              className="rounded-2xl p-6 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
-            >
-              <h3 className="mb-4 text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
-                Download Now
-              </h3>
-              <p className="mb-4 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                Get the AI Autocloser app from Microsoft AppSource and start automating your case
-                resolution today.
-              </p>
-              <a
-                href="#"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-purple-600 px-4 py-3 font-semibold text-white transition-colors hover:bg-purple-700"
-              >
-                <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
-                Download from Microsoft AppSource
-              </a>
-            </div>
-
-            {/* Keep in Touch */}
-            <div
-              className="rounded-2xl p-6 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
-            >
-              <h3 className="mb-4 text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
-                Keep in Touch
-              </h3>
-              <div className="space-y-3">
-                <a
-                  href="#"
-                  className="flex items-center gap-3 transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                  <span className="text-sm">Contact us</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-3 transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                  <span className="text-sm">Chat on Microsoft Teams</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-3 transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                  <span className="text-sm">LinkedIn</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-3 transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                  <span className="text-sm">Instagram</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-3 transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                  <span className="text-sm">YouTube</span>
-                </a>
-              </div>
-            </div>
-          </div>
+        {/* Bottom CTA */}
+        <div className="mt-8 flex w-full justify-center">
+          <a
+            href="https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.autocloser?tab=DetailsAndSupport"
+            className="rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:from-purple-700 hover:to-indigo-700"
+          >
+            Download from Microsoft AppSource
+          </a>
         </div>
       </main>
     );
