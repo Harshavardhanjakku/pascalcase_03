@@ -15,3 +15,11 @@ export type BlogCardProps = Pick<
   BlogPost,
   'slug' | 'title' | 'excerpt' | 'category' | 'author' | 'readTime'
 >;
+
+export type BlogPostWithImage = BlogPost;
+
+// Helper function to convert BlogPostWithImage to BlogCardProps
+export function toBlogCardProps(post: BlogPostWithImage): BlogCardProps {
+  const { coverImage, ...blogCardProps } = post;
+  return blogCardProps;
+}

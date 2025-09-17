@@ -1,10 +1,10 @@
-"use client";
+'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import BlogSlider from './BlogSlider';
-import type { BlogCardProps } from '@/lib/blog/types';
+import type { BlogPostWithImage } from '@/lib/blog/types';
 
 type BlogBrowserProps = {
-  posts: BlogCardProps[];
+  posts: BlogPostWithImage[];
 };
 
 const TAGS_ORDER = [
@@ -22,14 +22,16 @@ const TAGS_ORDER = [
 export default function BlogBrowser({ posts }: BlogBrowserProps) {
   const [activeTags, setActiveTags] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   const popoverRef = useRef<HTMLDivElement | null>(null);
 
   const tags = useMemo(() => {
     const set = new Set<string>(posts.map((p) => p.category).filter(Boolean) as string[]);
     // Order by TAGS_ORDER first, then any remaining alphabetically
     const orderedKnown = TAGS_ORDER.filter((t) => set.has(t));
-    const remaining = Array.from(set).filter((t) => !TAGS_ORDER.includes(t)).sort((a, b) => a.localeCompare(b));
+    const remaining = Array.from(set)
+      .filter((t) => !TAGS_ORDER.includes(t))
+      .sort((a, b) => a.localeCompare(b));
     return [...orderedKnown, ...remaining];
   }, [posts]);
 
@@ -56,7 +58,8 @@ export default function BlogBrowser({ posts }: BlogBrowserProps) {
 
   const clearAll = () => setActiveTags([]);
 
-  const selectAllVisible = () => setActiveTags((prev) => Array.from(new Set<string>([...prev, ...visibleTags])));
+  const selectAllVisible = () =>
+    setActiveTags((prev) => Array.from(new Set<string>([...prev, ...visibleTags])));
 
   useEffect(() => {
     const onDocClick = (e: MouseEvent) => {
@@ -76,29 +79,52 @@ export default function BlogBrowser({ posts }: BlogBrowserProps) {
           <button
             type="button"
             onClick={() => setIsOpen((o) => !o)}
-            className="inline-flex items-center gap-2 rounded-md border border-slate-200/50 dark:border-white/20 bg-slate-100/80 dark:bg-white/10 px-3 py-1.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-white/15"
+            className="inline-flex items-center gap-2 rounded-md border border-slate-200/50 bg-slate-100/80 px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-200/80 dark:border-white/20 dark:bg-white/10 dark:text-slate-300 dark:hover:bg-white/15"
             aria-haspopup="dialog"
             aria-expanded={isOpen}
           >
-            <svg className="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M5.05 3C3.291 3 2.352 5.024 3.51 6.317l5.422 6.059v4.874c0 .472.227.917.613 1.2l3.069 2.25c1.01.742 2.454.036 2.454-1.2v-7.124l5.422-6.059C21.647 5.024 20.708 3 18.95 3H5.05Z"/>
+            <svg
+              className="h-5 w-5 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5.05 3C3.291 3 2.352 5.024 3.51 6.317l5.422 6.059v4.874c0 .472.227.917.613 1.2l3.069 2.25c1.01.742 2.454.036 2.454-1.2v-7.124l5.422-6.059C21.647 5.024 20.708 3 18.95 3H5.05Z" />
             </svg>
             <span className="text-sm">Filter by</span>
           </button>
 
           {isOpen && (
-            <div className="absolute z-20 mt-2 w-80 rounded-xl border border-slate-200/50 dark:border-white/20 bg-white/95 dark:bg-slate-800/95 backdrop-blur p-3 shadow-xl" role="dialog" aria-label="Filter by topics">
+            <div
+              className="absolute z-20 mt-2 w-80 rounded-xl border border-slate-200/50 bg-white/95 p-3 shadow-xl backdrop-blur dark:border-white/20 dark:bg-slate-800/95"
+              role="dialog"
+              aria-label="Filter by topics"
+            >
               <div className="relative">
                 <input
                   autoFocus
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="search topics"
-                  className="w-full rounded-md border border-slate-200/50 dark:border-white/20 bg-slate-50/80 dark:bg-white/10 px-8 py-2 text-sm text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:outline-none focus:ring-2 ring-blue-500 dark:ring-accent"
+                  className="dark:ring-accent w-full rounded-md border border-slate-200/50 bg-slate-50/80 px-8 py-2 text-sm text-slate-900 ring-blue-500 placeholder:text-slate-500 focus:ring-2 focus:outline-none dark:border-white/20 dark:bg-white/10 dark:text-white dark:placeholder:text-slate-400"
                 />
-                <svg className="pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500 dark:text-slate-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                <svg
+                  className="pointer-events-none absolute top-1/2 left-2 h-4 w-4 -translate-y-1/2 text-slate-500 dark:text-slate-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
                   <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
-                  <path d="m20 20-3-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <path
+                    d="m20 20-3-3"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
                 </svg>
               </div>
 
@@ -114,26 +140,52 @@ export default function BlogBrowser({ posts }: BlogBrowserProps) {
                         onClick={() => toggleTag(t)}
                         aria-pressed={selected}
                         className={`flex items-center justify-between rounded-md px-2 py-1 text-sm transition-colors ${
-                          selected ? 'bg-blue-100 dark:bg-accent/20 text-blue-900 dark:text-white' : 'hover:bg-slate-100 dark:hover:bg-white/10 text-slate-900 dark:text-white'
+                          selected
+                            ? 'dark:bg-accent/20 bg-blue-100 text-blue-900 dark:text-white'
+                            : 'text-slate-900 hover:bg-slate-100 dark:text-white dark:hover:bg-white/10'
                         }`}
                       >
                         <span className="truncate">{t}</span>
-                        <span className={`ml-3 rounded-full border px-1.5 py-0.5 text-[10px] ${selected ? 'border-blue-600 dark:border-accent/60' : 'border-slate-300 dark:border-white/20 text-slate-500 dark:text-slate-400'}`}>{count}</span>
+                        <span
+                          className={`ml-3 rounded-full border px-1.5 py-0.5 text-[10px] ${selected ? 'dark:border-accent/60 border-blue-600' : 'border-slate-300 text-slate-500 dark:border-white/20 dark:text-slate-400'}`}
+                        >
+                          {count}
+                        </span>
                       </button>
                     );
                   })}
                   {visibleTags.length === 0 && (
-                    <div className="px-2 py-2 text-sm text-slate-500 dark:text-slate-400">No matches</div>
+                    <div className="px-2 py-2 text-sm text-slate-500 dark:text-slate-400">
+                      No matches
+                    </div>
                   )}
                 </div>
               </div>
 
               <div className="mt-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <button type="button" onClick={clearAll} className="rounded-md border border-slate-200/50 dark:border-white/20 px-2 py-1 text-xs text-slate-700 dark:text-slate-300 hover:bg-slate-100/80 dark:hover:bg-white/10">Clear</button>
-                  <button type="button" onClick={selectAllVisible} className="rounded-md border border-slate-200/50 dark:border-white/20 px-2 py-1 text-xs text-slate-700 dark:text-slate-300 hover:bg-slate-100/80 dark:hover:bg-white/10">Select all</button>
+                  <button
+                    type="button"
+                    onClick={clearAll}
+                    className="rounded-md border border-slate-200/50 px-2 py-1 text-xs text-slate-700 hover:bg-slate-100/80 dark:border-white/20 dark:text-slate-300 dark:hover:bg-white/10"
+                  >
+                    Clear
+                  </button>
+                  <button
+                    type="button"
+                    onClick={selectAllVisible}
+                    className="rounded-md border border-slate-200/50 px-2 py-1 text-xs text-slate-700 hover:bg-slate-100/80 dark:border-white/20 dark:text-slate-300 dark:hover:bg-white/10"
+                  >
+                    Select all
+                  </button>
                 </div>
-                <button type="button" onClick={() => setIsOpen(false)} className="rounded-md bg-blue-600 dark:bg-white px-3 py-1.5 text-xs font-medium text-white dark:text-black hover:bg-blue-700 dark:hover:bg-white/90">Done</button>
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="rounded-md bg-blue-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-blue-700 dark:bg-white dark:text-black dark:hover:bg-white/90"
+                >
+                  Done
+                </button>
               </div>
             </div>
           )}
@@ -151,8 +203,8 @@ export default function BlogBrowser({ posts }: BlogBrowserProps) {
                 aria-pressed={selected}
                 className={`rounded-full border px-3 py-1 text-xs transition-colors ${
                   selected
-                    ? 'border-blue-600 dark:border-accent/60 bg-blue-100 dark:bg-accent/20 text-blue-900 dark:text-white'
-                    : 'border-slate-200/50 dark:border-white/20 bg-slate-100/80 dark:bg-white/10 text-slate-600 dark:text-slate-400 hover:bg-slate-200/80 dark:hover:bg-white/15'
+                    ? 'dark:border-accent/60 dark:bg-accent/20 border-blue-600 bg-blue-100 text-blue-900 dark:text-white'
+                    : 'border-slate-200/50 bg-slate-100/80 text-slate-600 hover:bg-slate-200/80 dark:border-white/20 dark:bg-white/10 dark:text-slate-400 dark:hover:bg-white/15'
                 }`}
               >
                 {t}
@@ -166,7 +218,7 @@ export default function BlogBrowser({ posts }: BlogBrowserProps) {
           <button
             type="button"
             onClick={clearAll}
-            className="ml-auto rounded-md border border-slate-200/50 dark:border-white/20 px-3 py-1.5 text-xs text-slate-700 dark:text-slate-300 hover:bg-slate-100/80 dark:hover:bg-white/10"
+            className="ml-auto rounded-md border border-slate-200/50 px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-100/80 dark:border-white/20 dark:text-slate-300 dark:hover:bg-white/10"
           >
             Clear
           </button>
@@ -174,9 +226,13 @@ export default function BlogBrowser({ posts }: BlogBrowserProps) {
       </div>
 
       <div className="flex items-center justify-between">
-        <p className="text-sm text-slate-600 dark:text-slate-400">Showing {filtered.length} of {posts.length} articles</p>
+        <p className="text-sm text-slate-600 dark:text-slate-400">
+          Showing {filtered.length} of {posts.length} articles
+        </p>
         {activeTags.length > 0 && (
-          <div className="text-xs text-slate-500 dark:text-slate-400">Active: {activeTags.join(', ')}</div>
+          <div className="text-xs text-slate-500 dark:text-slate-400">
+            Active: {activeTags.join(', ')}
+          </div>
         )}
       </div>
 
@@ -184,4 +240,3 @@ export default function BlogBrowser({ posts }: BlogBrowserProps) {
     </div>
   );
 }
-
