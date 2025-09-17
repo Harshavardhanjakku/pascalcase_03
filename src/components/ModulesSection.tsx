@@ -8,32 +8,32 @@ const modules = [
     icon: SpeakerWaveIcon,
     title: 'Marketing',
     description:
-      'Drive customer engagement and lead generation with our comprehensive Marketing module solutions. Automate campaigns, track customer journeys, and optimize your marketing ROI with advanced analytics and personalized experiences.',
+      'We help you create complete end-to-end marketing funnels, customer journeys, campaigns, industry-specific integrations & marketing analytics',
   },
   {
     icon: PhoneIcon,
     title: 'Customer Service',
     description:
-      'Deliver exceptional customer support with our Customer Service module implementations. Streamline case management, improve response times, and enhance customer satisfaction through intelligent automation and omnichannel support.',
+      'Connect to Call centers, self-help portals, knowledge-base, SLA management, entitlements & more',
   },
   {
     icon: CogIcon,
     title: 'Field Service',
     description:
-      'Optimize field operations and resource management with our Field Service solutions. Schedule appointments, track technicians, manage inventory, and ensure first-time fix rates with mobile-first field service capabilities.',
+      'Bring customer service capabilities to customer locations.',
   },
   {
     icon: ChartBarIcon,
     title: 'Sales',
     description:
-      'Accelerate sales performance and pipeline management with our Sales module expertise. Track opportunities, forecast revenue, manage relationships, and close deals faster with intelligent sales automation and insights.',
+      'Get access to lead management, sales funnels, opportunity management, order processing, reports & more with Dynamics 365 Sales module.',
   },
 ];
 
 export default function ModulesSection() {
   return (
     <section
-      className="py-16 sm:py-20 lg:py-24"
+      className="pt-10 pb-16 sm:pt-12 sm:pb-20 lg:pt-14 lg:pb-24"
       style={{ background: 'linear-gradient(to bottom, var(--surface-1), transparent)' }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -45,7 +45,7 @@ export default function ModulesSection() {
           className="section-header"
         >
           <h2 className="section-title">
-            We build industry specific solutions for Dynamics 365 modules
+            We build industry specific solutions/tools for Dynamics 365 modules
           </h2>
           <p className="section-subtitle">
             Transform your business processes with our specialized expertise across all major

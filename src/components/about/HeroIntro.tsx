@@ -18,21 +18,6 @@ export default function HeroIntro() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border backdrop-blur-sm mb-6"
-            style={{
-              background: 'var(--surface-card)',
-              borderColor: 'var(--border-subtle)'
-            }}
-          >
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>Trusted by 500+ Companies</span>
-          </motion.div>
 
           {/* Main Heading */}
           <motion.div
