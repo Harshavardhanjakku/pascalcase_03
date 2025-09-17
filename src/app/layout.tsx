@@ -44,9 +44,13 @@ export default function RootLayout({
                   const theme = stored || system;
                   document.documentElement.setAttribute('data-theme', theme);
                   document.documentElement.style.colorScheme = theme;
+                  document.documentElement.className = document.documentElement.className.replace(/theme-\\w+/g, '');
+                  document.documentElement.classList.add('theme-' + theme);
                 } catch(e) {
                   document.documentElement.setAttribute('data-theme', 'dark');
                   document.documentElement.style.colorScheme = 'dark';
+                  document.documentElement.className = document.documentElement.className.replace(/theme-\\w+/g, '');
+                  document.documentElement.classList.add('theme-dark');
                 }
               })();
             `,

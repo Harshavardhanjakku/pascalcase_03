@@ -1077,6 +1077,166 @@ body {
   }
 }
 
+/* Browser-specific fixes for Edge and Safari */
+@supports (-ms-ime-align: auto) {
+  /* Edge-specific fixes */
+  .theme-dark {
+    background-color: #050607 !important;
+    color: #e6eef2 !important;
+  }
+
+  .theme-light {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  .card,
+  .module-card,
+  .blog-card,
+  .product-card {
+    background-color: var(--card-bg-fallback) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-appearance: none) and (not (-ms-ime-align: auto)) {
+  .theme-dark {
+    background-color: #050607 !important;
+    color: #e6eef2 !important;
+  }
+
+  .theme-light {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  /* Force dark theme consistency in Safari */
+  [data-theme='dark'] {
+    background-color: #050607 !important;
+    color: #e6eef2 !important;
+  }
+
+  [data-theme='dark'] body {
+    background-color: #050607 !important;
+    color: #e6eef2 !important;
+  }
+
+  [data-theme='light'] {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  [data-theme='light'] body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+}
+
+/* Force theme application for all browsers */
+.theme-dark,
+.theme-dark body {
+  background-color: var(--bg-900) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-light,
+.theme-light body {
+  background-color: var(--bg-900) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Ensure all components respect theme */
+.theme-dark * {
+  border-color: var(--border-subtle);
+}
+
+.theme-light * {
+  border-color: var(--border-subtle);
+}
+
+/* Force dark theme on all elements when dark theme is active */
+[data-theme='dark'] {
+  background-color: var(--bg-900) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] body {
+  background-color: var(--bg-900) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] main {
+  background-color: var(--bg-900) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] section {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] div {
+  color: inherit !important;
+}
+
+/* Force light theme on all elements when light theme is active */
+[data-theme='light'] {
+  background-color: var(--bg-900) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme='light'] body {
+  background-color: var(--bg-900) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme='light'] main {
+  background-color: var(--bg-900) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme='light'] section {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme='light'] div {
+  color: inherit !important;
+}
+
+/* Override any remaining color leaks */
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme='light'] h1,
+[data-theme='light'] h2,
+[data-theme='light'] h3,
+[data-theme='light'] h4,
+[data-theme='light'] h5,
+[data-theme='light'] h6 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] p,
+[data-theme='dark'] span,
+[data-theme='dark'] a {
+  color: inherit !important;
+}
+
+[data-theme='light'] p,
+[data-theme='light'] span,
+[data-theme='light'] a {
+  color: inherit !important;
+}
+
 /* Print styles */
 @media print {
   .navbar,
