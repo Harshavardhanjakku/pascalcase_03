@@ -364,35 +364,58 @@ export default async function ProductDetail({ params }: Params) {
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {/* Left Column - Main Product */}
-          <div className="space-y-8 lg:col-span-2">
-            {/* Product Description */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
-                About the App
-              </h2>
-              <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
-                Mask/Anonymize/Obfuscate Dataverse data with random characters and numbers, mock
-                data from pre-built formats. You can also easily select the fields to be masked or
-                simply deleted.
-              </p>
+        <div className="space-y-8">
+          {/* Row 1: About the App & Get Started */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
+                <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
+                  About the App
+                </h2>
+                <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
+                  Mask/Anonymize/Obfuscate Dataverse data with random characters and numbers, mock
+                  data from pre-built formats. You can also easily select the fields to be masked or
+                  simply deleted.
+                </p>
 
-              <a
-                href="#"
-                className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-600 hover:to-purple-700 hover:shadow-xl"
-              >
-                <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
-                Download from Microsoft AppSource
-              </a>
+                <a
+                  href="#"
+                  className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-600 hover:to-purple-700 hover:shadow-xl"
+                >
+                  <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
+                  Download from Microsoft AppSource
+                </a>
+              </div>
             </div>
 
-            {/* Why This App */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
-                Why This App?
-              </h2>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-8 text-white">
+                <div className="mb-4 flex items-center gap-3">
+                  <ArrowDownTrayIcon className="h-8 w-8" />
+                  <h3 className="text-xl font-bold">Get Started</h3>
+                </div>
+                <p className="mb-6 text-blue-100">
+                  Ready to secure your sandbox environment? Book a call or demo to see the Data Mask
+                  app in action.
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50"
+                >
+                  <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
+                  Book a Call or Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2: Why This App & FAQ */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
+                <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
+                  Why This App?
+                </h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
@@ -423,9 +446,7 @@ export default async function ProductDetail({ params }: Params) {
                       </p>
                     </div>
                   </div>
-                </div>
 
-                <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
                       <CheckCircleIcon className="h-5 w-5 text-blue-600" />
@@ -459,128 +480,112 @@ export default async function ProductDetail({ params }: Params) {
               </div>
             </div>
 
-            {/* How It Works */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
-                How Does Data Mask App Work?
-              </h2>
-              <div className="rounded-xl border-l-4 border-blue-500 bg-slate-50 p-6 dark:bg-slate-700/50">
-                <div className="mb-4 flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-lg font-bold text-white">
-                    1
+            <div>
+              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
+                <h3 className="mb-6 text-xl font-bold text-slate-900 dark:text-white">
+                  Frequently Asked Questions
+                </h3>
+
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                      Is the app free to test?
+                    </h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      The app is free to test without a valid license. However, there is a record
+                      restriction of 1,000 records per run without a license.
+                    </p>
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                    Step-by-Step Process
-                  </h3>
+
+                  <div>
+                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                      How can I install the app?
+                    </h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      This app is available as managed solution. You can directly download the app
+                      from this link, and follow the steps in the video.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                      How can I use the app for more than 1,000 records?
+                    </h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      You can reach out to us through Microsoft Teams or contact us page.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                      How efficiently does your app handle data masking?
+                    </h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Our app efficiently masks 200,000 records in 15 minutes and up to 1 million
+                      records in 60 to 70 minutes, ensuring speedy and secure data masking.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                      Can I selectively mask tables and attributes?
+                    </h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Yes, it is possible to configure tables and attributes to mask.
+                    </p>
+                  </div>
                 </div>
-                <p className="text-slate-600 dark:text-slate-400">
-                  The Data Mask app provides a simple, intuitive interface to select tables and
-                  fields for masking. Configure your masking preferences and run the process to
-                  secure your sandbox environment.
-                </p>
               </div>
             </div>
           </div>
 
-          {/* Right Column - CTA & FAQ */}
-          <div className="space-y-6">
-            {/* Book a Call */}
-            <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-6 text-white">
-              <div className="mb-4 flex items-center gap-3">
-                <ArrowDownTrayIcon className="h-8 w-8" />
-                <h3 className="text-xl font-bold">Get Started</h3>
-              </div>
-              <p className="mb-6 text-blue-100">
-                Ready to secure your sandbox environment? Book a call or demo to see the Data Mask
-                app in action.
-              </p>
-              <a
-                href="#"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50"
-              >
-                <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
-                Book a Call or Demo
-              </a>
-            </div>
-
-            {/* FAQ */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-6 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h3 className="mb-4 text-lg font-bold text-slate-900 dark:text-white">
-                Frequently Asked Questions
-              </h3>
-
-              <div className="space-y-4">
-                <div>
-                  <h4 className="mb-1 font-semibold text-slate-800 dark:text-slate-200">
-                    Is the app free to test?
-                  </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    The app is free to test without a valid license. However, there is a record
-                    restriction of 1,000 records per run without a license.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="mb-1 font-semibold text-slate-800 dark:text-slate-200">
-                    How can I install the app?
-                  </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    This app is available as managed solution. You can directly download the app
-                    from this link, and follow the steps in the video.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="mb-1 font-semibold text-slate-800 dark:text-slate-200">
-                    How can I use the app for more than 1,000 records?
-                  </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    You can reach out to us through Microsoft Teams or contact us page.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="mb-1 font-semibold text-slate-800 dark:text-slate-200">
-                    How efficiently does your app handle data masking?
-                  </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Our app efficiently masks 200,000 records in 15 minutes and up to 1 million
-                    records in 60 to 70 minutes, ensuring speedy and secure data masking.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="mb-1 font-semibold text-slate-800 dark:text-slate-200">
-                    Can I selectively mask tables and attributes?
-                  </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Yes, it is possible to configure tables and attributes to mask.
+          {/* Row 3: How It Works & Performance */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
+                <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
+                  How Does Data Mask App Work?
+                </h2>
+                <div className="rounded-xl border-l-4 border-blue-500 bg-slate-50 p-6 dark:bg-slate-700/50">
+                  <div className="mb-4 flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-lg font-bold text-white">
+                      1
+                    </div>
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                      Step-by-Step Process
+                    </h3>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    The Data Mask app provides a simple, intuitive interface to select tables and
+                    fields for masking. Configure your masking preferences and run the process to
+                    secure your sandbox environment.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Performance Stats */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-6 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h3 className="mb-4 text-lg font-bold text-slate-900 dark:text-white">Performance</h3>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-600 dark:text-slate-400">
-                    200,000 records
-                  </span>
-                  <span className="text-sm font-semibold text-blue-600">15 minutes</span>
+            <div>
+              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
+                <h3 className="mb-6 text-xl font-bold text-slate-900 dark:text-white">Performance</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-slate-600 dark:text-slate-400">
+                      200,000 records
+                    </span>
+                    <span className="text-sm font-semibold text-blue-600">15 minutes</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-slate-600 dark:text-slate-400">
+                      1 million records
+                    </span>
+                    <span className="text-sm font-semibold text-blue-600">60-70 minutes</span>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-600 dark:text-slate-400">
-                    1 million records
-                  </span>
-                  <span className="text-sm font-semibold text-blue-600">60-70 minutes</span>
+                <div className="mt-4 rounded-lg bg-blue-50 p-3 dark:bg-blue-900/20">
+                  <p className="text-xs text-blue-700 dark:text-blue-300">
+                    <strong>Free tier:</strong> Up to 1,000 records per run
+                  </p>
                 </div>
-              </div>
-              <div className="mt-4 rounded-lg bg-blue-50 p-3 dark:bg-blue-900/20">
-                <p className="text-xs text-blue-700 dark:text-blue-300">
-                  <strong>Free tier:</strong> Up to 1,000 records per run
-                </p>
               </div>
             </div>
           </div>
@@ -625,126 +630,182 @@ export default async function ProductDetail({ params }: Params) {
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {/* Left Column - Main Product */}
-          <div className="space-y-8 lg:col-span-2">
-            {/* Product Description */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
-                About the Connector
-              </h2>
-              <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
-                A Power Automate premium connector for converting HTML content to PDF documents. Say
-                goodbye to the restrictive 2MB limit. Now, you can create heavy-duty PDF documents
-                without size constraints.
-              </p>
+        <div className="space-y-8">
+          {/* Row 1: About the Connector & Pricing Plans */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
+                <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
+                  About the Connector
+                </h2>
+                <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
+                  A Power Automate premium connector for converting HTML content to PDF documents. Say
+                  goodbye to the restrictive 2MB limit. Now, you can create heavy-duty PDF documents
+                  without size constraints.
+                </p>
 
-              <div className="rounded-xl border-l-4 border-blue-500 bg-slate-50 p-6 dark:bg-slate-700/50">
-                <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
-                  Key Advantages
+                <div className="rounded-xl border-l-4 border-blue-500 bg-slate-50 p-6 dark:bg-slate-700/50">
+                  <h3 className="mb-4 font-semibold text-slate-900 dark:text-white">
+                    Key Advantages
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
+                        <CheckCircleIcon className="h-4 w-4 text-blue-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-900 dark:text-white">
+                          Free for one page
+                        </p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400">
+                          Use without a licensing key for one page
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
+                        <CheckCircleIcon className="h-4 w-4 text-blue-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-900 dark:text-white">
+                          Process large HTML content
+                        </p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400">
+                          Fast and powerful conversion
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
+                        <CheckCircleIcon className="h-4 w-4 text-blue-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-900 dark:text-white">
+                          Power Automate integration
+                        </p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400">
+                          Use directly from Power Automate flows
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
+                        <CheckCircleIcon className="h-4 w-4 text-blue-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-900 dark:text-white">
+                          No size constraints
+                        </p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400">
+                          Break free from 2MB limitations
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="h-full rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-8 text-white">
+                <div className="mb-4 flex items-center gap-3">
+                  <ArrowDownTrayIcon className="h-8 w-8" />
+                  <h3 className="text-xl font-bold">Pricing Plans</h3>
+                </div>
+
+                {/* Free Plan */}
+                <div className="mb-4 rounded-lg bg-white/20 p-4">
+                  <h4 className="mb-2 text-lg font-bold">Free Version</h4>
+                  <div className="mb-2 text-2xl font-bold">$0</div>
+                  <ul className="space-y-1 text-sm text-blue-100">
+                    <li>• Convert HTML to PDF (one page only)</li>
+                    <li>• Available on Power Automate</li>
+                    <li>• 100 calls per month</li>
+                  </ul>
+                </div>
+
+                {/* Paid Plan */}
+                <div className="mb-4 rounded-lg bg-white/20 p-4">
+                  <h4 className="mb-2 text-lg font-bold">Paid Plan</h4>
+                  <div className="mb-2 text-2xl font-bold">
+                    $49<span className="text-sm font-normal">/month*</span>
+                  </div>
+                  <p className="mb-2 text-xs text-blue-100">*billed annually</p>
+                  <ul className="space-y-1 text-sm text-blue-100">
+                    <li>• Convert HTML to PDF (up to 5 pages)</li>
+                    <li>• Up to 10MB of HTML content</li>
+                    <li>• 1000 calls per month</li>
+                  </ul>
+                </div>
+
+                <a
+                  href="#"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50"
+                >
+                  <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
+                  Purchase using Stripe
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2: Features & FAQ */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
+                <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">Features</h2>
+                <div className="space-y-3">
+                  {[
+                    'Free one-page conversion',
+                    'Large HTML content support',
+                    'Power Automate integration',
+                    'Fast and powerful processing',
+                    'No 2MB size limit',
+                    'Premium connector access',
+                    'Stripe payment integration',
+                    'Easy setup and configuration',
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
+                      <span className="text-slate-600 dark:text-slate-400">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
+                <h3 className="mb-6 text-xl font-bold text-slate-900 dark:text-white">
+                  Frequently Asked Questions
                 </h3>
-                <ul className="space-y-2 text-slate-600 dark:text-slate-400">
-                  <li>
-                    • <strong>Free for one page</strong> - Use without a licensing key for one page
-                  </li>
-                  <li>
-                    • <strong>Process large HTML content</strong> - Fast and powerful conversion
-                  </li>
-                  <li>
-                    • <strong>Power Automate integration</strong> - Use directly from Power Automate
-                    flows
-                  </li>
-                  <li>
-                    • <strong>No size constraints</strong> - Break free from 2MB limitations
-                  </li>
-                </ul>
-              </div>
-            </div>
 
-            {/* Features */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">Features</h2>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                {[
-                  'Free one-page conversion',
-                  'Large HTML content support',
-                  'Power Automate integration',
-                  'Fast and powerful processing',
-                  'No 2MB size limit',
-                  'Premium connector access',
-                  'Stripe payment integration',
-                  'Easy setup and configuration',
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
-                    <span className="text-slate-600 dark:text-slate-400">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Setup Instructions */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
-                Setup Instructions
-              </h2>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
-                    1
-                  </div>
+                <div className="space-y-4">
                   <div>
-                    <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
-                      Search for the Connector
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400">
-                      Search for &quot;HTML to PDF by Pascalcase&quot; in the &quot;add an
-                      action&quot; section and select the Pascalcase connector.
+                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                      Can I cancel the subscription at any time?
+                    </h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Yes, you can cancel the plan anytime.
                     </p>
                   </div>
-                </div>
 
-                <div className="flex gap-4">
-                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
-                    2
-                  </div>
                   <div>
-                    <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
-                      Provide HTML Content
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400">
-                      Provide the HTML string or code along with an optional key. The key enables
-                      multi-page PDFs.
-                    </p>
+                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                      Can I get a refund if I&apos;m not satisfied?
+                    </h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Yes, you can.</p>
                   </div>
-                </div>
 
-                <div className="flex gap-4">
-                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
-                    3
-                  </div>
                   <div>
-                    <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
-                      Get Response
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400">
-                      The response will be a byte array that can be used as file content for storing
-                      in Dataverse or SharePoint.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
-                      Parse Output
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400">
-                      Parse the output using the provided schema and use the body output to create
-                      your PDF file.
+                    <h4 className="mb-2 font-semibold text-slate-800 dark:text-slate-200">
+                      Can I get a free trial before subscribing?
+                    </h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      There is a free version available without requiring a license key.
                     </p>
                   </div>
                 </div>
@@ -752,98 +813,94 @@ export default async function ProductDetail({ params }: Params) {
             </div>
           </div>
 
-          {/* Right Column - Pricing & Links */}
-          <div className="space-y-6">
-            {/* Pricing Card */}
-            <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-6 text-white">
-              <div className="mb-4 flex items-center gap-3">
-                <ArrowDownTrayIcon className="h-8 w-8" />
-                <h3 className="text-xl font-bold">Pricing Plans</h3>
-              </div>
+          {/* Row 3: Setup Instructions & Documentation */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
+                <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
+                  Setup Instructions
+                </h2>
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
+                      1
+                    </div>
+                    <div>
+                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                        Search for the Connector
+                      </h3>
+                      <p className="text-slate-600 dark:text-slate-400">
+                        Search for &quot;HTML to PDF by Pascalcase&quot; in the &quot;add an
+                        action&quot; section and select the Pascalcase connector.
+                      </p>
+                    </div>
+                  </div>
 
-              {/* Free Plan */}
-              <div className="mb-4 rounded-lg bg-white/20 p-4">
-                <h4 className="mb-2 text-lg font-bold">Free Version</h4>
-                <div className="mb-2 text-2xl font-bold">$0</div>
-                <ul className="space-y-1 text-sm text-blue-100">
-                  <li>• Convert HTML to PDF (one page only)</li>
-                  <li>• Available on Power Automate</li>
-                  <li>• 100 calls per month</li>
-                </ul>
-              </div>
+                  <div className="flex gap-4">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
+                      2
+                    </div>
+                    <div>
+                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                        Provide HTML Content
+                      </h3>
+                      <p className="text-slate-600 dark:text-slate-400">
+                        Provide the HTML string or code along with an optional key. The key enables
+                        multi-page PDFs.
+                      </p>
+                    </div>
+                  </div>
 
-              {/* Paid Plan */}
-              <div className="mb-4 rounded-lg bg-white/20 p-4">
-                <h4 className="mb-2 text-lg font-bold">Paid Plan</h4>
-                <div className="mb-2 text-2xl font-bold">
-                  $49<span className="text-sm font-normal">/month*</span>
-                </div>
-                <p className="mb-2 text-xs text-blue-100">*billed annually</p>
-                <ul className="space-y-1 text-sm text-blue-100">
-                  <li>• Convert HTML to PDF (up to 5 pages)</li>
-                  <li>• Up to 10MB of HTML content</li>
-                  <li>• 1000 calls per month</li>
-                </ul>
-              </div>
+                  <div className="flex gap-4">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
+                      3
+                    </div>
+                    <div>
+                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                        Get Response
+                      </h3>
+                      <p className="text-slate-600 dark:text-slate-400">
+                        The response will be a byte array that can be used as file content for storing
+                        in Dataverse or SharePoint.
+                      </p>
+                    </div>
+                  </div>
 
-              <a
-                href="#"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50"
-              >
-                <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
-                Purchase using Stripe
-              </a>
-            </div>
-
-            {/* FAQ */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-6 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h3 className="mb-4 text-lg font-bold text-slate-900 dark:text-white">
-                Frequently Asked Questions
-              </h3>
-
-              <div className="space-y-4">
-                <div>
-                  <h4 className="mb-1 font-semibold text-slate-800 dark:text-slate-200">
-                    Can I cancel the subscription at any time?
-                  </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Yes, you can cancel the plan anytime.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="mb-1 font-semibold text-slate-800 dark:text-slate-200">
-                    Can I get a refund if I&apos;m not satisfied?
-                  </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">Yes, you can.</p>
-                </div>
-
-                <div>
-                  <h4 className="mb-1 font-semibold text-slate-800 dark:text-slate-200">
-                    Can I get a free trial before subscribing?
-                  </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    There is a free version available without requiring a license key.
-                  </p>
+                  <div className="flex gap-4">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
+                      4
+                    </div>
+                    <div>
+                      <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
+                        Parse Output
+                      </h3>
+                      <p className="text-slate-600 dark:text-slate-400">
+                        Parse the output using the provided schema and use the body output to create
+                        your PDF file.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Documentation Link */}
-            <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-6 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
-              <h3 className="mb-4 text-lg font-bold text-slate-900 dark:text-white">
-                Documentation
-              </h3>
-              <p className="mb-4 text-sm text-slate-600 dark:text-slate-400">
-                Visit Microsoft Docs for detailed setup instructions and schema information.
-              </p>
-              <a
-                href="#"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-slate-100 px-4 py-2 font-semibold text-slate-800 transition-colors hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
-              >
-                <ArrowTopRightOnSquareIcon className="mr-2 h-4 w-4" />
-                Visit Microsoft Docs
-              </a>
+            <div>
+              <div className="rounded-2xl border border-slate-200/50 bg-white/80 p-8 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/80">
+                <h3 className="mb-6 text-xl font-bold text-slate-900 dark:text-white">
+                  Documentation
+                </h3>
+                <p className="mb-6 text-slate-600 dark:text-slate-400">
+                  Get detailed information about the HTML to PDF connector, including setup guides,
+                  API documentation, and best practices for Power Automate integration.
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-blue-500 px-4 py-3 font-semibold text-white transition-colors hover:bg-blue-600"
+                >
+                  <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
+                  Visit Microsoft Docs
+                </a>
+              </div>
             </div>
           </div>
         </div>
