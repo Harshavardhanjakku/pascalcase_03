@@ -810,140 +810,121 @@ export default async function ProductDetail({ params }: Params) {
                 Commission 365 for Dataverse
               </h1>
               <p className="mb-4 text-xl" style={{ color: 'var(--text-secondary)' }}>
-                Design commission plans and incentives for your sales teams
+                Configure commissions for your sales staff.
               </p>
-            </div>
-            <div className="hidden md:block">
-              <div className="rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 p-4 text-white">
-                <ArrowDownTrayIcon className="mb-2 h-8 w-8" />
-                <p className="text-sm font-medium">Microsoft AppSource</p>
-              </div>
             </div>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {/* Left Column - Main Product */}
-          <div className="space-y-8 lg:col-span-2">
-            {/* Product Description */}
-            <div
-              className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
+        <div className="space-y-8">
+          {/* About the App */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm"
+            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+          >
+            <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              About the App
+            </h2>
+            <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              Commission 365 is a tool by Pascalcase for Dynamics 365 Sales App &amp; PowerApps that allows you to configure commissions, incentives and bonus plans for your sales staff. You can customise plans and automate the complete process. This App gives complete control over the ruleset, including type of data, eligible people, frequency of commissions paid, etc.
+            </p>
+            <a
+              href="https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.commission365?tab=Overview"
+              className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-600 hover:to-purple-700 hover:shadow-xl"
             >
-              <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                About the App
-              </h2>
-              <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Commission 365 is a comprehensive commission management solution for Dataverse that
-                helps you design, implement, and track commission plans for your sales teams. Create
-                flexible incentive structures that drive performance and align with your business
-                goals.
-              </p>
+              <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
+              Download from Microsoft AppSource
+            </a>
+          </div>
 
-              <div
-                className="rounded-xl border-l-4 border-blue-500 p-6"
-                style={{ backgroundColor: 'var(--surface-2)' }}
-              >
-                <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                  Key Advantage
-                </h3>
-                <p style={{ color: 'var(--text-secondary)' }}>
-                  Commission 365 provides a centralized platform to manage all aspects of sales
-                  compensation, from plan design to payout calculations, ensuring accuracy and
-                  transparency in your commission processes.
-                </p>
-              </div>
-            </div>
-
-            {/* Features */}
-            <div
-              className="rounded-2xl p-8 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
-            >
-              <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                Features
-              </h2>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                {[
-                  'Flexible commission plan design',
-                  'Multi-tier commission structures',
-                  'Automated payout calculations',
-                  'Performance tracking and analytics',
-                  'Sales team management',
-                  'Commission history and reporting',
-                  'Integration with sales data',
-                  'Customizable commission rules',
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
-                    <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
+          {/* Why This App - pills in 2 rows */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm"
+            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+          >
+            <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              Why This App?
+            </h2>
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              {[
+                'Simplify complex calculations',
+                'Offers a variety of options',
+                'Live progress tracking',
+                'One time configuration',
+                'Low cost implementation',
+              ].map((title, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-xl p-5"
+                  style={{ backgroundColor: 'var(--surface-2)', border: '1px solid', borderColor: 'var(--border-default)' }}
+                >
+                  <div className="mb-2 flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
+                      <CheckCircleIcon className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <h3 className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+                      {title}
+                    </h3>
                   </div>
-                ))}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Automate Sales Incentives + Image + CTA */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm"
+            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+          >
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center">
+              <div>
+                <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                  Automate Sales Incentives with Commission 365
+                </h2>
+                <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
+                  Commission 365 helps you in creating tailored incentives based on your preferences. Choose when you want to receive commissions and the calculation method that suits you best. With two types of calculations, Count-Based &amp; Percentage-Based, This App ensures a personalized commission experience tailored to your needs.
+                </p>
+                <a
+                  href="https://teams.microsoft.com/l/chat/0/0?users=satish@pascalcase.com,likitha@pascalcase.com&topicName=Commission365%20Demo"
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-5 py-3 font-semibold text-white transition-colors hover:from-purple-700 hover:to-indigo-700"
+                >
+                  <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
+                  Book a Call or Demo
+                </a>
+              </div>
+              <div>
+                <img
+                  src="/our_products/commission365NEW.png"
+                  alt="Commission 365"
+                  className="w-full rounded-xl border"
+                  style={{ borderColor: 'var(--border-default)' }}
+                />
               </div>
             </div>
           </div>
 
-          {/* Right Column - CTA & How It Works */}
-          <div className="space-y-6">
-            {/* Download Card */}
-            <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-6 text-white">
-              <div className="mb-4 flex items-center gap-3">
-                <ArrowDownTrayIcon className="h-8 w-8" />
-                <h3 className="text-xl font-bold">Download Now</h3>
-              </div>
-              <p className="mb-6 text-blue-100">
-                Get Commission 365 from Microsoft AppSource and start designing your commission
-                plans today.
-              </p>
-              <a
-                href="#"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
-              >
-                <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
-                Download from Microsoft AppSource
-              </a>
-            </div>
+          {/* Banner Image above Download for Free! */}
+          <div
+            className="rounded-2xl p-6 backdrop-blur-sm"
+            style={{ backgroundColor: 'var(--surface-card)', borderColor: 'var(--border-default)', border: '1px solid' }}
+          >
+            <img
+              src="/our_products/commission365(2).png"
+              alt="Commission 365 Features"
+              className="w-full rounded-xl border"
+              style={{ borderColor: 'var(--border-default)' }}
+            />
+          </div>
 
-            {/* How Commission 365 Works */}
-            <div
-              className="rounded-2xl p-6 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'var(--surface-card)',
-                borderColor: 'var(--border-default)',
-                border: '1px solid',
-              }}
+          {/* Download for Free! */}
+          <div className="flex w-full justify-center">
+            <a
+              href="https://appsource.microsoft.com/en/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.commission365?tab=Overview"
+              className="rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
             >
-              <h3 className="mb-4 text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
-                How Commission 365 Works
-              </h3>
-              <div
-                className="rounded-xl border-l-4 border-blue-500 p-4"
-                style={{ backgroundColor: 'var(--surface-2)' }}
-              >
-                <div className="mb-3 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500 text-sm font-bold text-white">
-                    $
-                  </div>
-                  <h4 className="font-semibold" style={{ color: 'var(--text-primary)' }}>
-                    Commission Management
-                  </h4>
-                </div>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  Commission 365 streamlines your sales compensation process by providing tools to
-                  create commission plans, track sales performance, and automatically calculate
-                  payouts based on your defined rules and criteria.
-                </p>
-              </div>
-            </div>
+              Download for Free!
+            </a>
           </div>
         </div>
       </main>
