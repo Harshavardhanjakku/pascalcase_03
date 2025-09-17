@@ -5,6 +5,7 @@ import {
   ArrowTopRightOnSquareIcon,
   CheckCircleIcon,
 } from '@heroicons/react/24/outline';
+import FaqAccordion, { FaqItem } from '@/components/FaqAccordion';
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -65,12 +66,6 @@ export default async function ProductDetail({ params }: Params) {
               <p className="mb-4 text-xl" style={{ color: 'var(--text-secondary)' }}>
                 Auto-resolve the cases with AI Auto-closer
               </p>
-            </div>
-            <div className="hidden md:block">
-              <div className="rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 p-4 text-white">
-                <ArrowDownTrayIcon className="mb-2 h-8 w-8" />
-                <p className="text-sm font-medium">Microsoft AppSource</p>
-              </div>
             </div>
           </div>
         </div>
@@ -355,280 +350,175 @@ export default async function ProductDetail({ params }: Params) {
                 data with dummy data
               </p>
             </div>
-            <div className="hidden md:block">
-              <div className="rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 p-4 text-white">
-                <ArrowDownTrayIcon className="mb-2 h-8 w-8" />
-                <p className="text-sm font-medium">Microsoft AppSource</p>
-              </div>
-            </div>
+
           </div>
         </div>
 
         {/* Main Content */}
         <div className="space-y-8">
-          {/* Row 1: About the App & Get Started */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
-            <div className="lg:col-span-2">
-              <div
-                className="rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
-              >
-                <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  About the App
-                </h2>
-                <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                  Mask/Anonymize/Obfuscate Dataverse data with random characters and numbers, mock
-                  data from pre-built formats. You can also easily select the fields to be masked or
-                  simply deleted.
-                </p>
+          {/* Row 1: About the App */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm"
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
+          >
+            <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              About the App
+            </h2>
+            <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              Mask/Anonymize/Obfuscate Dataverse data with random characters and numbers, mock
+              data from pre-built formats. You can also easily select the fields to be masked or
+              simply deleted.
+            </p>
 
-                <a
-                  href="#"
-                  className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-600 hover:to-purple-700 hover:shadow-xl"
-                >
-                  <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
-                  Download from Microsoft AppSource
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-8 text-white">
-                <div className="mb-4 flex items-center gap-3">
-                  <ArrowDownTrayIcon className="h-8 w-8" />
-                  <h3 className="text-xl font-bold">Get Started</h3>
-                </div>
-                <p className="mb-6 text-blue-100">
-                  Ready to secure your sandbox environment? Book a call or demo to see the Data Mask
-                  app in action.
-                </p>
-                <a
-                  href="#"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
-                >
-                  <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
-                  Book a Call or Demo
-                </a>
-              </div>
-            </div>
+            <a
+              href="https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.datamask?tab=Overview"
+              className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-600 hover:to-purple-700 hover:shadow-xl"
+            >
+              <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
+              Download from Microsoft AppSource
+            </a>
           </div>
 
-          {/* Row 2: Why This App & FAQ */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
-            <div className="lg:col-span-2">
-              <div
-                className="rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
-              >
-                <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  Why This App?
-                </h2>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
-                      <CheckCircleIcon className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Secure your sandbox environments
-                      </h3>
-                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        The app ensures that your testing and development activities can be
-                        conducted without compromising confidential data.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
-                      <CheckCircleIcon className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Anonymization
-                      </h3>
-                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        The app replaces sensitive data with realistic anonymous values, ensuring
-                        personal information remains unlinked to specific individuals.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
-                      <CheckCircleIcon className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Data Privacy & Compliance
-                      </h3>
-                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        Comply with data privacy regulations like GDPR, HIPAA, or CCPA by masking
-                        personal & sensitive information.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
-                      <CheckCircleIcon className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Data Protection
-                      </h3>
-                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        Safeguard sensitive data from unauthorized access or exposure, reducing the
-                        risk of data breaches, cyberattacks, and internal data leaks.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div
-                className="rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
-              >
-                <h3 className="mb-6 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  Frequently Asked Questions
-                </h3>
-
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                      Is the app free to test?
-                    </h4>
-                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      The app is free to test without a valid license. However, there is a record
-                      restriction of 1,000 records per run without a license.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                      How can I install the app?
-                    </h4>
-                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      This app is available as managed solution. You can directly download the app
-                      from this link, and follow the steps in the video.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                      How can I use the app for more than 1,000 records?
-                    </h4>
-                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      You can reach out to us through Microsoft Teams or contact us page.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                      How efficiently does your app handle data masking?
-                    </h4>
-                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      Our app efficiently masks 200,000 records in 15 minutes and up to 1 million
-                      records in 60 to 70 minutes, ensuring speedy and secure data masking.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                      Can I selectively mask tables and attributes?
-                    </h4>
-                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      Yes, it is possible to configure tables and attributes to mask.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Row 3: How It Works & Performance */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
-            <div className="lg:col-span-2">
-              <div
-                className="rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
-              >
-                <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  How Does Data Mask App Work?
-                </h2>
+          {/* Row 2: Why This App */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm"
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
+          >
+            <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              Why This App?
+            </h2>
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              {[
+                {
+                  title: 'Secure your sandbox environments',
+                  body:
+                    'The app ensures that your testing and development activities can be conducted without compromising confidential data.',
+                },
+                {
+                  title: 'Anonymization',
+                  body:
+                    'The app replaces sensitive data with realistic anonymous values, ensuring personal information remains unlinked to specific individuals.',
+                },
+                {
+                  title: 'Data Privacy & Compliance',
+                  body:
+                    'Comply with data privacy regulations like GDPR, HIPAA, or CCPA by masking personal & sensitive information.',
+                },
+                {
+                  title: 'Data Protection',
+                  body:
+                    'Safeguard sensitive data from unauthorized access or exposure, reducing the risk of data breaches, cyberattacks, and internal data leaks.',
+                },
+              ].map((item, idx) => (
                 <div
-                  className="rounded-xl border-l-4 border-blue-500 p-6"
-                  style={{ backgroundColor: 'var(--surface-2)' }}
+                  key={idx}
+                  className="rounded-xl p-5"
+                  style={{
+                    backgroundColor: 'var(--surface-2)',
+                    border: '1px solid',
+                    borderColor: 'var(--border-default)',
+                  }}
                 >
-                  <div className="mb-4 flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-lg font-bold text-white">
-                      1
+                  <div className="mb-2 flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
+                      <CheckCircleIcon className="h-5 w-5 text-blue-600" />
                     </div>
-                    <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
-                      Step-by-Step Process
+                    <h3 className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+                      {item.title}
                     </h3>
                   </div>
-                  <p style={{ color: 'var(--text-secondary)' }}>
-                    The Data Mask app provides a simple, intuitive interface to select tables and
-                    fields for masking. Configure your masking preferences and run the process to
-                    secure your sandbox environment.
+                  <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                    {item.body}
                   </p>
                 </div>
-              </div>
+              ))}
             </div>
+          </div>
 
-            <div>
-              <div
-                className="rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
-              >
-                <h3 className="mb-6 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  Performance
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      200,000 records
-                    </span>
-                    <span className="text-sm font-semibold text-blue-600">15 minutes</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      1 million records
-                    </span>
-                    <span className="text-sm font-semibold text-blue-600">60-70 minutes</span>
-                  </div>
-                </div>
-                <div className="mt-4 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 p-3">
-                  <p className="text-xs text-white">
-                    <strong>Free tier:</strong> Up to 1,000 records per run
-                  </p>
-                </div>
-              </div>
+          {/* Row 3: How It Works (image) */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm"
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
+          >
+            <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              How does Data Mask app work?
+            </h2>
+            <div className="w-full">
+              <img
+                src="/our_products/DataMaskingImage.png"
+                alt="Data Masking Production to Sandbox"
+                className="w-full rounded-xl border"
+                style={{ borderColor: 'var(--border-default)' }}
+              />
             </div>
+          </div>
+
+          {/* Row 4: Demo Video */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm"
+            style={{
+              backgroundColor: 'var(--surface-card)',
+              borderColor: 'var(--border-default)',
+              border: '1px solid',
+            }}
+          >
+            <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              Watch the Demo
+            </h2>
+            <div className="aspect-video w-full overflow-hidden rounded-xl">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/jWjaJS_7Zus"
+                title="Data Mask Tool for Dataverse"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          </div>
+
+          {/* Book a call or demo */}
+          <div className="flex w-full justify-center">
+            <a
+              href="https://teams.microsoft.com/l/chat/0/0?users=satish@pascalcase.com,likitha@pascalcase.com&topicName=DataMask%20Demo"
+              className="rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
+            >
+              Book a Call or Demo
+            </a>
+          </div>
+
+          {/* FAQs */}
+          <div
+            className="rounded-2xl p-8 backdrop-blur-sm mt-8"
+            style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+          >
+            <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              FAQS
+            </h2>
+            <h3 className="mb-4 text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+              Frequently Asked Questions
+            </h3>
+            <FaqAccordion
+              items={[
+                { q: 'Is the app free to test?', a: (<p>The app is free to test without a valid license. However, there is a record restriction of 1,000 records per run without a license.</p>) },
+                { q: 'How can I install the app?', a: (<p>This app is available as managed solution. You can directly download the app from <a href="https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.datamask?tab=Overview" target="_blank" rel="noopener noreferrer" className="ml-1 text-blue-500 hover:underline">this link</a>, and follow the steps in the <a href="https://youtu.be/jWjaJS_7Zus" target="_blank" rel="noopener noreferrer" className="ml-1 text-blue-500 hover:underline">video</a>.</p>) },
+                { q: 'How can I use the app for more than 1,000 records?', a: (<p>You can reach out to us through Microsoft Teams or contact us page.</p>) },
+                { q: 'How efficiently does your app handle data masking?', a: (<p>Our app efficiently masks 200,000 records in 15 minutes and up to 1 million records in 60 to 70 minutes, ensuring speedy and secure data masking.</p>) },
+                { q: 'Can I selectively mask tables and attributes?', a: (<p>Yes, it is possible to configure tables and attributes to mask.</p>) },
+              ] as FaqItem[]}
+            />
           </div>
         </div>
       </main>
