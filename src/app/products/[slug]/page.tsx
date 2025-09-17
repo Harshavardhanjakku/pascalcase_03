@@ -436,7 +436,7 @@ export default async function ProductDetail({ params }: Params) {
         id="content"
         className="mx-auto max-w-6xl scroll-mt-24 px-4 py-10 sm:px-6 md:scroll-mt-28"
       >
-        {/* Header */}
+        {/* Back link */}
         <div className="mb-8">
           <Link
             href="/products"
@@ -446,342 +446,199 @@ export default async function ProductDetail({ params }: Params) {
             <ArrowLeftIcon className="h-4 w-4" />
             Back to Products
           </Link>
+        </div>
 
-          <div className="flex items-start justify-between">
-            <div>
-              <h1 className="mb-2 text-4xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                HTML to PDF Converter for Power Automate
-              </h1>
-              <p className="mb-4 text-xl" style={{ color: 'var(--text-secondary)' }}>
-                Convert HTML content to PDF documents using Power Automate flows
-              </p>
-            </div>
-            <div className="hidden md:block">
-              <div className="rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 p-4 text-white">
-                <ArrowDownTrayIcon className="mb-2 h-8 w-8" />
-                <p className="text-sm font-medium">Power Automate Connector</p>
-              </div>
-            </div>
+        {/* Hero */}
+        <div
+          className="mb-8 rounded-2xl p-8 backdrop-blur-sm"
+          style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+        >
+          <h1 className="mb-2 text-4xl font-bold" style={{ color: 'var(--text-primary)' }}>
+            Html to Pdf converter for Power Automate
+          </h1>
+          <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
+            Convert Html content to Pdf documents using Power Automate flows
+          </p>
+          <p className="mt-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
+            Say goodbye to the restrictive 2MB limit. Now, you can create heavy-duty pdf documents without size constraints.
+          </p>
+          <div className="mt-6">
+            <a
+              href="https://learn.microsoft.com/en-us/connectors/htmltopdfconverter/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
+            >
+              <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
+              Visit Microsoft Docs
+            </a>
           </div>
         </div>
 
-        {/* Main Content */}
-        <div className="space-y-8">
-          {/* Row 1: About the Connector & Pricing Plans */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
-            <div className="lg:col-span-2">
+        {/* Intro advantages */}
+        <div
+          className="mb-8 rounded-2xl p-8 backdrop-blur-sm"
+          style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+        >
+          <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+            A Power Automate premium connector for converting HTML content to PDF documents
+          </h2>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {[
+              {
+                title: 'Free for one page',
+                body: 'You can use it without a licensing key for one page.',
+              },
+              {
+                title: 'It can process large HTML content',
+                body: 'Fast and Powerful.',
+              },
+              {
+                title: 'Power Automate connector',
+                body: 'Use it from Power Automat flow.',
+              },
+            ].map((item, idx) => (
               <div
-                className="rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
+                key={idx}
+                className="rounded-xl p-5"
+                style={{ backgroundColor: 'var(--surface-2)', border: '1px solid', borderColor: 'var(--border-default)' }}
               >
-                <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  About the Connector
-                </h2>
-                <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                  A Power Automate premium connector for converting HTML content to PDF documents.
-                  Say goodbye to the restrictive 2MB limit. Now, you can create heavy-duty PDF
-                  documents without size constraints.
-                </p>
-
-                <div
-                  className="rounded-xl border-l-4 border-blue-500 p-6"
-                  style={{ backgroundColor: 'var(--surface-2)' }}
-                >
-                  <h3 className="mb-4 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                    Key Advantages
+                <div className="mb-2 flex items-center gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
+                    <CheckCircleIcon className="h-5 w-5 text-blue-600" />
+                  </div>
+                  <h3 className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+                    {item.title}
                   </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-                        <CheckCircleIcon className="h-4 w-4 text-blue-600" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
-                          Free for one page
-                        </p>
-                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-                          Use without a licensing key for one page
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-                        <CheckCircleIcon className="h-4 w-4 text-blue-600" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
-                          Process large HTML content
-                        </p>
-                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-                          Fast and powerful conversion
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-                        <CheckCircleIcon className="h-4 w-4 text-blue-600" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
-                          Power Automate integration
-                        </p>
-                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-                          Use directly from Power Automate flows
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-                        <CheckCircleIcon className="h-4 w-4 text-blue-600" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
-                          No size constraints
-                        </p>
-                        <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
-                          Break free from 2MB limitations
-                        </p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="h-full rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-8 text-white">
-                <div className="mb-4 flex items-center gap-3">
-                  <ArrowDownTrayIcon className="h-8 w-8" />
-                  <h3 className="text-xl font-bold">Pricing Plans</h3>
-                </div>
-
-                {/* Free Plan */}
-                <div className="mb-4 rounded-lg bg-gradient-to-r from-blue-50/50 to-indigo-50/50 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 border border-blue-200/50 dark:border-blue-700/50">
-                  <h4 className="mb-2 text-lg font-bold">Free Version</h4>
-                  <div className="mb-2 text-2xl font-bold">$0</div>
-                  <ul className="space-y-1 text-sm text-blue-100">
-                    <li>• Convert HTML to PDF (one page only)</li>
-                    <li>• Available on Power Automate</li>
-                    <li>• 100 calls per month</li>
-                  </ul>
-                </div>
-
-                {/* Paid Plan */}
-                <div className="mb-4 rounded-lg bg-gradient-to-r from-blue-50/50 to-indigo-50/50 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 border border-blue-200/50 dark:border-blue-700/50">
-                  <h4 className="mb-2 text-lg font-bold">Paid Plan</h4>
-                  <div className="mb-2 text-2xl font-bold">
-                    $49<span className="text-sm font-normal">/month*</span>
-                  </div>
-                  <p className="mb-2 text-xs text-blue-100">*billed annually</p>
-                  <ul className="space-y-1 text-sm text-blue-100">
-                    <li>• Convert HTML to PDF (up to 5 pages)</li>
-                    <li>• Up to 10MB of HTML content</li>
-                    <li>• 1000 calls per month</li>
-                  </ul>
-                </div>
-
-                <a
-                  href="#"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
-                >
-                  <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
-                  Purchase using Stripe
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Row 2: Features & FAQ */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
-            <div className="lg:col-span-2">
-              <div
-                className="rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
-              >
-                <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  Features
-                </h2>
-                <div className="space-y-3">
-                  {[
-                    'Free one-page conversion',
-                    'Large HTML content support',
-                    'Power Automate integration',
-                    'Fast and powerful processing',
-                    'No 2MB size limit',
-                    'Premium connector access',
-                    'Stripe payment integration',
-                    'Easy setup and configuration',
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
-                      <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div
-                className="rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
-              >
-                <h3 className="mb-6 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  Frequently Asked Questions
-                </h3>
-
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                      Can I cancel the subscription at any time?
-                    </h4>
-                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      Yes, you can cancel the plan anytime.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                      Can I get a refund if I&apos;m not satisfied?
-                    </h4>
-                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      Yes, you can.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                      Can I get a free trial before subscribing?
-                    </h4>
-                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      There is a free version available without requiring a license key.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Row 3: Setup Instructions & Documentation */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-stretch">
-            <div className="lg:col-span-2">
-              <div
-                className="rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
-              >
-                <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  Setup Instructions
-                </h2>
-                <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
-                      1
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Search for the Connector
-                      </h3>
-                      <p style={{ color: 'var(--text-secondary)' }}>
-                        Search for &quot;HTML to PDF by Pascalcase&quot; in the &quot;add an
-                        action&quot; section and select the Pascalcase connector.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
-                      2
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Provide HTML Content
-                      </h3>
-                      <p style={{ color: 'var(--text-secondary)' }}>
-                        Provide the HTML string or code along with an optional key. The key enables
-                        multi-page PDFs.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
-                      3
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Get Response
-                      </h3>
-                      <p style={{ color: 'var(--text-secondary)' }}>
-                        The response will be a byte array that can be used as file content for
-                        storing in Dataverse or SharePoint.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
-                      4
-                    </div>
-                    <div>
-                      <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Parse Output
-                      </h3>
-                      <p style={{ color: 'var(--text-secondary)' }}>
-                        Parse the output using the provided schema and use the body output to create
-                        your PDF file.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div
-                className="rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
-              >
-                <h3 className="mb-6 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  Documentation
-                </h3>
-                <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
-                  Get detailed information about the HTML to PDF connector, including setup guides,
-                  API documentation, and best practices for Power Automate integration.
+                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                  {item.body}
                 </p>
-                <a
-                  href="#"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-blue-500 px-4 py-3 font-semibold text-white transition-colors hover:bg-blue-600"
-                >
-                  <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
-                  Visit Microsoft Docs
-                </a>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Pricing */}
+        <div
+          className="mb-8 rounded-2xl p-8 backdrop-blur-sm"
+          style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+        >
+          <h2 className="mb-2 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+            Pricing
+          </h2>
+          <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
+            Pay yearly and cancel anytime.
+          </p>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="rounded-xl border p-6" style={{ borderColor: 'var(--border-default)', backgroundColor: 'var(--surface-2)' }}>
+              <h3 className="mb-2 text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
+                Free Version
+              </h3>
+              <div className="mb-3 text-3xl font-bold">$0</div>
+              <ul className="space-y-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                <li>Convert HTML content to pdf document (one page only)</li>
+                <li>Available on Power Automate</li>
+                <li>100 calls per month</li>
+              </ul>
+            </div>
+            <div className="rounded-xl border p-6" style={{ borderColor: 'var(--border-default)', backgroundColor: 'var(--surface-2)' }}>
+              <h3 className="mb-2 text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
+                Paid
+              </h3>
+              <div className="mb-1 text-3xl font-bold">$49<span className="text-base font-normal"> per month*</span></div>
+              <p className="mb-3 text-xs" style={{ color: 'var(--text-secondary)' }}>*billed annually</p>
+              <ul className="space-y-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                <li>Convert HTML content to pdf document (Up to 5 pages)</li>
+                <li>Up to 10MB of HTML content</li>
+                <li>1000 calls per month</li>
+              </ul>
+              <a
+                href="https://buy.stripe.com/dR6g269fm7BQbuMfZ1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
+              >
+                <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
+                Purchase Using Stripe
+              </a>
+              <p className="mt-2 text-xs" style={{ color: 'var(--text-secondary)' }}>Credit card required.</p>
             </div>
           </div>
         </div>
+
+        {/* FAQs */}
+        <div
+          className="mb-8 rounded-2xl p-8 backdrop-blur-sm"
+          style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+        >
+          <h2 className="mb-2 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+            FAQS
+          </h2>
+          <h3 className="mb-6 text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+            Frequently Asked Questions
+          </h3>
+          <FaqAccordion
+            items={[
+              { q: 'Can I cancel the subscription at any time?', a: (<p>Yes, you can cancel the plan anytime.</p>) },
+              { q: 'Can I get a refund if I\'m not satisfied?', a: (<p>Yes, you can.</p>) },
+              { q: 'Can I get a free trial before subscribing?', a: (<p>There is a free version available without requiring a license key.</p>) },
+            ] as FaqItem[]}
+          />
+        </div>
+
+        {/* Setting up */}
+        <div
+          className="mb-8 rounded-2xl p-8 backdrop-blur-sm"
+          style={{ backgroundColor: 'var(--surface-card)', border: '1px solid', borderColor: 'var(--border-default)' }}
+        >
+          <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+            Setting up:
+          </h2>
+          {/* Step 1 */}
+          <div className="mb-8">
+            <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>
+              1. Search for HTML to PDF by Pascalcase in the &quot;add an action&quot; section and select the Pascalcase connector. (Refer Image - H1)
+            </p>
+            <img src="/our_products/Image1–H1-HTMLToPDF.png" alt="HTML to PDF H1" className="w-full rounded-xl border" style={{ borderColor: 'var(--border-default)' }} />
+          </div>
+          {/* Step 2 */}
+          <div className="mb-8">
+            <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>
+              2. Provide the HTML string or code along with an optional key. The key, provided by Pascalcase Software Pvt. Ltd., enables users to generate multi-page PDFs. By default, the HTML string contains pre-defined values, but users can customize it according to their requirements. (Refer Image - H2)
+            </p>
+            <img src="/our_products/Image1–H2-HTMLToPDF.png" alt="HTML to PDF H2" className="w-full rounded-xl border" style={{ borderColor: 'var(--border-default)' }} />
+          </div>
+          {/* Step 3 */}
+          <div className="mb-8">
+            <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>
+              3. After running the flow, the response will be a byte array that can be used as file content for various purposes, such as storing in Dataverse or SharePoint. (Refer Image - H3)
+            </p>
+            <img src="/our_products/Image1–H3-HTMLToPDF.png" alt="HTML to PDF H3" className="w-full rounded-xl border" style={{ borderColor: 'var(--border-default)' }} />
+          </div>
+          {/* Step 4 */}
+          <div className="mb-8">
+            <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>
+              4. Note, while creating a OneDrive, Dataverse, or SharePoint PDF file, you must parse the output of the connector using the below schema. (Refer Image – H4)
+            </p>
+            <img src="/our_products/Image–H4-HTMLToPDF.png" alt="HTML to PDF H4" className="w-full rounded-xl border mb-4" style={{ borderColor: 'var(--border-default)' }} />
+            <h3 className="mb-2 text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+              Schema
+            </h3>
+            <div className="overflow-auto rounded-xl border p-4 text-sm" style={{ borderColor: 'var(--border-default)', backgroundColor: 'var(--surface-2)', color: 'var(--text-secondary)' }}>
+              <pre className="whitespace-pre-wrap break-words">{`{ "type": "object", "properties": { "statusCode": {"type": "integer"}, "headers": { "type": "object", "properties": { "Pragma": {"type": "string"}, "Vary": {"type": "string"}, "Cache-Control": {"type": "string"}, "Set-Cookie": {"type": "string"}, "X-AspNet-Version": {"type": "string"}, "X-Powered-By": {"type": "string"}, "Timing-Allow-Origin": {"type": "string"}, "x-ms-apihub-cached-response": {"type": "string"}, "x-ms-apihub-obo": {"type": "string"}, "Date": {"type": "string"}, "Content-Type": {"type": "string"}, "Expires": {"type": "string"}, "Content-Length": {"type": "string"} } }, "body": {"type": "string"} } }`}</pre>
+            </div>
+          </div>
+          {/* Step 5 */}
+          <div>
+            <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>
+              5. The desired file can then be created using the body output from the parsed object. It&apos;s vital to remember that when creating PDF files for OneDrive or SharePoint, you must use the base64to Binary function to convert the body to binary. (Refer to Image H5 below)
+            </p>
+            <img src="/our_products/Image–H5-HTMLToPDF.png" alt="HTML to PDF H5" className="w-full rounded-xl border" style={{ borderColor: 'var(--border-default)' }} />
+          </div>
+        </div>
+
+        {/* Bottom CTAs intentionally removed */}
       </main>
     );
   }
