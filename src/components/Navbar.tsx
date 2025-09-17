@@ -68,6 +68,11 @@ const productCatalog = [
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const isDark = theme === 'dark';
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -287,30 +292,38 @@ export default function Navbar() {
               }}
               aria-label="Toggle color theme"
               role="switch"
-              aria-checked={theme === 'dark'}
+              aria-checked={mounted ? theme === 'dark' : false}
               className="theme-toggle"
             >
               <span className="sr-only">
-                {theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                {mounted
+                  ? theme === 'dark'
+                    ? 'Switch to light mode'
+                    : 'Switch to dark mode'
+                  : 'Toggle color theme'}
               </span>
               {/* Icons */}
               <SunIcon
                 aria-hidden
                 className="absolute left-2 h-4 w-4 transition-colors"
-                style={{ color: theme === 'dark' ? 'var(--text-primary)' : 'var(--text-primary)' }}
+                style={{ color: 'var(--text-primary)' }}
               />
               <MoonIcon
                 aria-hidden
                 className="absolute right-2 h-4 w-4 transition-colors"
                 style={{
-                  color: theme === 'dark' ? 'var(--text-primary)' : 'var(--text-secondary)',
+                  color: mounted
+                    ? theme === 'dark'
+                      ? 'var(--text-primary)'
+                      : 'var(--text-secondary)'
+                    : 'var(--text-secondary)',
                 }}
               />
               {/* Knob */}
               <motion.span
                 aria-hidden
                 className="theme-toggle-knob"
-                animate={{ x: theme === 'dark' ? 32 : 0 }}
+                animate={{ x: mounted ? (theme === 'dark' ? 32 : 0) : 0 }}
                 transition={{ type: 'spring', stiffness: 500, damping: 32 }}
               />
             </button>

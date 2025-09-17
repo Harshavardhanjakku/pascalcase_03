@@ -12,21 +12,27 @@ type ThemeContextValue = {
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('dark');
+  const [theme, setThemeState] = useState<Theme>('dark'); // Always start with dark on server
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const stored =
-      typeof window !== 'undefined' ? (localStorage.getItem('theme') as Theme | null) : null;
-    const system: Theme =
-      window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-    const initial = stored ?? system;
-    setThemeState(initial);
-    document.documentElement.setAttribute('data-theme', initial);
-  }, []);
+    // Get theme from the data-theme attribute set by ThemeScript
+    const dataTheme = document.documentElement.getAttribute('data-theme') as Theme | null;
+    if (dataTheme && dataTheme !== theme) {
+      setThemeState(dataTheme);
+    } else if (!dataTheme) {
+      // Fallback to localStorage or system preference
+      const stored = localStorage.getItem('theme') as Theme | null;
+      const system: Theme =
+        window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light';
+      const initial = stored ?? system;
+      setThemeState(initial);
+      document.documentElement.setAttribute('data-theme', initial);
+    }
+  }, [theme]);
 
   const setTheme = useCallback((t: Theme) => {
     setThemeState(t);
@@ -63,10 +69,23 @@ import Script from 'next/script';
 
 export function ThemeScript() {
   // Avoids flash of wrong theme; must run before hydration
-  const script = `(() => { try { const s = localStorage.getItem('theme');
-    const m = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', s || m);
-  } catch(_){} })();`;
+  const script = `(function() {
+    try {
+      const stored = localStorage.getItem('theme');
+      const system = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const theme = stored || system;
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.style.colorScheme = theme;
+      // Also set CSS custom properties immediately to prevent flash
+      document.documentElement.style.setProperty('--initial-theme', theme);
+    } catch(e) {
+      // Fallback to system preference
+      const system = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', system);
+      document.documentElement.style.colorScheme = system;
+      document.documentElement.style.setProperty('--initial-theme', system);
+    }
+  })();`;
   return (
     <Script id="theme-init" strategy="beforeInteractive">
       {script}
