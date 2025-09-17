@@ -14,6 +14,11 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.6, delay },
 });
 
+// Shared styles for product bands to ensure perfect visual consistency
+const bandTitleClass = 'font-extrabold text-3xl sm:text-4xl tracking-tight';
+const bandTextClass = 'mt-4 mx-auto max-w-3xl text-base sm:text-lg leading-relaxed';
+const bandCtaClass = 'product-cta rounded-full px-5 py-3 text-sm font-semibold shadow-medium hover:shadow-large transition-transform hover:-translate-y-0.5';
+
 export default function Hero() {
   return (
     <section className="hero-section">
@@ -21,112 +26,114 @@ export default function Hero() {
         <div className="flex flex-col items-center text-center">
           <div className="max-w-5xl">
             <motion.h1 className="hero-title" {...fadeUp(0)}>
-              Transform Dynamics 365 & Power Platform into Business Growth
+              We #build Dynamics 365 and Power Platform tools
             </motion.h1>
 
             <motion.p
               className="hero-subtitle mx-auto mt-4 max-w-3xl text-balance"
               {...fadeUp(0.08)}
             >
-              Purpose-built apps and add-ons that drive measurable productivity.
+              Transform your Dynamics 365 investment into tangible results with the help of a seasoned partner. Choose Pascalcase, where our expertise in Dynamics 365 and Power Platform will take your business to the next level.
             </motion.p>
 
-            <motion.div
-              className="mx-auto mt-5 grid max-w-3xl gap-2 text-center text-base leading-relaxed sm:text-lg"
-              style={{ color: 'var(--text-secondary)' }}
-              {...fadeUp(0.16)}
-            >
-              <p>Make Dataverse simpler. Accelerate decision-making. Automate the busywork.</p>
-              <p>We help you move beyond configuration—into sustainable innovation.</p>
-            </motion.div>
+            {/* Removed extra subtext lines per request */}
 
             <div
               className="mx-auto mt-8 h-px w-40"
               style={{ backgroundColor: 'var(--border-subtle)' }}
             />
 
-            <motion.ul
-              className="mt-8 grid grid-cols-1 gap-6 text-left sm:grid-cols-2 lg:grid-cols-4"
-              {...fadeUp(0.2)}
-              aria-label="Key product highlights"
-            >
-              <li className="h-full">
-                <div className="module-card flex h-full flex-col">
-                  <div className="module-icon">
-                    <CircleStackIcon className="h-8 w-8" aria-hidden />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="module-title">Metadata Browser</h3>
-                    <p className="module-description">
-                      Explore and export Dataverse tables, columns and relationships with ease.
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className="h-full">
-                <div className="module-card flex h-full flex-col">
-                  <div className="module-icon">
-                    <BanknotesIcon className="h-8 w-8" aria-hidden />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="module-title">Commission 365</h3>
-                    <p className="module-description">
-                      Flexible commissions, incentives and bonus plans.
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className="h-full">
-                <div className="module-card flex h-full flex-col">
-                  <div className="module-icon">
-                    <SparklesIcon className="h-8 w-8" aria-hidden />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="module-title">AI Autocloser</h3>
-                    <p className="module-description">Resolve non-actionable cases with AI.</p>
-                  </div>
-                </div>
-              </li>
-              <li className="h-full">
-                <div className="module-card flex h-full flex-col">
-                  <div className="module-icon">
-                    <ArrowPathRoundedSquareIcon className="h-8 w-8" aria-hidden />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="module-title">Flow Monitor</h3>
-                    <p className="module-description">
-                      Track and optimize Power Automate flows across environments.
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </motion.ul>
-
-            <motion.div className="mt-8 flex items-center justify-center gap-4" {...fadeUp(0.24)}>
+            {/* Primary CTA */}
+            <motion.div className="mt-8 flex items-center justify-center" {...fadeUp(0.2)}>
               <Link
-                href="/products"
-                aria-label="Explore all products"
-                className="inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold shadow-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                href="https://teams.microsoft.com/l/chat/0/0?users=satish@pascalcase.com,likitha@pascalcase.com&topicName=Website%20Inquiry"
+                aria-label="Chat on Microsoft Teams"
+                className="inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
                 style={{
                   backgroundColor: 'var(--color-brand)',
                   color: 'var(--color-brand-foreground)',
                 }}
               >
-                Explore All Products
-              </Link>
-              <Link
-                href="https://teams.microsoft.com/l/chat/0/0?users=satish@pascalcase.com,likitha@pascalcase.com&topicName=Website%20Inquiry"
-                aria-label="Chat with us on Microsoft Teams"
-                className="inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                style={{
-                  backgroundColor: 'transparent',
-                  color: 'var(--text-primary)',
-                  border: '1px solid var(--border-default)',
-                }}
-              >
-                Chat with Us on Microsoft Teams
+                Chat on Microsoft Teams
               </Link>
             </motion.div>
+
+            {/* Products overview bands (full-width) */}
+            <motion.div className="mt-10 space-y-0" {...fadeUp(0.24)}>
+              {/* Helper to stretch background edge-to-edge */}
+              <div className="-mx-4 sm:-mx-6">
+                {/* Metadata Browser */}
+                <section className="py-12 sm:py-14" style={{ backgroundColor: 'var(--surface-1)' }}>
+                  <div className="mx-auto max-w-5xl px-4 sm:px-6 text-center">
+                    <motion.div className="inline-flex items-center justify-center gap-3" {...fadeUp(0)}>
+                      <CircleStackIcon className="h-7 w-7" aria-hidden />
+                      <h3 className={bandTitleClass} style={{ color: 'var(--text-primary)' }}>Pascalcase Metadata Browser for Dataverse</h3>
+                    </motion.div>
+                    <motion.p className={bandTextClass} style={{ color: 'var(--text-secondary)' }} {...fadeUp(0.08)}>
+                      With over 8,000 downloads, We are the creators of the Metadata browser for Dynamics 365 and Power Platform add-on for Microsoft Edge, which allows you to examine and export Dataverse metadata such as tables, columns, relationships, keys, etc.
+                    </motion.p>
+                    <motion.div className="mt-6 flex justify-center gap-3" {...fadeUp(0.16)}>
+                      <Link href="https://microsoftedge.microsoft.com/addons/detail/metadata-browser-for-dyna/fdfelmicclblfanogpnejdogjjildbkf?hl=en-GB" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>
+                        Download for Microsoft Edge
+                      </Link>
+                    </motion.div>
+                  </div>
+                </section>
+
+                {/* Commission 365 */}
+                <section className="py-12 sm:py-14">
+                  <div className="mx-auto max-w-5xl px-4 sm:px-6 text-center">
+                    <motion.div className="inline-flex items-center justify-center gap-3" {...fadeUp(0)}>
+                      <BanknotesIcon className="h-7 w-7" aria-hidden />
+                      <h3 className={bandTitleClass} style={{ color: 'var(--text-primary)' }}>Commission 365</h3>
+                    </motion.div>
+                    <motion.p className={bandTextClass} style={{ color: 'var(--text-secondary)' }} {...fadeUp(0.08)}>
+                      Commission 365 is a tool by Pascalcase for the Dynamics 365 Sales App & PowerApps that allows you to configure commissions, incentives and bonus plans for your sales staff. You can customise plans by determining when sales representatives receive commission, the sort of calculation to be used to determine commission, and so on.
+                    </motion.p>
+                    <motion.div className="mt-6 flex justify-center gap-3" {...fadeUp(0.16)}>
+                      <Link href="https://pascalcase.com/Home/Commission365" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>More Info</Link>
+                      <Link href="https://appsource.microsoft.com/en/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.commission365?tab=Overview" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>Download from Microsoft AppSource</Link>
+                    </motion.div>
+                  </div>
+                </section>
+
+                {/* AI Autocloser */}
+                <section className="py-12 sm:py-14" style={{ backgroundColor: 'var(--surface-1)' }}>
+                  <div className="mx-auto max-w-5xl px-4 sm:px-6 text-center">
+                    <motion.div className="inline-flex items-center justify-center gap-3" {...fadeUp(0)}>
+                      <SparklesIcon className="h-7 w-7" aria-hidden />
+                      <h3 className={bandTitleClass} style={{ color: 'var(--text-primary)' }}>AI Autocloser</h3>
+                    </motion.div>
+                    <motion.p className={bandTextClass} style={{ color: 'var(--text-secondary)' }} {...fadeUp(0.08)}>
+                      Resolve your cases quickly using AI Autocloser. It is an app for the Dataverse that auto-resolves cases that require no further action. The app closes only non-actionable tickets, where the customer has thanked you and has no additional requests to be made.
+                    </motion.p>
+                    <motion.div className="mt-6 flex justify-center gap-3" {...fadeUp(0.16)}>
+                      <Link href="https://pascalcase.com/Home/AIAutocloser" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>More Info</Link>
+                      <Link href="https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.autocloser?tab=DetailsAndSupport" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>Download from Microsoft AppSource</Link>
+                    </motion.div>
+                  </div>
+                </section>
+
+                {/* Flow Monitor */}
+                <section className="py-12 sm:py-14">
+                  <div className="mx-auto max-w-5xl px-4 sm:px-6 text-center">
+                    <motion.div className="inline-flex items-center justify-center gap-3" {...fadeUp(0)}>
+                      <ArrowPathRoundedSquareIcon className="h-7 w-7" aria-hidden />
+                      <h3 className={bandTitleClass} style={{ color: 'var(--text-primary)' }}>Flow Monitor for Power Automate</h3>
+                    </motion.div>
+                    <motion.p className={bandTextClass} style={{ color: 'var(--text-secondary)' }} {...fadeUp(0.08)}>
+                      Flow Monitor provides seamless tracking and in-depth monitoring of your Power Automate flows across all environments. Gain detailed insights into flow performance, including execution duration and failure reasons.
+                    </motion.p>
+                    <motion.div className="mt-6 flex justify-center gap-3" {...fadeUp(0.16)}>
+                      <Link href="https://pascalcase.com/Home/FlowMonitor" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>More Info</Link>
+                      <Link href="https://appsource.microsoft.com/en-us/product/web-apps/pascalcasesoftwareprivatelimited1662384934323.flowmonitor?ocid=GTMRewards_WhatsNewBlog_flowmonitor_08012024" target="_blank" className={bandCtaClass} style={{ backgroundColor: 'var(--color-brand)', color: 'var(--color-brand-foreground)' }}>Download from Microsoft AppSource</Link>
+                    </motion.div>
+                  </div>
+                </section>
+              </div>
+            </motion.div>
+
+
           </div>
         </div>
       </div>
