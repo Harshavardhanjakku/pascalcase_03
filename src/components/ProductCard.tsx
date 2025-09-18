@@ -1,6 +1,5 @@
 'use client';
-import { useState } from 'react';
-import { FileTextIcon, GitHubLogoIcon, DownloadIcon } from '@radix-ui/react-icons';
+import { DownloadIcon } from '@radix-ui/react-icons';
 import { motion } from 'framer-motion';
 
 type Tag = 'Free' | 'AppSource' | 'Edge' | 'Popular';
