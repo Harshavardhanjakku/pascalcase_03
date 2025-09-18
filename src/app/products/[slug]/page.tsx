@@ -1185,10 +1185,10 @@ export default async function ProductDetail({ params }: Params) {
         </div>
 
         {/* Main Content */}
-        <div className="space-y-8">
-          {/* Two Column Layout for Main Cards */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {/* Left Card - Main Product */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {/* Left Column - Main Product */}
+          <div className="space-y-8 lg:col-span-2">
+            {/* Product Description */}
             <div
               className="rounded-2xl p-8 backdrop-blur-sm"
               style={{
@@ -1208,7 +1208,7 @@ export default async function ProductDetail({ params }: Params) {
               </p>
 
               <div
-                className="mb-6 rounded-xl border-l-4 border-blue-500 p-6"
+                className="rounded-xl border-l-4 border-blue-500 p-6"
                 style={{ backgroundColor: 'var(--surface-2)' }}
               >
                 <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
@@ -1220,19 +1220,41 @@ export default async function ProductDetail({ params }: Params) {
                   always navigate to your solution to find the logical names.
                 </p>
               </div>
-
-              <a
-                href="https://microsoftedge.microsoft.com/addons/detail/metadata-browser-for-dyna/fdfelmicclblfanogpnejdogjjildbkf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow transition-colors hover:from-blue-700 hover:to-indigo-700"
-              >
-                <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
-                Download from Microsoft Edge
-              </a>
+              <div className="mt-6">
+                <a
+                  href="https://microsoftedge.microsoft.com/addons/detail/metadata-browser-for-dyna/fdfelmicclblfanogpnejdogjjildbkf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow transition-colors hover:from-blue-700 hover:to-indigo-700"
+                >
+                  <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
+                  Download from Microsoft Edge
+                </a>
+              </div>
             </div>
 
-            {/* Right Card - Alternative Product */}
+            {/* Video */}
+            <div
+              className="rounded-2xl p-4 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <div className="aspect-video w-full overflow-hidden rounded-xl">
+                <iframe
+                  className="h-full w-full"
+                  src="https://www.youtube.com/embed/WGOKc2VnODY"
+                  title="Metadata Browser for Dataverse"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            {/* Features */}
             <div
               className="rounded-2xl p-8 backdrop-blur-sm"
               style={{
@@ -1241,10 +1263,44 @@ export default async function ProductDetail({ params }: Params) {
                 border: '1px solid',
               }}
             >
-              <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                Safyr for Microsoft Dynamics 365 Metadata
+              <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                Features
               </h2>
-              <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                {[
+                  'Download Microsoft Dataverse metadata as a .mdb file',
+                  'Direct extraction from your Dataverse instance',
+                  'Browse tables, columns, entities, keys, option sets, relationships',
+                  'Expand tables to view primary/foreign keys, logical and schema names',
+                  'Accelerate discovery for data catalog, governance, warehouse, MDM and integration projects',
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
+                    <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Alternative */}
+          <div className="space-y-6">
+            {/* Safyr Section */}
+            <div
+              className="rounded-2xl p-6 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h3 className="mb-4 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                Safyr for Microsoft Dynamics 365 Metadata
+              </h3>
+              <p
+                className="mb-4 text-sm leading-relaxed"
+                style={{ color: 'var(--text-secondary)' }}
+              >
                 Safyr for Microsoft Dynamics 365 Metadata is a powerful metadata tool, which allows
                 you to download metadata as a .mdb file. The data present in the file is directly
                 extracted from your Microsoft Dataverse instance. This file contains a list of
@@ -1260,63 +1316,11 @@ export default async function ProductDetail({ params }: Params) {
                 href="https://www.silwoodtechnology.com/products/safyr-for-microsoft-dynamics-365/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
+                className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
               >
                 <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
                 Go to Silwood Technology website
               </a>
-            </div>
-          </div>
-
-          {/* Video Section */}
-          <div
-            className="rounded-2xl p-8 backdrop-blur-sm"
-            style={{
-              backgroundColor: 'var(--surface-card)',
-              borderColor: 'var(--border-default)',
-              border: '1px solid',
-            }}
-          >
-            <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-              Watch the Demo
-            </h2>
-            <div className="aspect-video w-full overflow-hidden rounded-xl">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube.com/embed/WGOKc2VnODY"
-                title="Metadata Browser for Dataverse"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
-          </div>
-
-          {/* Features Section */}
-          <div
-            className="rounded-2xl p-8 backdrop-blur-sm"
-            style={{
-              backgroundColor: 'var(--surface-card)',
-              borderColor: 'var(--border-default)',
-              border: '1px solid',
-            }}
-          >
-            <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-              Features
-            </h2>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              {[
-                'Download Microsoft Dataverse metadata as a .mdb file',
-                'Direct extraction from your Dataverse instance',
-                'Browse tables, columns, entities, keys, option sets, relationships',
-                'Expand tables to view primary/foreign keys, logical and schema names',
-                'Accelerate discovery for data catalog, governance, warehouse, MDM and integration projects',
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
-                  <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
