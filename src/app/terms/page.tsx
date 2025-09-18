@@ -19,12 +19,12 @@ export default function TermsPage() {
       </header>
 
       <p className="mt-8 text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-        Welcome to Pascalcase.com! These Terms of Service ("Terms") govern your use of our website
-        and our suite of products and services, including Metadata Browser, Commission 365, Flow
-        Monitor, and other tools built for Dynamics 365 and Power Platform (collectively,
-        "Services"). By accessing or using our Services, you agree to these Terms. If you don&apos;t
-        agree, please refrain from using our Services. We may update these Terms periodically, and
-        changes will be posted here with an updated effective date.
+        Welcome to Pascalcase.com! These Terms of Service (&quot;Terms&quot;) govern your use of our
+        website and our suite of products and services, including Metadata Browser, Commission 365,
+        Flow Monitor, and other tools built for Dynamics 365 and Power Platform (collectively,
+        &quot;Services&quot;). By accessing or using our Services, you agree to these Terms. If you
+        don&apos;t agree, please refrain from using our Services. We may update these Terms
+        periodically, and changes will be posted here with an updated effective date.
       </p>
 
       <Section title="1. Use of Our Services">

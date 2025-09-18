@@ -38,8 +38,8 @@ export default function PrivacyPage() {
 
       <Section title="Types of Data Collected">
         While using our Service, we may ask you to provide us with certain personally identifiable
-        information that can be used to contact or identify you ("Personal Data"). Personally,
-        identifiable information may include, but is not limited to:
+        information that can be used to contact or identify you (&quot;Personal Data&quot;).
+        Personally, identifiable information may include, but is not limited to:
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li>Email address</li>
           <li>First name and last name</li>
@@ -49,11 +49,11 @@ export default function PrivacyPage() {
       </Section>
 
       <Section title="Usage Data">
-        We may also collect information about how the Service is accessed and used ("Usage Data").
-        This Usage Data may include information such as your computer&apos;s Internet Protocol
-        address (e.g. IP address), browser type, browser version, the pages of our Service that you
-        visit, the time and date of your visit, the time spent on those pages, unique device
-        identifiers and other diagnostic data.
+        We may also collect information about how the Service is accessed and used (&quot;Usage
+        Data&quot;). This Usage Data may include information such as your computer&apos;s Internet
+        Protocol address (e.g. IP address), browser type, browser version, the pages of our Service
+        that you visit, the time and date of your visit, the time spent on those pages, unique
+        device identifiers and other diagnostic data.
       </Section>
 
       <Section title="Tracking & Cookies Data">
@@ -131,11 +131,11 @@ export default function PrivacyPage() {
       </Section>
 
       <Section title="Service Providers">
-        We may employ third party companies and individuals to facilitate our Service ("Service
-        Providers"), to provide the Service on our behalf, to perform Service-related services or to
-        assist us in analyzing how our Service is used. These third parties have access to your
-        Personal Data only to perform these tasks on our behalf and are obligated not to disclose or
-        use it for any other purpose.
+        We may employ third party companies and individuals to facilitate our Service (&quot;Service
+        Providers&quot;), to provide the Service on our behalf, to perform Service-related services
+        or to assist us in analyzing how our Service is used. These third parties have access to
+        your Personal Data only to perform these tasks on our behalf and are obligated not to
+        disclose or use it for any other purpose.
       </Section>
 
       <Section title="Links to Other Sites">
@@ -159,9 +159,9 @@ export default function PrivacyPage() {
         We may update our Privacy Policy from time to time. We will notify you of any changes by
         posting the new Privacy Policy on this page. We will let you know via email and/or a
         prominent notice on our Service, prior to the change becoming effective and update the
-        "effective date" at the top of this Privacy Policy. You are advised to review this Privacy
-        Policy periodically for any changes. Changes to this Privacy Policy are effective when they
-        are posted on this page.
+        &quot;effective date&quot; at the top of this Privacy Policy. You are advised to review this
+        Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective
+        when they are posted on this page.
       </Section>
 
       <Section title="Contact Us">
