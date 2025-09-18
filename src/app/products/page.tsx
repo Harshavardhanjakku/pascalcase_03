@@ -39,7 +39,7 @@ const products: Product[] = [
     title: 'Commission 365',
     description: 'Configure commissions, incentives and bonus plans for your sales teams.',
     icon: <RocketIcon />,
-    tags: ['Popular'],
+    // tags removed
     downloadUrl:
       'https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.commission365?tab=Overview',
   },

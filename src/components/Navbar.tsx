@@ -204,14 +204,6 @@ export default function Navbar() {
                                       style={{ color: isDark ? '#e5e7eb' : '#1e293b' }}
                                     >
                                       {p.label}
-                                      {p.badge && (
-                                        <span
-                                          className="rounded-full px-2 py-0.5 text-[10px] font-semibold text-white"
-                                          style={{ backgroundColor: '#ea580c' }}
-                                        >
-                                          {p.badge}
-                                        </span>
-                                      )}
                                     </span>
                                     <span
                                       className="truncate text-xs"

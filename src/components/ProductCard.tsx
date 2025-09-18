@@ -38,18 +38,7 @@ export default function ProductCard({ product }: { product: Product }) {
             {/* Kebab menu removed */}
           </div>
           <p className="text-text-muted mt-1 line-clamp-2 text-sm">{product.description}</p>
-          {product.tags && (
-            <div className="mt-2 flex flex-wrap gap-2">
-              {product.tags.map((t) => (
-                <span
-                  key={t}
-                  className="border-border-subtle text-text-muted rounded-full border px-2 py-0.5 text-[10px]"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          )}
+          {/* Tags removed as requested */}
           <div className="mt-3 flex items-center gap-2">
             {product.downloadUrl && (
               <motion.a
@@ -69,7 +58,7 @@ export default function ProductCard({ product }: { product: Product }) {
               className="product-cta product-cta--ghost"
               onClick={() => track('docs')}
             >
-              Docs
+              Know more
             </a>
           </div>
         </div>
