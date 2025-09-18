@@ -13,7 +13,7 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(1);
-  const [viewMode, setViewMode] = useState<'flash' | 'grid'>('flash');
+  const [viewMode, setViewMode] = useState<'flash' | 'grid'>('grid');
   const [slideWidth, setSlideWidth] = useState(0);
 
   const GAP_PX = 16; // gap-4
@@ -88,12 +88,15 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: false }}
-        className="mb-4 flex items-center justify-between"
+        className="mb-4 flex items-center justify-center"
       >
-        <h2 className="text-xl font-semibold" style={{ color: 'var(--text-primary)' }}>
-          Latest from the blog
+        <h2 className="text-center text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>
+          Blogs
         </h2>
-        {/* Segmented control: Grid / Flashcard */}
+      </motion.div>
+
+      {/* Segmented control: Grid / Flashcard (restored), centered below the title */}
+      <div className="mb-4 flex items-center justify-center">
         <div
           className="relative inline-flex items-center rounded-full border p-1 backdrop-blur"
           style={{ borderColor: 'var(--border-subtle)', backgroundColor: 'var(--surface-card)' }}
@@ -133,6 +136,7 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
                 d="M9.143 4H4.857A.857.857 0 0 0 4 4.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 10 9.143V4.857A.857.857 0 0 0 9.143 4Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 20 9.143V4.857A.857.857 0 0 0 19.143 4Zm-10 10H4.857a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286A.857.857 0 0 0 9.143 14Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286a.857.857 0 0 0-.857-.857Z"
               />
             </svg>
+            Grid
           </button>
           <button
             role="tab"
@@ -162,9 +166,10 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
               <path d="M8 10h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               <path d="M8 14h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
+            Cards
           </button>
         </div>
-      </motion.div>
+      </div>
 
       {viewMode === 'grid' ? (
         <motion.div
