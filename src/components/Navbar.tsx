@@ -4,7 +4,6 @@ import { useTheme } from '@/components/theme/ThemeProvider';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   CaretDownIcon,
-  MagnifyingGlassIcon,
   SunIcon,
   MoonIcon,
   RocketIcon,
@@ -106,7 +105,7 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <nav aria-label="Primary" className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="flex h-16 items-center justify-between gap-4">
+        <div className="relative flex h-16 items-center justify-between gap-4">
           {/* Left: Logo */}
           <Link
             href="/"
@@ -123,8 +122,11 @@ export default function Navbar() {
             <span className="hidden sm:inline">Pascalcase</span>
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden items-center gap-1 md:flex" ref={menuRef}>
+          {/* Desktop nav (centered) */}
+          <div
+            className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex"
+            ref={menuRef}
+          >
             {navItems.map((item) => {
               const hasChildren = 'children' in item;
               return (
@@ -261,24 +263,8 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Center: Search (desktop) */}
-          <div className="hidden w-full max-w-sm items-center md:flex">
-            <div className="group relative w-full">
-              <MagnifyingGlassIcon
-                className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2"
-                style={{ color: 'var(--text-secondary)' }}
-                aria-hidden
-              />
-              <input aria-label="Search" placeholder="Search..." className="search-input" />
-              <button
-                aria-label="Clear search"
-                className="absolute top-1/2 right-2 -translate-y-1/2 text-xs"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                Esc
-              </button>
-            </div>
-          </div>
+          {/* Center spacer (was search) */}
+          <div className="hidden flex-1 md:block" />
 
           {/* Right: Theme + Profile + Mobile toggle */}
           <div className="flex items-center gap-2">
@@ -351,20 +337,6 @@ export default function Navbar() {
               className="overflow-hidden md:hidden"
             >
               <div className="space-y-1 py-3">
-                <div className="px-3 pb-2">
-                  <div className="relative">
-                    <MagnifyingGlassIcon
-                      className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2"
-                      style={{ color: 'var(--text-secondary)' }}
-                      aria-hidden
-                    />
-                    <input
-                      aria-label="Search"
-                      placeholder="Search..."
-                      className="search-input pr-3 pl-9"
-                    />
-                  </div>
-                </div>
                 {navItems.map((item) => {
                   const hasChildren = 'children' in item;
                   return (
