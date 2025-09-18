@@ -14,12 +14,16 @@ const products: Product[] = [
     description: 'Examine and export Dataverse metadata: tables, columns, relationships, keys.',
     icon: <ReaderIcon />,
     tags: ['Edge'],
+    downloadUrl:
+      'https://microsoftedge.microsoft.com/addons/detail/metadata-browser-for-dyna/fdfelmicclblfanogpnejdogjjildbkf',
   },
   {
     slug: 'data-mask',
     title: 'Data Mask for Dataverse',
     description: 'Protect sensitive data with deterministic masking and reversible tokens.',
     icon: <LayersIcon />,
+    downloadUrl:
+      'https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.datamask?tab=Overview',
   },
   {
     slug: 'ai-autocloser',
@@ -27,6 +31,8 @@ const products: Product[] = [
     description: 'Auto-resolve non-actionable support tickets using intelligent rules.',
     icon: <MagicWandIcon />,
     tags: ['AppSource'],
+    downloadUrl:
+      'https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.autocloser?tab=DetailsAndSupport',
   },
   {
     slug: 'commission-365',
@@ -34,6 +40,8 @@ const products: Product[] = [
     description: 'Configure commissions, incentives and bonus plans for your sales teams.',
     icon: <RocketIcon />,
     tags: ['Popular'],
+    downloadUrl:
+      'https://appsource.microsoft.com/en-us/product/dynamics-365/pascalcasesoftwareprivatelimited1662384934323.commission365?tab=Overview',
   },
   {
     slug: 'html-to-pdf',
@@ -41,12 +49,15 @@ const products: Product[] = [
     description: 'Generate pixel-perfect PDFs from HTML templates and data.',
     icon: <FileTextIcon />,
     tags: ['Free'],
+    // No downloadUrl for this product (button hidden)
   },
   {
     slug: 'flow-monitor',
     title: 'Flow Monitor',
     description: 'Monitor Power Automate flows: duration, failures and insights across envs.',
     icon: <RocketIcon />,
+    downloadUrl:
+      'https://appsource.microsoft.com/en-us/product/web-apps/pascalcasesoftwareprivatelimited1662384934323.flowmonitor?ocid=GTMRewards_WhatsNewBlog_flowmonitor_08012024',
   },
 ];
 

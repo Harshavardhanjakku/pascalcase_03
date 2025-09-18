@@ -65,6 +65,9 @@ const productCatalog = [
   },
 ];
 
+// Flattened list for a simple 3x2 grid in the dropdown (no categories)
+const allProducts = productCatalog.flatMap((group) => group.items);
+
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -165,75 +168,63 @@ export default function Navbar() {
                           backdropFilter: 'none',
                         }}
                       >
-                        <div className="dropdown-content grid grid-cols-1 gap-4 md:grid-cols-3">
-                          {productCatalog.map((group) => (
-                            <div key={group.category}>
-                              <h3
-                                className="px-2 pb-2 text-xs font-semibold tracking-wider uppercase"
-                                style={{ color: isDark ? '#94a3b8' : '#64748b' }}
-                              >
-                                {group.category}
-                              </h3>
-                              <ul className="space-y-2">
-                                {group.items.map((p) => {
-                                  const Icon = p.icon;
-                                  return (
-                                    <li key={p.label}>
-                                      <a
-                                        href={p.href}
-                                        className="group flex items-start gap-3 rounded-xl px-3 py-3 transition-colors"
-                                        style={{
-                                          backgroundColor: 'transparent',
-                                        }}
-                                        onMouseEnter={(e) => {
-                                          e.currentTarget.style.backgroundColor = isDark
-                                            ? '#1f2937'
-                                            : '#f1f5f9';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                          e.currentTarget.style.backgroundColor = 'transparent';
-                                        }}
-                                        role="menuitem"
-                                      >
+                        <ul className="dropdown-content grid grid-cols-1 gap-4 md:grid-cols-2">
+                          {allProducts.map((p) => {
+                            const Icon = p.icon;
+                            return (
+                              <li key={p.label}>
+                                <a
+                                  href={p.href}
+                                  className="group flex items-start gap-3 rounded-xl px-3 py-3 transition-colors"
+                                  style={{
+                                    backgroundColor: 'transparent',
+                                  }}
+                                  onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor = isDark
+                                      ? '#1f2937'
+                                      : '#f1f5f9';
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor = 'transparent';
+                                  }}
+                                  role="menuitem"
+                                >
+                                  <span
+                                    className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
+                                    style={{
+                                      backgroundColor: isDark ? '#374151' : '#f1f5f9',
+                                      color: isDark ? '#e5e7eb' : '#1e293b',
+                                    }}
+                                  >
+                                    <Icon className="h-4 w-4" aria-hidden />
+                                  </span>
+                                  <span className="flex min-w-0 flex-col">
+                                    <span
+                                      className="flex items-center gap-2 text-sm font-medium"
+                                      style={{ color: isDark ? '#e5e7eb' : '#1e293b' }}
+                                    >
+                                      {p.label}
+                                      {p.badge && (
                                         <span
-                                          className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
-                                          style={{
-                                            backgroundColor: isDark ? '#374151' : '#f1f5f9',
-                                            color: isDark ? '#e5e7eb' : '#1e293b',
-                                          }}
+                                          className="rounded-full px-2 py-0.5 text-[10px] font-semibold text-white"
+                                          style={{ backgroundColor: '#ea580c' }}
                                         >
-                                          <Icon className="h-4 w-4" aria-hidden />
+                                          {p.badge}
                                         </span>
-                                        <span className="flex min-w-0 flex-col">
-                                          <span
-                                            className="flex items-center gap-2 text-sm font-medium"
-                                            style={{ color: isDark ? '#e5e7eb' : '#1e293b' }}
-                                          >
-                                            {p.label}
-                                            {p.badge && (
-                                              <span
-                                                className="rounded-full px-2 py-0.5 text-[10px] font-semibold text-white"
-                                                style={{ backgroundColor: '#ea580c' }}
-                                              >
-                                                {p.badge}
-                                              </span>
-                                            )}
-                                          </span>
-                                          <span
-                                            className="truncate text-xs"
-                                            style={{ color: isDark ? '#94a3b8' : '#64748b' }}
-                                          >
-                                            Click to learn more
-                                          </span>
-                                        </span>
-                                      </a>
-                                    </li>
-                                  );
-                                })}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
+                                      )}
+                                    </span>
+                                    <span
+                                      className="truncate text-xs"
+                                      style={{ color: isDark ? '#94a3b8' : '#64748b' }}
+                                    >
+                                      Click to learn more
+                                    </span>
+                                  </span>
+                                </a>
+                              </li>
+                            );
+                          })}
+                        </ul>
                         <div className="mt-4 flex justify-end">
                           <Link
                             href="/products"
