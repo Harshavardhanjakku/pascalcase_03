@@ -2,19 +2,16 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '@/components/theme/ThemeProvider';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  CaretDownIcon,
-  SunIcon,
-  MoonIcon,
-  RocketIcon,
-  MagicWandIcon,
-  FileTextIcon,
-  LayersIcon,
-  ReaderIcon,
-} from '@radix-ui/react-icons';
+import { CaretDownIcon, SunIcon, MoonIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BanknotesIcon } from '@heroicons/react/24/outline';
+// Helper to render product logos in the dropdown just like Products page
+const makeLogoIcon =
+  (src: string, alt: string) =>
+  ({ className }: { className?: string }) => (
+    // Using <img> to align with products page icons
+    <img src={src} alt={alt} className={className ?? ''} />
+  );
 
 type NavItem =
   | { label: string; href: string }
@@ -42,13 +39,30 @@ const productCatalog = [
   {
     category: 'Data Tools',
     items: [
-      { label: 'Metadata Browser', href: '/products/metadata-browser', icon: ReaderIcon },
-      { label: 'Data Mask for Dataverse', href: '/products/data-mask', icon: LayersIcon },
+      {
+        label: 'Metadata Browser',
+        href: '/products/metadata-browser',
+        icon: makeLogoIcon('/our_products/logos/Metadata_Browser.png', 'Metadata Browser logo'),
+      },
+      {
+        label: 'Data Mask for Dataverse',
+        href: '/products/data-mask',
+        icon: makeLogoIcon('/our_products/logos/Data Mask Tool', 'Data Mask for Dataverse logo'),
+      },
     ],
   },
   {
     category: 'AI Tools',
-    items: [{ label: 'AI Autocloser', href: '/products/ai-autocloser', icon: MagicWandIcon }],
+    items: [
+      {
+        label: 'AI Autocloser',
+        href: '/products/ai-autocloser',
+        icon: makeLogoIcon(
+          '/our_products/logos/AI Autocloser.5def4e0d-2e21-4e49-b8e8-3c8463a090c5',
+          'AI Autocloser logo',
+        ),
+      },
+    ],
   },
   {
     category: 'Business Tools',
@@ -56,11 +70,25 @@ const productCatalog = [
       {
         label: 'Commission 365',
         href: '/products/commission-365',
-        icon: BanknotesIcon,
+        icon: makeLogoIcon(
+          '/our_products/logos/Commission 365.a4e8130e-a236-4e16-9a8b-cec40c92775c',
+          'Commission 365 logo',
+        ),
         badge: 'Popular',
       },
-      { label: 'HTML To PDF Converter', href: '/products/html-to-pdf', icon: FileTextIcon },
-      { label: 'Flow Monitor', href: '/products/flow-monitor', icon: RocketIcon },
+      {
+        label: 'HTML To PDF Converter',
+        href: '/products/html-to-pdf',
+        icon: makeLogoIcon('/our_products/logos/HTML_To_PDF.png', 'HTML To PDF Converter logo'),
+      },
+      {
+        label: 'Flow Monitor',
+        href: '/products/flow-monitor',
+        icon: makeLogoIcon(
+          '/our_products/logos/Flow_Monitor.bf7976ba-dd43-4110-a145-d649264b7869',
+          'Flow Monitor logo',
+        ),
+      },
     ],
   },
 ];
