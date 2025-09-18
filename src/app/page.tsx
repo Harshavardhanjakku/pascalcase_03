@@ -17,21 +17,43 @@ export default async function Home() {
       <Hero />
       <CustomersSection />
       <ModulesSection />
-      <section id="why" className="mx-auto max-w-7xl px-4 sm:px-6 mt-14 scroll-mt-24 md:scroll-mt-28">
+      <section
+        id="why"
+        className="mx-auto mt-4 max-w-7xl scroll-mt-24 px-4 sm:px-6 md:scroll-mt-28"
+      >
         <HeroIntro />
       </section>
-      <section id="features" className="mx-auto max-w-7xl px-4 sm:px-6 mt-6">
+      <section id="features" className="mx-auto mt-6 max-w-7xl px-4 sm:px-6">
         <FeatureGrid />
         <div className="mt-6 flex justify-end">
-          <Link href="/about" className="inline-flex items-center gap-2 rounded-md border px-4 py-2 text-sm transition-colors hover:opacity-80" style={{ borderColor: 'var(--border-strong)', backgroundColor: 'var(--surface-2)', color: 'var(--text-primary)' }}>
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 rounded-md border px-4 py-2 text-sm transition-colors hover:opacity-80"
+            style={{
+              borderColor: 'var(--border-strong)',
+              backgroundColor: 'var(--surface-2)',
+              color: 'var(--text-primary)',
+            }}
+          >
             More details →
           </Link>
         </div>
       </section>
-      <section id="blog" className="mx-auto max-w-7xl px-4 sm:px-6 mt-12 scroll-mt-24 md:scroll-mt-28">
+      <section
+        id="blog"
+        className="mx-auto mt-12 max-w-7xl scroll-mt-24 px-4 sm:px-6 md:scroll-mt-28"
+      >
         <BlogSlider posts={posts} />
         <div className="mt-6 flex justify-end">
-          <Link href="/blog" className="inline-flex items-center gap-2 rounded-md border px-4 py-2 text-sm transition-colors hover:opacity-80" style={{ borderColor: 'var(--border-strong)', backgroundColor: 'var(--surface-2)', color: 'var(--text-primary)' }}>
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 rounded-md border px-4 py-2 text-sm transition-colors hover:opacity-80"
+            style={{
+              borderColor: 'var(--border-strong)',
+              backgroundColor: 'var(--surface-2)',
+              color: 'var(--text-primary)',
+            }}
+          >
             More Blogs →
           </Link>
         </div>

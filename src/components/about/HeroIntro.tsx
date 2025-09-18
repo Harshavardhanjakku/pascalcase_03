@@ -1,13 +1,13 @@
-"use client";
+'use client';
 import { motion } from 'framer-motion';
 
 export default function HeroIntro() {
   return (
-    <section className="relative mx-auto max-w-6xl px-4 sm:px-6 py-16">
+    <section className="relative mx-auto max-w-6xl px-4 py-4 sm:px-6">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-500/20 to-blue-600/20 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-600/20 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-gradient-to-tr from-green-500/20 to-blue-600/20 blur-3xl"></div>
       </div>
 
       <div className="relative">
@@ -16,16 +16,15 @@ export default function HeroIntro() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="mb-4 text-center"
         >
-
           {/* Main Heading */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-4 mb-6"
+            className="mb-3 flex items-center justify-center gap-3"
           >
             <motion.div
               initial={{ rotate: -6, scale: 0.9, opacity: 0 }}
@@ -45,7 +44,10 @@ export default function HeroIntro() {
                 <rect x="10" y="21" width="4" height="1" rx="0.5" />
               </svg>
             </motion.div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold" style={{ color: 'var(--text-primary)' }}>
+            <h1
+              className="text-4xl font-bold sm:text-5xl lg:text-6xl"
+              style={{ color: 'var(--text-primary)' }}
+            >
               Why Pascalcase?
             </h1>
           </motion.div>
@@ -56,15 +58,14 @@ export default function HeroIntro() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto text-lg sm:text-xl leading-relaxed"
+            className="mx-auto max-w-4xl text-lg leading-relaxed sm:text-xl"
             style={{ color: 'var(--text-secondary)' }}
           >
-            Trusted Dynamics 365 & Power Platform Experts with deep product knowledge to accelerate your success.
+            Trusted Dynamics 365 & Power Platform Experts with deep product knowledge to accelerate
+            your success.
           </motion.p>
         </motion.div>
       </div>
     </section>
   );
 }
-
-
