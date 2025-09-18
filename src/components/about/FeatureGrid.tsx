@@ -1,12 +1,13 @@
 'use client';
 import { motion } from 'framer-motion';
+import { CheckCircledIcon } from '@radix-ui/react-icons';
 import {
-  CheckCircledIcon,
-  LightningBoltIcon,
-  LockClosedIcon,
-  RocketIcon,
-  InfoCircledIcon,
-} from '@radix-ui/react-icons';
+  BanknotesIcon,
+  ArrowPathIcon,
+  ReceiptPercentIcon,
+  ShieldCheckIcon,
+  WrenchScrewdriverIcon,
+} from '@heroicons/react/24/outline';
 
 type Feature = {
   Icon: React.ElementType;
@@ -19,41 +20,41 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    Icon: CheckCircledIcon,
-    title: 'Low Total Cost',
-    text: 'Lean delivery that maximizes value and minimizes waste through efficient processes and smart resource allocation.',
+    Icon: BanknotesIcon,
+    title: 'Low-cost implementation',
+    text: 'Lean, efficient delivery that lowers total cost without compromising on quality or outcomes.',
     gradient: 'from-green-500/20 to-emerald-600/20',
     iconBg: 'from-green-500 to-emerald-600',
     delay: 0.1,
   },
   {
-    Icon: InfoCircledIcon,
-    title: 'License Savings',
-    text: 'Architectures that reduce licensing overhead where possible, optimizing your Microsoft investment.',
+    Icon: ArrowPathIcon,
+    title: 'Custom data migration tools',
+    text: 'Purpose-built accelerators and scripts to migrate data reliably and quickly between systems.',
     gradient: 'from-blue-500/20 to-cyan-600/20',
     iconBg: 'from-blue-500 to-cyan-600',
     delay: 0.2,
   },
   {
-    Icon: LightningBoltIcon,
-    title: 'Faster Time-to-Value',
-    text: 'Iterative delivery that shows results from day one, accelerating your digital transformation journey.',
+    Icon: ReceiptPercentIcon,
+    title: 'We can assist you in reducing your licence expenses',
+    text: 'Guidance to optimize SKUs and environments so you pay only for what you need.',
     gradient: 'from-yellow-500/20 to-orange-600/20',
     iconBg: 'from-yellow-500 to-orange-600',
     delay: 0.3,
   },
   {
-    Icon: LockClosedIcon,
-    title: 'Secure by Design',
-    text: 'Security-first approach across environments and data, ensuring compliance and protection at every level.',
+    Icon: ShieldCheckIcon,
+    title: 'We work with Microsoft technologies exclusively',
+    text: 'Deep specialization across Dynamics 365 and the Power Platform for first-class outcomes.',
     gradient: 'from-purple-500/20 to-pink-600/20',
     iconBg: 'from-purple-500 to-pink-600',
     delay: 0.4,
   },
   {
-    Icon: RocketIcon,
-    title: 'Partner Mindset',
-    text: 'We work with you, not just for you. True partnership that grows with your business success.',
+    Icon: WrenchScrewdriverIcon,
+    title: 'We develop tools for Dynamics 365 and Power Platform',
+    text: 'Reusable products and utilities that accelerate delivery and increase reliability.',
     gradient: 'from-indigo-500/20 to-purple-600/20',
     iconBg: 'from-indigo-500 to-purple-600',
     delay: 0.5,
