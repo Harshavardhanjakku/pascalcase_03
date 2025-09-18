@@ -25,18 +25,20 @@ A modern, responsive website built with Next.js 14, TypeScript, and Tailwind CSS
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm, yarn, or pnpm
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Harshavardhanjakku/pascalcase.git
 cd pascalcase
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 # or
@@ -46,6 +48,7 @@ pnpm install
 ```
 
 3. Run the development server:
+
 ```bash
 npm run dev
 # or
@@ -78,16 +81,19 @@ src/
 ## Key Components
 
 ### BlogBrowser
+
 - Searchable tag filtering system
 - LeetCode-style popover interface
 - Real-time filtering with counts
 
 ### ContactSection
+
 - Glassmorphism contact form
 - Floating labels with icons
 - Form validation and accessibility
 
 ### Footer
+
 - Social media integration
 - Responsive grid layout
 - Smooth hover animations
@@ -95,11 +101,13 @@ src/
 ## Deployment
 
 ### Vercel (Recommended)
+
 1. Push your code to GitHub
 2. Connect your repository to Vercel
 3. Deploy automatically on every push
 
 ### Other Platforms
+
 - **Netlify**: Connect GitHub repo and deploy
 - **Railway**: Deploy with one click
 - **AWS/GCP**: Use Docker containers
@@ -124,4 +132,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Built with ❤️ by the Pascalcase team
+Built with ❤️ by the Jakku Harshavardhan and Nagaraju
