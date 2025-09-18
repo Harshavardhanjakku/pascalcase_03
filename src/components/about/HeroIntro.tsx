@@ -61,8 +61,7 @@ export default function HeroIntro() {
             className="mx-auto max-w-4xl text-lg leading-relaxed sm:text-xl"
             style={{ color: 'var(--text-secondary)' }}
           >
-            Trusted Dynamics 365 & Power Platform Experts with deep product knowledge to accelerate
-            your success.
+            We are ex-Microsoft employees. We have unparalleled product knowledge.
           </motion.p>
         </motion.div>
       </div>
