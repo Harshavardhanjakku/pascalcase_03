@@ -1185,148 +1185,142 @@ export default async function ProductDetail({ params }: Params) {
         </div>
 
         {/* Main Content */}
-        <div className="space-y-8">
-          {/* Row 1: Two-column layout for main content */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {/* Left Column - Main Product */}
-            <div className="flex">
-              {/* Product Description */}
-              <div
-                className="flex w-full flex-col rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
-              >
-                <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  About the Extension
-                </h2>
-                <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                  Pascalcase Metadata Browser is an extension for Microsoft Edge browser for
-                  accessing metadata of Dataverse (Dynamics 365 and PowerApps) instances. You can
-                  easily browse properties like tables, columns, relationships, choices, etc. and
-                  export to CSV files.
-                </p>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {/* Left Column - Main Product */}
+          <div className="space-y-8 lg:col-span-2">
+            {/* Product Description */}
+            <div
+              className="rounded-2xl p-8 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h2 className="mb-4 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                About the Extension
+              </h2>
+              <p className="mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                Pascalcase Metadata Browser is an extension for Microsoft Edge browser for accessing
+                metadata of Dataverse (Dynamics 365 and PowerApps) instances. You can easily browse
+                properties like tables, columns, relationships, choices, etc. and export to CSV
+                files.
+              </p>
 
-                <div
-                  className="rounded-xl border-l-4 border-blue-500 p-6"
-                  style={{ backgroundColor: 'var(--surface-2)' }}
-                >
-                  <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
-                    Key Advantage
-                  </h3>
-                  <p style={{ color: 'var(--text-secondary)' }}>
-                    The main advantage of this extension is that it will automatically show you the
-                    logical names of the tables and their columns on UI forms, assisting you not to
-                    always navigate to your solution to find the logical names.
-                  </p>
-                </div>
-                <div className="mt-auto pt-6">
-                  <a
-                    href="https://microsoftedge.microsoft.com/addons/detail/metadata-browser-for-dyna/fdfelmicclblfanogpnejdogjjildbkf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow transition-colors hover:from-blue-700 hover:to-indigo-700"
-                  >
-                    <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
-                    Download from Microsoft Edge
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Alternative */}
-            <div className="flex">
-              {/* Safyr Section */}
               <div
-                className="flex w-full flex-col rounded-2xl p-8 backdrop-blur-sm"
-                style={{
-                  backgroundColor: 'var(--surface-card)',
-                  borderColor: 'var(--border-default)',
-                  border: '1px solid',
-                }}
+                className="rounded-xl border-l-4 border-blue-500 p-6"
+                style={{ backgroundColor: 'var(--surface-2)' }}
               >
-                <h3 className="mb-4 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                  Safyr for Microsoft Dynamics 365 Metadata
+                <h3 className="mb-2 font-semibold" style={{ color: 'var(--text-primary)' }}>
+                  Key Advantage
                 </h3>
-                <p
-                  className="mb-6 flex-grow leading-relaxed"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  Safyr for Microsoft Dynamics 365 Metadata is a powerful metadata tool, which
-                  allows you to download metadata as a .mdb file. The data present in the file is
-                  directly extracted from your Microsoft Dataverse instance. This file contains a
-                  list of metadata components such as tables, columns, entities, keys, option sets,
-                  relationships, etc. You can expand any table and find the required information
-                  like primary keys, foreign keys, logical names, schema names and more. The main
-                  advantage of using this tool is, it allows you to speed up the source data
-                  discovery process for many projects such as data catalog, data governance, data
-                  warehouse, master data, data integration, etc.
+                <p style={{ color: 'var(--text-secondary)' }}>
+                  The main advantage of this extension is that it will automatically show you the
+                  logical names of the tables and their columns on UI forms, assisting you not to
+                  always navigate to your solution to find the logical names.
                 </p>
-
+              </div>
+              <div className="mt-6">
                 <a
-                  href="https://www.silwoodtechnology.com/products/safyr-for-microsoft-dynamics-365/"
+                  href="https://microsoftedge.microsoft.com/addons/detail/metadata-browser-for-dyna/fdfelmicclblfanogpnejdogjjildbkf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
+                  className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow transition-colors hover:from-blue-700 hover:to-indigo-700"
                 >
-                  <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
-                  Go to Silwood Technology website
+                  <ArrowDownTrayIcon className="mr-2 h-5 w-5" />
+                  Download from Microsoft Edge
                 </a>
               </div>
             </div>
-          </div>
 
-          {/* Row 2: Video Section - Full Width */}
-          <div
-            className="rounded-2xl p-8 backdrop-blur-sm"
-            style={{
-              backgroundColor: 'var(--surface-card)',
-              borderColor: 'var(--border-default)',
-              border: '1px solid',
-            }}
-          >
-            <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-              Watch the Demo
-            </h2>
-            <div className="aspect-video w-full overflow-hidden rounded-xl">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube.com/embed/WGOKc2VnODY"
-                title="Metadata Browser for Dataverse"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
+            {/* Video */}
+            <div
+              className="rounded-2xl p-4 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <div className="aspect-video w-full overflow-hidden rounded-xl">
+                <iframe
+                  className="h-full w-full"
+                  src="https://www.youtube.com/embed/WGOKc2VnODY"
+                  title="Metadata Browser for Dataverse"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            {/* Features */}
+            <div
+              className="rounded-2xl p-8 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                Features
+              </h2>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                {[
+                  'Download Microsoft Dataverse metadata as a .mdb file',
+                  'Direct extraction from your Dataverse instance',
+                  'Browse tables, columns, entities, keys, option sets, relationships',
+                  'Expand tables to view primary/foreign keys, logical and schema names',
+                  'Accelerate discovery for data catalog, governance, warehouse, MDM and integration projects',
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
+                    <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Row 3: Features Section - Full Width */}
-          <div
-            className="rounded-2xl p-8 backdrop-blur-sm"
-            style={{
-              backgroundColor: 'var(--surface-card)',
-              borderColor: 'var(--border-default)',
-              border: '1px solid',
-            }}
-          >
-            <h2 className="mb-6 text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
-              Features
-            </h2>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              {[
-                'Download Microsoft Dataverse metadata as a .mdb file',
-                'Direct extraction from your Dataverse instance',
-                'Browse tables, columns, entities, keys, option sets, relationships',
-                'Expand tables to view primary/foreign keys, logical and schema names',
-                'Accelerate discovery for data catalog, governance, warehouse, MDM and integration projects',
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-blue-500" />
-                  <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
-                </div>
-              ))}
+          {/* Right Column - Alternative */}
+          <div className="space-y-6">
+            {/* Safyr Section */}
+            <div
+              className="rounded-2xl p-6 backdrop-blur-sm"
+              style={{
+                backgroundColor: 'var(--surface-card)',
+                borderColor: 'var(--border-default)',
+                border: '1px solid',
+              }}
+            >
+              <h3 className="mb-4 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                Safyr for Microsoft Dynamics 365 Metadata
+              </h3>
+              <p
+                className="mb-4 text-sm leading-relaxed"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                Safyr for Microsoft Dynamics 365 Metadata is a powerful metadata tool, which allows
+                you to download metadata as a .mdb file. The data present in the file is directly
+                extracted from your Microsoft Dataverse instance. This file contains a list of
+                metadata components such as tables, columns, entities, keys, option sets,
+                relationships, etc. You can expand any table and find the required information like
+                primary keys, foreign keys, logical names, schema names and more. The main advantage
+                of using this tool is, it allows you to speed up the source data discovery process
+                for many projects such as data catalog, data governance, data warehouse, master
+                data, data integration, etc.
+              </p>
+
+              <a
+                href="https://www.silwoodtechnology.com/products/safyr-for-microsoft-dynamics-365/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 font-semibold text-white transition-colors hover:from-blue-700 hover:to-indigo-700"
+              >
+                <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />
+                Go to Silwood Technology website
+              </a>
             </div>
           </div>
         </div>
