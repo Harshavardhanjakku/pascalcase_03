@@ -76,20 +76,12 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: false }}
+      // Render immediately; avoid whileInView which sometimes leaves content invisible after navigation
+      initial={false}
       aria-label="Blog posts"
       className="relative"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        viewport={{ once: false }}
-        className="mb-4 flex items-center justify-center"
-      >
+      <motion.div initial={false} className="mb-4 flex items-center justify-center">
         <h2 className="text-center text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>
           Blogs
         </h2>
@@ -172,13 +164,7 @@ export default function BlogSlider({ posts }: BlogSliderProps) {
       </div>
 
       {viewMode === 'grid' ? (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: false }}
-          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-        >
+        <motion.div initial={false} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
             <BlogCard key={p.slug} {...toBlogCardProps(p)} />
           ))}
