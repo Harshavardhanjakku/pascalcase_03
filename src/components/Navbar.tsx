@@ -6,12 +6,14 @@ import { CaretDownIcon, SunIcon, MoonIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 import Image from 'next/image';
 // Helper to render product logos in the dropdown just like Products page
-const makeLogoIcon =
-  (src: string, alt: string) =>
-  ({ className }: { className?: string }) => (
+const makeLogoIcon = (src: string, alt: string) => {
+  const Icon = ({ className }: { className?: string }) => (
     // Using <img> to align with products page icons
     <img src={src} alt={alt} className={className ?? ''} />
   );
+  Icon.displayName = `ProductLogo(${alt})`;
+  return Icon;
+};
 
 type NavItem =
   | { label: string; href: string }
