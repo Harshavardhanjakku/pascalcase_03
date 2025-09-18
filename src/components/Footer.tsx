@@ -158,7 +158,7 @@ export default function Footer() {
                       style={{ color: 'var(--text-secondary)' }}
                     >
                       <span className="relative">
-                        Terms of Service
+                        Terms
                         <span
                           className="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full"
                           style={{ backgroundColor: 'var(--text-primary)' }}
