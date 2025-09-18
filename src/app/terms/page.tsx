@@ -176,7 +176,7 @@ export default function TermsPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-10">
-      <h2 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+      <h2 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
         {title}
       </h2>
       <div

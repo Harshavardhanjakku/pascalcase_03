@@ -48,7 +48,7 @@ export default function CareersPage() {
       </section>
 
       <section className="mt-14">
-        <h2 className="text-xl font-semibold" style={{ color: 'var(--text-primary)' }}>
+        <h2 className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
           How to Apply?
         </h2>
         <p className="mt-2 text-base" style={{ color: 'var(--text-secondary)' }}>
@@ -79,7 +79,7 @@ function Job({ title, skills, experience, location }: JobProps) {
       className="rounded-xl border p-5"
       style={{ borderColor: 'var(--border-subtle)', backgroundColor: 'var(--surface-1)' }}
     >
-      <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+      <h3 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
         {title}
       </h3>
       <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">
