@@ -44,10 +44,7 @@ export default function HeroIntro() {
                 <rect x="10" y="21" width="4" height="1" rx="0.5" />
               </svg>
             </motion.div>
-            <h1
-              className="text-4xl font-bold sm:text-5xl lg:text-6xl"
-              style={{ color: 'var(--text-primary)' }}
-            >
+            <h1 className="section-title" style={{ color: 'var(--text-primary)' }}>
               Why Pascalcase?
             </h1>
           </motion.div>
