@@ -104,11 +104,15 @@ function Job({ title, skills, experience, location }: JobProps) {
         border: '1px solid',
       }}
     >
-      <h3 className="mb-4 text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
-        {title}
-      </h3>
+      {/* Fixed-height header so following content aligns across cards */}
+      <div className="mb-4 min-h-14">
+        <h3 className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
+          {title}
+        </h3>
+      </div>
 
-      <div className="flex-grow space-y-3">
+      {/* Middle: Skills block (content area) */}
+      <div className="space-y-3">
         <div>
           <h4 className="mb-1 text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
             Skills Required
@@ -117,40 +121,41 @@ function Job({ title, skills, experience, location }: JobProps) {
             {skills}
           </p>
         </div>
+      </div>
 
-        <div className="flex flex-wrap gap-6">
-          <div className="flex items-center gap-2">
-            <div
-              className="flex h-8 w-8 items-center justify-center rounded-lg"
-              style={{ backgroundColor: 'var(--accent-2)' }}
-            >
-              <ClockIcon className="h-4 w-4 text-white" />
-            </div>
-            <div>
-              <h4 className="mb-1 text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
-                Experience
-              </h4>
-              <p className="text-sm font-medium" style={{ color: 'var(--accent-2)' }}>
-                {experience}
-              </p>
-            </div>
+      {/* Meta row pinned near the bottom for consistent alignment */}
+      <div className="mt-auto flex flex-wrap gap-6 pt-4">
+        <div className="flex items-center gap-2">
+          <div
+            className="flex h-8 w-8 items-center justify-center rounded-lg"
+            style={{ backgroundColor: 'var(--accent-2)' }}
+          >
+            <ClockIcon className="h-4 w-4 text-white" />
           </div>
+          <div>
+            <h4 className="mb-1 text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+              Experience
+            </h4>
+            <p className="text-sm font-medium" style={{ color: 'var(--accent-2)' }}>
+              {experience}
+            </p>
+          </div>
+        </div>
 
-          <div className="flex items-center gap-2">
-            <div
-              className="flex h-8 w-8 items-center justify-center rounded-lg"
-              style={{ backgroundColor: 'var(--accent-2)' }}
-            >
-              <MapPinIcon className="h-4 w-4 text-white" />
-            </div>
-            <div>
-              <h4 className="mb-1 text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
-                Location
-              </h4>
-              <p className="text-sm font-medium" style={{ color: 'var(--accent-2)' }}>
-                {location}
-              </p>
-            </div>
+        <div className="flex items-center gap-2">
+          <div
+            className="flex h-8 w-8 items-center justify-center rounded-lg"
+            style={{ backgroundColor: 'var(--accent-2)' }}
+          >
+            <MapPinIcon className="h-4 w-4 text-white" />
+          </div>
+          <div>
+            <h4 className="mb-1 text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+              Location
+            </h4>
+            <p className="text-sm font-medium" style={{ color: 'var(--accent-2)' }}>
+              {location}
+            </p>
           </div>
         </div>
       </div>
