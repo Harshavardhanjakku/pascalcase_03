@@ -34,12 +34,7 @@ declare module '../src/app/products/[slug]/page.js' {
   export const revalidate: any;
 }
 
-// Products index page
-declare module '../src/app/products/page.js' {
-  const _default: any;
-  export default _default;
-  export const revalidate: any;
-}
+// Products index page removed
 
 // Root layout
 declare module '../src/app/layout.js' {
