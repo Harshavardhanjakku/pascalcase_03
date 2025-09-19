@@ -240,27 +240,7 @@ export default function Navbar() {
                             );
                           })}
                         </ul>
-                        <div className="mt-4 flex justify-end">
-                          <Link
-                            href="/products"
-                            className="rounded-lg border px-3 py-2 text-sm transition-colors"
-                            style={{
-                              borderColor: isDark ? '#334155' : '#e2e8f0',
-                              color: isDark ? '#e5e7eb' : '#1e293b',
-                              backgroundColor: 'transparent',
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor = isDark
-                                ? '#1f2937'
-                                : '#f1f5f9';
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.backgroundColor = 'transparent';
-                            }}
-                          >
-                            View All Products
-                          </Link>
-                        </div>
+                        {/* Removed global View All Products button */}
                       </motion.div>
                     )}
                   </AnimatePresence>

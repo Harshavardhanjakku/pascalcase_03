@@ -50,14 +50,7 @@ export default async function ProductDetail({ params }: Params) {
       >
         {/* Header */}
         <div className="mb-8">
-          <Link
-            href="/products"
-            className="mb-6 inline-flex items-center gap-2 transition-colors"
-            style={{ color: 'var(--text-secondary)' }}
-          >
-            <ArrowLeftIcon className="h-4 w-4" />
-            Back to Products
-          </Link>
+          {/* Back link removed since /products page no longer exists */}
 
           <div className="flex items-start justify-between">
             <div>
@@ -261,14 +254,7 @@ export default async function ProductDetail({ params }: Params) {
       >
         {/* Header */}
         <div className="mb-8">
-          <Link
-            href="/products"
-            className="mb-6 inline-flex items-center gap-2 transition-colors"
-            style={{ color: 'var(--text-secondary)' }}
-          >
-            <ArrowLeftIcon className="h-4 w-4" />
-            Back to Products
-          </Link>
+          {/* Back link removed since /products page no longer exists */}
 
           <div className="flex items-start justify-between">
             <div>
@@ -512,16 +498,7 @@ export default async function ProductDetail({ params }: Params) {
         className="mx-auto max-w-6xl scroll-mt-24 px-4 py-10 sm:px-6 md:scroll-mt-28"
       >
         {/* Back link */}
-        <div className="mb-8">
-          <Link
-            href="/products"
-            className="mb-6 inline-flex items-center gap-2 transition-colors"
-            style={{ color: 'var(--text-secondary)' }}
-          >
-            <ArrowLeftIcon className="h-4 w-4" />
-            Back to Products
-          </Link>
-        </div>
+        <div className="mb-8" />
 
         {/* Hero */}
         <div
@@ -814,14 +791,7 @@ export default async function ProductDetail({ params }: Params) {
       >
         {/* Header */}
         <div className="mb-8">
-          <Link
-            href="/products"
-            className="mb-6 inline-flex items-center gap-2 transition-colors"
-            style={{ color: 'var(--text-secondary)' }}
-          >
-            <ArrowLeftIcon className="h-4 w-4" />
-            Back to Products
-          </Link>
+          {/* Back link removed since /products page no longer exists */}
 
           <div className="flex items-start justify-between">
             <div>
@@ -987,14 +957,7 @@ export default async function ProductDetail({ params }: Params) {
       >
         {/* Header */}
         <div className="mb-8">
-          <Link
-            href="/products"
-            className="mb-6 inline-flex items-center gap-2 transition-colors"
-            style={{ color: 'var(--text-secondary)' }}
-          >
-            <ArrowLeftIcon className="h-4 w-4" />
-            Back to Products
-          </Link>
+          {/* Back link removed since /products page no longer exists */}
 
           <div className="flex items-start justify-between">
             <div>
@@ -1347,16 +1310,6 @@ export default async function ProductDetail({ params }: Params) {
         {data.body}
       </p>
       <div className="mt-6 flex gap-3">
-        <Link
-          href="/products"
-          className="rounded-md border px-4 py-2 text-sm transition-colors"
-          style={{
-            borderColor: 'var(--border-default)',
-            color: 'var(--text-secondary)',
-          }}
-        >
-          Back to Products
-        </Link>
         <a
           href="#"
           className="bg-accent rounded-md px-4 py-2 text-sm font-medium text-black hover:opacity-90"
