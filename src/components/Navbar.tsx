@@ -48,7 +48,10 @@ const productCatalog = [
       {
         label: 'Data Mask for Dataverse',
         href: '/products/data-mask',
-        icon: makeLogoIcon('/our_products/logos/Data Mask Tool', 'Data Mask for Dataverse logo'),
+        icon: makeLogoIcon(
+          '/our_products/logos/Data_Mask_Tool.png',
+          'Data Mask for Dataverse logo',
+        ),
       },
     ],
   },
@@ -58,10 +61,7 @@ const productCatalog = [
       {
         label: 'AI Autocloser',
         href: '/products/ai-autocloser',
-        icon: makeLogoIcon(
-          '/our_products/logos/AI Autocloser.5def4e0d-2e21-4e49-b8e8-3c8463a090c5',
-          'AI Autocloser logo',
-        ),
+        icon: makeLogoIcon('/our_products/logos/AI_Autocloser.png', 'AI Autocloser logo'),
       },
     ],
   },
@@ -71,10 +71,7 @@ const productCatalog = [
       {
         label: 'Commission 365',
         href: '/products/commission-365',
-        icon: makeLogoIcon(
-          '/our_products/logos/Commission 365.a4e8130e-a236-4e16-9a8b-cec40c92775c',
-          'Commission 365 logo',
-        ),
+        icon: makeLogoIcon('/our_products/logos/Commission_365.png', 'Commission 365 logo'),
         badge: 'Popular',
       },
       {
@@ -85,10 +82,7 @@ const productCatalog = [
       {
         label: 'Flow Monitor',
         href: '/products/flow-monitor',
-        icon: makeLogoIcon(
-          '/our_products/logos/Flow_Monitor.bf7976ba-dd43-4110-a145-d649264b7869',
-          'Flow Monitor logo',
-        ),
+        icon: makeLogoIcon('/our_products/logos/Flow_Monitor.png', 'Flow Monitor logo'),
       },
     ],
   },
