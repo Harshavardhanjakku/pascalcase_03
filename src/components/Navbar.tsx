@@ -8,8 +8,7 @@ import Image from 'next/image';
 // Helper to render product logos in the dropdown just like Products page
 const makeLogoIcon = (src: string, alt: string) => {
   const Icon = ({ className }: { className?: string }) => (
-    // Using <img> to align with products page icons
-    <img src={src} alt={alt} className={className ?? ''} />
+    <Image src={src} alt={alt} width={20} height={20} className={className ?? ''} />
   );
   Icon.displayName = `ProductLogo(${alt})`;
   return Icon;
